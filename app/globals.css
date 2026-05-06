@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #2C2C2C;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes hero-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-hero-gradient {
+  background-size: 200% 200%;
+  animation: hero-gradient 12s ease infinite alternate;
+}
+
+@keyframes cta-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-cta-gradient {
+  background-size: 200% 200%;
+  animation: cta-gradient 6s ease infinite alternate;
+}
+
+@keyframes dash-draw {
+  to { stroke-dashoffset: 0; }
+}
+.animate-dash-draw {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash-draw 1.2s ease forwards;
+}
+
+@keyframes rotate-ring {
+  to { transform: rotate(360deg); }
+}
+.animate-rotate-ring {
+  animation: rotate-ring 8s linear infinite;
+}
+
+@keyframes drawBorder {
+  to { stroke-dashoffset: 0; }
+}
+
+
