@@ -346,7 +346,7 @@ We look forward to growing together with our partners and setting new standards 
               { id: "03", title: "Cost-Effective Services", desc: "Competitive pricing without compromising on service quality." },
               { id: "04", title: "Professional & Transparent Operations", desc: "Clear communication and complete transparency in every process." },
               { id: "05", title: "Growing Network & Scalability", desc: "Continuously expanding reach to serve clients efficiently across NCR and beyond." },
-            ].map((feature, idx) => (
+            ].map((feature) => (
               <motion.div
                 key={feature.id}
                 variants={slideLeft}

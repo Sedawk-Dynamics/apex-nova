@@ -7,13 +7,13 @@ import { ArrowRight, Phone } from "lucide-react";
 import dynamic from "next/dynamic";
 import { useCountUp } from "@/hooks/useCountUp";
 import { useMouseParallax } from "@/hooks/useMouseParallax";
-import { scaleIn, fadeUp } from "@/lib/animations";
+import { scaleIn } from "@/lib/animations";
 
 const FloatingParticles = dynamic(() => import("@/components/ui/FloatingParticles"), { ssr: false });
 
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
-  const { x: parallaxX, y: parallaxY } = useMouseParallax(0.02);
+  useMouseParallax(0.02);
 
   const stat1 = useCountUp(500, 2000, "+");
   const stat2 = useCountUp(100, 2000, "+");

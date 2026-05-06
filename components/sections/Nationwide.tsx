@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import Image from "next/image";
 import { ArrowRight, Quote } from "lucide-react";
 import { useCountUp } from "@/hooks/useCountUp";
 import { slideLeft } from "@/lib/animations";
@@ -86,9 +87,11 @@ export default function Nationwide() {
               transition={{ duration: 0.8 }}
               className="relative w-full max-w-[600px] aspect-[4/5] drop-shadow-2xl"
             >
-              <img
+              <Image
                 src="/images/map.webp"
                 alt="Apexnova Logistics India Coverage Map"
+                width={600}
+                height={750}
                 className="w-full h-full object-contain filter drop-shadow-[0_0_15px_rgba(244,121,32,0.2)]"
               />
             </motion.div>

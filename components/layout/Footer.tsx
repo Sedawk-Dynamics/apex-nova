@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Mail } from "lucide-react";
 
 export default function Footer() {
@@ -8,7 +9,7 @@ export default function Footer() {
         {/* Column 1 */}
         <div className="space-y-6">
           <Link href="/" className="inline-block bg-white p-2 rounded-xl mb-4">
-            <img src="/images/apex-nova.png" alt="Apexnova Logistics" className="h-14 w-auto object-contain" />
+            <Image src="/images/apex-nova.png" alt="Apexnova Logistics" width={150} height={56} className="h-14 w-auto object-contain" />
           </Link>
           <p className="text-sm leading-relaxed">
             Fast, Secure & Reliable Logistics Across India. Delivering your business, on time – every time.

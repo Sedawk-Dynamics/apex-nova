@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import clsx from "clsx";
@@ -59,7 +60,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <img src="/images/apex-nova.png" alt="Apexnova Logistics" className="h-16 w-auto object-contain" />
+            <Image src="/images/apex-nova.png" alt="Apexnova Logistics" width={200} height={64} className="h-16 w-auto object-contain" />
           </Link>
 
           {/* Desktop Nav */}
