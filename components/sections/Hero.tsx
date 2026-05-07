@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Phone, ShieldCheck, Clock, Truck, MapPin } from "lucide-react";
 import dynamic from "next/dynamic";
 import { useCountUp } from "@/hooks/useCountUp";
@@ -30,20 +31,15 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-[92vh] flex items-center bg-navy-deep w-full pt-32 md:pt-36 pb-48 md:pb-52 overflow-hidden">
-      {/* Background Video & Layered Overlays */}
+      {/* Background Image & Layered Overlays */}
       <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          poster="/images/hero-truck.jpg"
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover object-center scale-105"
-        >
-          <source src="/vedios/backgroundvedio.mp4" type="video/mp4" />
-        </video>
+        <Image
+          src="/images/hero-truck.jpg"
+          alt="Freight truck on highway at dusk"
+          fill
+          priority
+          className="object-cover object-center scale-105"
+        />
         {/* Cinematic darken */}
         <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/95 to-navy-deep/40" />
         {/* Animated brand wash */}

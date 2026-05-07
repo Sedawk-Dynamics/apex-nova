@@ -2,7 +2,6 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { Clock, ShieldCheck, IndianRupee, HeadphonesIcon, Sparkles } from "lucide-react";
-import Image from "next/image";
 import { slideRight } from "@/lib/animations";
 
 const features = [
@@ -90,12 +89,18 @@ export default function WhyChoose() {
               whileHover={!shouldReduceMotion ? { scale: 1.02 } : {}}
               className="relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-premium will-change-transform"
             >
-              <Image
-                src="/images/worker-warehouse.jpg"
-                alt="Logistics worker in warehouse"
-                fill
-                className="object-cover"
-              />
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                poster="/images/worker-warehouse.jpg"
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full object-cover"
+              >
+                <source src="/vedios/backgroundvedio.mp4" type="video/mp4" />
+              </video>
               <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/60 via-transparent to-transparent" />
             </motion.div>
 
