@@ -87,7 +87,7 @@ export default function WhyChoose() {
               animate={!shouldReduceMotion ? { y: [0, -14, 0] } : {}}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               whileHover={!shouldReduceMotion ? { scale: 1.02 } : {}}
-              className="relative aspect-[4/5] rounded-[32px] overflow-hidden shadow-premium will-change-transform"
+              className="relative aspect-video rounded-[32px] overflow-hidden shadow-premium will-change-transform bg-navy-deep"
             >
               <video
                 autoPlay
@@ -97,11 +97,11 @@ export default function WhyChoose() {
                 preload="auto"
                 poster="/images/worker-warehouse.jpg"
                 aria-hidden="true"
-                className="absolute inset-0 w-full h-full object-cover"
+                className="block w-full h-full object-cover"
               >
                 <source src="/vedios/backgroundvedio.mp4" type="video/mp4" />
               </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/60 via-transparent to-transparent" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-deep/40 via-transparent to-transparent" />
             </motion.div>
 
             <motion.div
