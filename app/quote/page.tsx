@@ -145,11 +145,8 @@ export default function QuotePage() {
           <p className="text-gray-600 mb-8 leading-relaxed">
             Thank you <span className="font-semibold text-navy">{formData.name}</span>! Our team will contact you at <span className="font-semibold text-navy">{formData.phone}</span> within 2 hours with the best rate for your shipment.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/tracking" className="bg-orange text-white px-6 py-3 rounded-full font-bold hover:bg-orange-dark transition-colors">
-              Track a Shipment
-            </Link>
-            <Link href="/" className="bg-gray-100 text-navy px-6 py-3 rounded-full font-bold hover:bg-gray-200 transition-colors">
+          <div className="flex justify-center">
+            <Link href="/" className="bg-orange text-white px-6 py-3 rounded-full font-bold hover:bg-orange-dark transition-colors">
               Go to Homepage
             </Link>
           </div>
@@ -161,32 +158,32 @@ export default function QuotePage() {
   return (
     <div className="min-h-screen pb-0 bg-theme-light">
       {/* HERO BANNER */}
-      <section className="bg-navy min-h-[40vh] relative flex flex-col justify-center items-center overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-5"
-          style={{
-            backgroundImage:
-              'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M54.627 0l.83.83-54.627 54.627-.83-.83zM60 5.373l-54.627 54.627-.83-.83L59.17 4.543zM60 15.373L15.373 60l-.83-.83L59.17 14.543zM60 25.373L25.373 60l-.83-.83L59.17 24.543zM60 35.373L35.373 60l-.83-.83L59.17 34.543zM60 45.373L45.373 60l-.83-.83L59.17 44.543zM60 55.373L55.373 60l-.83-.83L59.17 54.543zM44.627 0L0 44.627l.83.83L45.457.83zM34.627 0L0 34.627l.83.83L35.457.83zM24.627 0L0 24.627l.83.83L25.457.83zM14.627 0L0 14.627l.83.83L15.457.83zM4.627 0L0 4.627l.83.83L5.457.83z\' fill=\'%23ffffff\' fill-rule=\'evenodd\'/%3E%3C/svg%3E")',
-          }}
-        />
-        <div className="relative z-10 text-center mt-20">
+      <section className="bg-gradient-to-b from-navy to-navy-deep min-h-[44vh] relative flex flex-col justify-center items-center overflow-hidden">
+        <div className="absolute inset-0 grid-bg radial-fade opacity-40" />
+        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-orange/20 rounded-full blur-[140px] animate-blob" />
+        <div className="absolute -bottom-32 -left-32 w-[420px] h-[420px] bg-white/15 rounded-full blur-[140px] animate-blob" style={{ animationDelay: "3s" }} />
+        <div className="relative z-10 text-center mt-20 px-6">
           <motion.h1
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
-            className="text-4xl md:text-5xl font-bold text-white mb-4"
+            className="text-4xl md:text-[56px] font-bold text-white mb-4 tracking-tight"
           >
-            Get a Free Quote
+            Get a <span className="gradient-text">Free Quote</span>
           </motion.h1>
-          <p className="text-gray-300 text-lg mb-4 max-w-xl mx-auto px-6">
+          <p className="text-gray-300 text-lg mb-5 max-w-xl mx-auto">
             Tell us about your shipment and we&apos;ll get back with the best rate within 2 hours.
           </p>
-          <div className="text-gray-400 text-sm font-medium">
-            <Link href="/" className="hover:text-white transition-colors">
-              Home
-            </Link>{" "}
-            &gt; <span className="text-white">Get A Quote</span>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="inline-flex items-center gap-2 glass-dark text-white/85 text-[12.5px] font-medium px-4 py-1.5 rounded-full"
+          >
+            <Link href="/" className="hover:text-orange transition-colors">Home</Link>
+            <span className="opacity-50">›</span>
+            <span className="text-orange">Get a Quote</span>
+          </motion.div>
         </div>
       </section>
 

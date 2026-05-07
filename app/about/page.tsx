@@ -20,12 +20,17 @@ We look forward to growing together with our partners and setting new standards 
   return (
     <div className="min-h-screen pb-0">
       {/* HERO BANNER */}
-      <section className="bg-navy min-h-[40vh] relative flex flex-col justify-center items-center overflow-hidden">
+      <section className="bg-gradient-to-b from-navy to-navy-deep min-h-[44vh] relative flex flex-col justify-center items-center overflow-hidden">
+        {/* Grid mesh + glow */}
+        <div className="absolute inset-0 grid-bg radial-fade opacity-40" />
+        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-orange/20 rounded-full blur-[140px] animate-blob" />
+        <div className="absolute -bottom-32 -left-32 w-[420px] h-[420px] bg-white/15 rounded-full blur-[140px] animate-blob" style={{ animationDelay: "3s" }} />
+
         {/* Floating geometric shapes */}
         {[0, 1, 2, 3].map((i) => (
           <motion.div
             key={i}
-            className="absolute bg-[#112052] rounded-[30px] opacity-40 z-0 border border-white/5"
+            className="absolute bg-white/10 rounded-[30px] opacity-30 z-0 border border-white/10"
             style={{
               width: 200 + i * 50,
               height: 200 + i * 50,
@@ -56,16 +61,15 @@ We look forward to growing together with our partners and setting new standards 
               </span>
             ))}
           </h1>
-          <motion.div 
-            initial={{ opacity: 0 }} 
-            animate={{ opacity: 1 }} 
-            transition={{ delay: 0.4 }}
-            className="text-gray-400 text-sm font-medium"
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="inline-flex items-center gap-2 glass-dark text-white/85 text-[12.5px] font-medium px-4 py-1.5 rounded-full"
           >
-            <Link href="/" className="hover:text-white transition-colors">
-              Home
-            </Link>{" "}
-            &gt; <span className="text-white">About Us</span>
+            <Link href="/" className="hover:text-orange transition-colors">Home</Link>
+            <span className="opacity-50">›</span>
+            <span className="text-orange">About Us</span>
           </motion.div>
         </div>
       </section>
@@ -373,26 +377,6 @@ We look forward to growing together with our partners and setting new standards 
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-orange py-16">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-white text-3xl md:text-4xl font-bold mb-8">Ready to ship with us?</h2>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <Link
-              href="/contact"
-              className="bg-white text-navy px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-colors shadow-lg min-w-[200px]"
-            >
-              Get a Free Quote
-            </Link>
-            <a
-              href="tel:+919560639966"
-              className="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white/10 transition-colors min-w-[200px]"
-            >
-              Call Us Now
-            </a>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

@@ -4,13 +4,39 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #2C2C2C;
+  --foreground: #0F1D4A;
+  --navy: #1B2E6B;
+  --navy-deep: #0F1D4A;
+  --orange: #F47920;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
+  font-feature-settings: "ss01", "cv11";
+  letter-spacing: -0.005em;
 }
+
+/* Premium scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #f3f5fa; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #1B2E6B, #0F1D4A);
+  border-radius: 8px;
+  border: 2px solid #f3f5fa;
+}
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #F47920, #D4670A); }
+
+::selection { background: rgba(244,121,32,0.28); color: #0F1D4A; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -19,6 +45,55 @@ body {
   }
 }
 
+/* === Premium utilities === */
+@layer utilities {
+  .glass {
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255,255,255,0.7);
+  }
+  .glass-dark {
+    background: rgba(15,29,74,0.5);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, #F47920 0%, #FF9A4A 50%, #F47920 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: gradient-x 6s ease infinite;
+  }
+  .gradient-text-navy {
+    background: linear-gradient(135deg, #0F1D4A 0%, #2A48A5 50%, #0F1D4A 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .grid-bg-light {
+    background-image:
+      linear-gradient(rgba(15,29,74,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15,29,74,0.05) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .radial-fade {
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 100%);
+  }
+  .text-balance { text-wrap: balance; }
+  .perspective-1000 { perspective: 1000px; }
+}
+
+/* === Animations === */
 @keyframes hero-gradient {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -26,7 +101,7 @@ body {
 }
 .animate-hero-gradient {
   background-size: 200% 200%;
-  animation: hero-gradient 12s ease infinite alternate;
+  animation: hero-gradient 14s ease infinite alternate;
 }
 
 @keyframes cta-gradient {
@@ -39,24 +114,47 @@ body {
   animation: cta-gradient 6s ease infinite alternate;
 }
 
-@keyframes dash-draw {
-  to { stroke-dashoffset: 0; }
-}
+@keyframes dash-draw { to { stroke-dashoffset: 0; } }
 .animate-dash-draw {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
   animation: dash-draw 1.2s ease forwards;
 }
 
-@keyframes rotate-ring {
-  to { transform: rotate(360deg); }
-}
-.animate-rotate-ring {
-  animation: rotate-ring 8s linear infinite;
-}
+@keyframes rotate-ring { to { transform: rotate(360deg); } }
+.animate-rotate-ring { animation: rotate-ring 8s linear infinite; }
 
-@keyframes drawBorder {
-  to { stroke-dashoffset: 0; }
+@keyframes drawBorder { to { stroke-dashoffset: 0; } }
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(244,121,32,0.35), 0 0 50px rgba(244,121,32,0.18); }
+  50% { box-shadow: 0 0 32px rgba(244,121,32,0.55), 0 0 80px rgba(244,121,32,0.28); }
 }
+.animate-glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
 
+@keyframes ping-soft {
+  0% { transform: scale(1); opacity: 0.6; }
+  80%, 100% { transform: scale(2.4); opacity: 0; }
+}
+.animate-ping-soft { animation: ping-soft 2.4s cubic-bezier(0,0,0.2,1) infinite; }
 
+/* Underline grow on hover for nav-style links */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
