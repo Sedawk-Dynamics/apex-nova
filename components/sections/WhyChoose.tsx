@@ -103,6 +103,7 @@ export default function WhyChoose() {
               </video>
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-deep/40 via-transparent to-transparent" />
             </motion.div>
+          
 
             <motion.div
               animate={!shouldReduceMotion ? { y: [0, 8, 0] } : {}}
