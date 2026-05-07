@@ -30,7 +30,7 @@ export default function Hero() {
   const subChars = subText.split("");
 
   return (
-    <section className="relative min-h-[92vh] flex items-center bg-navy-deep w-full pt-10 pb-32 overflow-hidden">
+    <section className="relative min-h-[92vh] flex items-center bg-navy-deep w-full pt-32 md:pt-36 pb-48 md:pb-52 overflow-hidden">
       {/* Background Image & Layered Overlays */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -55,20 +55,6 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
         <div className="max-w-3xl">
-          {/* Status Pill */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2.5 glass-dark text-white px-4 py-2 rounded-full text-[13px] font-medium mb-7"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-orange opacity-75 animate-ping-soft" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-orange" />
-            </span>
-            <span className="tracking-wide">Driven by Reliability • Powered by Trust</span>
-          </motion.div>
-
           {/* Title */}
           <h1 className="text-[44px] sm:text-[56px] lg:text-[68px] font-extrabold text-white leading-[1.05] mb-7 tracking-tight flex flex-wrap gap-x-4 gap-y-2">
             {titleWords.map((word, index) => (
@@ -195,7 +181,7 @@ export default function Hero() {
         initial={{ y: 80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.9, duration: 0.7, ease: "easeOut" }}
-        className="absolute bottom-0 left-0 right-0 translate-y-1/2 z-20 px-6"
+        className="absolute bottom-0 left-0 right-0 translate-y-[60%] z-20 px-6"
       >
         <div className="max-w-5xl mx-auto bg-white/95 backdrop-blur-xl rounded-3xl shadow-premium border border-white/80 p-8 relative overflow-hidden">
           {/* Subtle gradient accent */}

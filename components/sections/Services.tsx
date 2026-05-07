@@ -32,7 +32,7 @@ export default function Services() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative bg-theme-light py-24 pt-36 overflow-hidden">
+    <section className="relative bg-theme-light py-24 pt-44 md:pt-48 overflow-hidden">
       {/* Ambient backdrop */}
       <div className="absolute inset-0 grid-bg-light opacity-50 pointer-events-none" />
       <div className="absolute -top-40 left-1/4 w-[500px] h-[500px] bg-orange/5 rounded-full blur-3xl pointer-events-none" />
