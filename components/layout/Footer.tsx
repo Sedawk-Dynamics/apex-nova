@@ -25,6 +25,14 @@ const TwitterIcon = ({ size = 16 }: { size?: number }) => (
   </svg>
 );
 
+const InstagramIcon = ({ size = 16 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+  </svg>
+);
+
 const services = [
   { name: "Full Truck Load (FTL)", href: "/services" },
   { name: "Part Load (PTL)", href: "/services" },
@@ -51,6 +59,7 @@ const trustBadges = [
 const socials = [
   { icon: LinkedinIcon, href: "#", label: "LinkedIn" },
   { icon: FacebookIcon, href: "#", label: "Facebook" },
+  { icon: InstagramIcon, href: "#", label: "Instagram" },
   { icon: TwitterIcon, href: "#", label: "X / Twitter" },
 ];
 
@@ -151,6 +160,54 @@ export default function Footer() {
                   </motion.div>
                 );
               })}
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ============== FIND US (MAP) ============== */}
+      <section className="relative px-6 pt-6 pb-2">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6 }}
+          className="relative max-w-6xl mx-auto rounded-[24px] overflow-hidden border border-white/10 bg-white/[0.02] backdrop-blur-sm"
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr]">
+            <div className="relative h-[260px] lg:h-[300px] bg-navy-deep">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m3!1d112130.64024344078!2d77.34862590204739!3d28.567086829774643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a43173357b%3A0x37ffce30c87205d0!2sGreater%20Noida%20West%2C%20Greater%20Noida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1715456208001!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0, filter: "grayscale(20%) contrast(1.05)" }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Apexnova Logistics Office Location"
+              />
+            </div>
+            <div className="relative p-7 lg:p-9 flex flex-col justify-center bg-gradient-to-br from-[#0F1D4A] to-[#0A1538]">
+              <span className="inline-flex items-center gap-2 text-orange text-[11px] font-bold tracking-[0.3em] uppercase mb-3">
+                <MapPin size={12} /> Find Us
+              </span>
+              <h3 className="text-white text-[22px] md:text-[26px] font-bold tracking-tight mb-3 leading-tight">
+                Visit Our Office
+              </h3>
+              <p className="text-gray-300 text-[13.5px] leading-relaxed mb-2">
+                <strong className="text-white font-semibold">Corporate:</strong> Greater Noida West, Sector-1, UP &ndash; 201306
+              </p>
+              <p className="text-gray-400 text-[12.5px] leading-relaxed mb-5">
+                <strong className="text-gray-300 font-medium">Registered:</strong> 205A, 2nd Floor, Block B-14, Supertech Eco Village 1, Noida &ndash; 201301
+              </p>
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=Greater+Noida+West+Sector-1+UP+201306"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 self-start px-5 py-2.5 rounded-full bg-orange text-white text-[13px] font-semibold hover:bg-orange-dark transition-colors shadow-md"
+              >
+                <MapPin size={14} /> Get Directions
+              </a>
             </div>
           </div>
         </motion.div>

@@ -103,7 +103,7 @@ export default function Hero() {
             variants={scaleIn}
             className="flex flex-wrap items-center gap-4"
           >
-            <Link href="/contact">
+            <Link href="/quote">
               <motion.button
                 whileHover={!shouldReduceMotion ? { scale: 1.03 } : {}}
                 whileTap={!shouldReduceMotion ? { scale: 0.97 } : {}}

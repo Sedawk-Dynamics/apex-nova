@@ -3,7 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Shield, Heart, Eye, Zap, Star } from "lucide-react";
+import { Shield, Heart, Eye, Zap, Star, Target, Compass, Lightbulb, ShieldCheck } from "lucide-react";
 import { fadeUp, staggerContainer, slideLeft, slideRight, scaleIn } from "@/lib/animations";
 
 export default function AboutPage() {
@@ -11,22 +11,18 @@ export default function AboutPage() {
   const titleText = "About Us";
   const words = titleText.split(" ");
 
-  const founderText = `As the Founder of Apexnova Logistics, I believe that trust, reliability, and commitment are the foundation of any successful logistics partnership.
-Our goal is not just to deliver goods, but to deliver confidence and satisfaction to our clients through consistent and efficient service.
-At Apexnova Logistics, we are dedicated to building long-term relationships by understanding our clients' needs and providing tailored logistics solutions.
-We look forward to growing together with our partners and setting new standards of excellence in the logistics industry.`;
+  const founderText = `At Apexnova Logistics, we believe that logistics is more than just transportation — it is about trust, commitment, responsibility, and long-term business relationships.
+Our goal is to provide dependable and efficient logistics solutions that help businesses move forward with confidence and peace of mind.`;
   const founderLines = founderText.split("\n");
 
   return (
     <div className="min-h-screen pb-0">
       {/* HERO BANNER */}
       <section className="bg-gradient-to-b from-navy to-navy-deep min-h-[44vh] relative flex flex-col justify-center items-center overflow-hidden">
-        {/* Grid mesh + glow */}
         <div className="absolute inset-0 grid-bg radial-fade opacity-40" />
         <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-orange/20 rounded-full blur-[140px] animate-blob" />
         <div className="absolute -bottom-32 -left-32 w-[420px] h-[420px] bg-white/15 rounded-full blur-[140px] animate-blob" style={{ animationDelay: "3s" }} />
 
-        {/* Floating geometric shapes */}
         {[0, 1, 2, 3].map((i) => (
           <motion.div
             key={i}
@@ -42,7 +38,7 @@ We look forward to growing together with our partners and setting new standards 
           />
         ))}
 
-        <div className="relative z-10 text-center mt-20">
+        <div className="relative z-10 text-center mt-20 px-6">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 flex flex-wrap justify-center gap-x-2">
             {words.map((word, index) => (
               <span key={index} className="overflow-hidden inline-block">
@@ -78,7 +74,7 @@ We look forward to growing together with our partners and setting new standards 
       <section className="bg-white py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
-            <motion.div 
+            <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
@@ -96,7 +92,7 @@ We look forward to growing together with our partners and setting new standards 
                   <rect x="0" y="0" width="100%" height="100%" rx="16" fill="none" stroke="#F47920" strokeWidth="4" strokeDasharray="10 10" className="group-hover:animate-drawBorder" />
                 </svg>
               </div>
-              
+
               <motion.div
                 animate={!shouldReduceMotion ? { y: [0, -10, 0] } : {}}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
@@ -112,7 +108,7 @@ We look forward to growing together with our partners and setting new standards 
               </motion.div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
@@ -126,7 +122,13 @@ We look forward to growing together with our partners and setting new standards 
                 About Apexnova Logistics
               </h2>
               <p className="text-gray-700 leading-relaxed mb-8">
-                Apexnova Logistics is a dynamic and fast-growing logistics and supply chain company committed to delivering reliable, efficient, and cost-effective transportation solutions. Based in NCR, we specialize in providing seamless logistics services tailored to meet the diverse needs of businesses, including manufacturers, traders, and e-commerce companies. Our focus is on building long-term partnerships by ensuring timely deliveries, operational excellence, and complete transparency in every shipment. With a customer-first approach and a vision to expand across India, Apexnova Logistics aims to set new standards in the logistics industry through trust, professionalism, and consistent service quality.
+                Apexnova Logistics India Pvt Ltd is a dynamic and fast-growing logistics
+                and supply chain company committed to delivering reliable, efficient, and
+                cost-effective transportation solutions. Headquartered in NCR, we specialize
+                in seamless freight services tailored to manufacturers, traders, and
+                e-commerce businesses. With a customer-first approach and a vision to grow
+                across India, we are building a logistics network rooted in trust,
+                professionalism, and consistent service quality.
               </p>
               <div className="flex flex-wrap gap-4">
                 <span className="px-6 py-2 border border-orange text-orange font-semibold rounded-full text-sm">
@@ -135,22 +137,33 @@ We look forward to growing together with our partners and setting new standards 
                 <span className="px-6 py-2 border border-orange text-orange font-semibold rounded-full text-sm">
                   Pan India Vision
                 </span>
+                <span className="px-6 py-2 border border-orange text-orange font-semibold rounded-full text-sm">
+                  Technology-Driven
+                </span>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* MISSION & VISION */}
+      {/* VISION & MISSION */}
       <section className="bg-theme-light py-20 overflow-hidden perspective-1000">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div 
+          <div className="text-center mb-14">
+            <span className="text-orange text-xs font-bold tracking-widest uppercase mb-2 block">
+              WHAT DRIVES US
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy">Vision & Mission</h2>
+          </div>
+
+          <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
             className="grid grid-cols-1 md:grid-cols-2 gap-8"
           >
+            {/* Vision */}
             <motion.div
               variants={{
                 hidden: { opacity: 0, rotateY: 90 },
@@ -160,55 +173,221 @@ We look forward to growing together with our partners and setting new standards 
               className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 md:p-10 group will-change-transform"
             >
               <div className="bg-orange/10 w-16 h-16 rounded-2xl flex items-center justify-center text-orange mb-6">
-                <motion.svg
-                  variants={{ hover: { scale: [1, 1.2, 1], transition: { duration: 0.4 } } }}
-                  className="w-8 h-8"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <circle cx="12" cy="12" r="6"></circle>
-                  <circle cx="12" cy="12" r="2"></circle>
-                </motion.svg>
+                <Compass size={28} strokeWidth={2} />
+              </div>
+              <h3 className="text-2xl font-bold text-navy mb-4">Our Vision</h3>
+              <p className="text-gray-600 leading-relaxed italic">
+                &ldquo;To become one of India&apos;s most trusted, efficient, and
+                technology-driven logistics companies by delivering reliable transportation
+                solutions with professionalism, transparency, and customer satisfaction
+                across the nation.&rdquo;
+              </p>
+            </motion.div>
+
+            {/* Mission */}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, rotateY: 90 },
+                visible: { opacity: 1, rotateY: 0, transition: { duration: 0.8, ease: "easeOut" } }
+              }}
+              whileHover={!shouldReduceMotion ? { y: -10, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" } : {}}
+              className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 md:p-10 group will-change-transform"
+            >
+              <div className="bg-orange/10 w-16 h-16 rounded-2xl flex items-center justify-center text-orange mb-6">
+                <Target size={28} strokeWidth={2} />
               </div>
               <h3 className="text-2xl font-bold text-navy mb-4">Our Mission</h3>
+              <p className="text-gray-600 leading-relaxed italic">
+                &ldquo;To deliver fast, secure, transparent, and cost-effective logistics
+                solutions while maintaining the highest standards of operational excellence,
+                customer service, and professional coordination.&rdquo;
+              </p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* WHY APEXNOVA STARTED */}
+      <section className="bg-white py-20 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col lg:flex-row gap-12 items-center">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              variants={slideLeft}
+              className="w-full lg:w-1/2"
+            >
+              <span className="text-orange text-xs font-bold tracking-widest uppercase mb-2 block">
+                OUR ORIGIN STORY
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-navy mb-6 leading-tight">
+                Why <span className="gradient-text">Apexnova</span> Started
+              </h2>
+              <p className="text-gray-700 leading-relaxed italic text-[16.5px] mb-6">
+                &ldquo;Apexnova Logistics was established with a vision to overcome common
+                logistics challenges such as delayed deliveries, lack of communication,
+                unreliable service, and inefficient transportation management.&rdquo;
+              </p>
               <p className="text-gray-600 leading-relaxed">
-                To deliver reliable, efficient, and cost-effective logistics solutions that empower businesses to operate smoothly and grow confidently. We are committed to maintaining the highest standards of service quality, ensuring timely deliveries, and building long-term relationships based on trust, transparency, and professionalism.
+                We aim to create a logistics network that businesses can truly rely on for
+                timely, secure, and professional transportation services — one shipment,
+                one relationship, one milestone at a time.
               </p>
             </motion.div>
 
             <motion.div
-              variants={{
-                hidden: { opacity: 0, rotateY: 90 },
-                visible: { opacity: 1, rotateY: 0, transition: { duration: 0.8, ease: "easeOut" } }
-              }}
-              whileHover={!shouldReduceMotion ? { y: -10, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" } : {}}
-              className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 md:p-10 group will-change-transform"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              variants={slideRight}
+              className="w-full lg:w-1/2"
             >
-              <div className="bg-orange/10 w-16 h-16 rounded-2xl flex items-center justify-center text-orange mb-6">
-                <motion.svg
-                  variants={{ hover: { scale: [1, 1.2, 1], transition: { duration: 0.4 } } }}
-                  className="w-8 h-8"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <circle cx="12" cy="12" r="3"></circle>
-                  <path d="M2 12c0-5 6-10 10-10s10 5 10 10-6 10-10 10S2 17 2 12Z"></path>
-                </motion.svg>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { icon: Lightbulb, title: "Born From Need", desc: "Solving real industry pain points" },
+                  { icon: Shield, title: "Built on Trust", desc: "Long-term business relationships" },
+                  { icon: Zap, title: "Efficient by Design", desc: "Optimized for speed & cost" },
+                  { icon: Heart, title: "Customer First", desc: "Every shipment matters" },
+                ].map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <div
+                      key={item.title}
+                      className="group bg-theme-light rounded-2xl border border-gray-100 p-5 hover:border-orange/30 hover:shadow-soft transition-all"
+                    >
+                      <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-navy-deep to-navy text-orange flex items-center justify-center mb-3 group-hover:shadow-glow-navy transition-shadow">
+                        <Icon size={20} />
+                      </div>
+                      <h3 className="text-navy font-bold text-[15px] mb-1 tracking-tight">{item.title}</h3>
+                      <p className="text-gray-600 text-[12.5px] leading-snug">{item.desc}</p>
+                    </div>
+                  );
+                })}
               </div>
-              <h3 className="text-2xl font-bold text-navy mb-4">Our Vision</h3>
-              <p className="text-gray-600 leading-relaxed">
-                To become a trusted and leading logistics partner across India by delivering innovative, reliable, and technology-driven supply chain solutions. We aim to set new benchmarks in service quality, efficiency, and customer satisfaction while continuously expanding our network and capabilities.
-              </p>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* FOUNDER MESSAGE */}
+      <section className="bg-navy py-20 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="w-full lg:w-2/3 relative z-10">
+              <motion.svg
+                initial={{ scale: 0, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 0.2 }}
+                viewport={{ once: true }}
+                transition={{ type: "spring", stiffness: 200, damping: 20 }}
+                className="absolute -top-10 -left-6 text-orange w-[120px] h-[120px] -z-10"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+              </motion.svg>
+              <span className="inline-block text-orange text-xs font-bold tracking-widest uppercase mb-3">
+                FOUNDER&apos;S MESSAGE
+              </span>
+              <div className="text-white text-[18px] italic leading-relaxed mb-6">
+                <motion.div
+                  variants={{
+                    hidden: {},
+                    visible: { transition: { staggerChildren: 0.1 } }
+                  }}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-50px" }}
+                >
+                  {founderLines.map((line, i) => (
+                    <motion.p key={i} variants={fadeUp} className={i !== founderLines.length - 1 ? "mb-4" : ""}>
+                      &ldquo;{line}&rdquo;
+                    </motion.p>
+                  ))}
+                </motion.div>
+              </div>
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.8 }}
+                className="text-orange font-bold"
+              >
+                — RS Shah, Director &amp; Founder, Apexnova Logistics
+              </motion.p>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="w-full lg:w-1/3 flex flex-col items-center"
+            >
+              <div className="relative mb-6">
+                <div className="absolute inset-0 border-2 border-orange border-dashed rounded-full scale-110 animate-rotate-ring opacity-50"></div>
+                <div className="w-[160px] h-[160px] bg-[#0F1D4A] rounded-full flex items-center justify-center shadow-2xl relative z-10 border border-white/10">
+                  <span className="text-orange text-5xl font-bold">RS</span>
+                </div>
+              </div>
+              <h3 className="text-white text-2xl font-bold">RS Shah</h3>
+              <p className="text-orange font-medium mb-6">Director &amp; Founder</p>
+
+              <div className="flex flex-wrap justify-center gap-2">
+                <span className="bg-white/10 text-white text-xs px-3 py-1 rounded-full border border-white/10">NCR Operations</span>
+                <span className="bg-white/10 text-white text-xs px-3 py-1 rounded-full border border-white/10">Pan India Vision</span>
+                <span className="bg-white/10 text-white text-xs px-3 py-1 rounded-full border border-white/10">Customer First</span>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* SAFETY & RELIABILITY COMMITMENT */}
+      <section className="bg-theme-light py-20 overflow-hidden">
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.7 }}
+            className="relative bg-white rounded-[28px] border border-gray-100 shadow-soft p-10 md:p-14 overflow-hidden"
+          >
+            <div className="absolute -top-24 -right-24 w-[300px] h-[300px] bg-orange/10 rounded-full blur-[100px]" />
+            <div className="absolute -bottom-20 -left-20 w-[280px] h-[280px] bg-navy/10 rounded-full blur-[100px]" />
+
+            <div className="relative flex flex-col md:flex-row gap-10 items-center">
+              <div className="shrink-0">
+                <div className="w-24 h-24 rounded-3xl bg-gradient-to-br from-orange to-orange-dark flex items-center justify-center shadow-glow-orange">
+                  <ShieldCheck size={44} className="text-white" />
+                </div>
+              </div>
+
+              <div className="flex-1">
+                <span className="inline-block text-orange text-xs font-bold tracking-widest uppercase mb-3">
+                  OUR COMMITMENT
+                </span>
+                <h2 className="text-3xl md:text-4xl font-bold text-navy mb-5 leading-tight">
+                  Safety &amp; Reliability First
+                </h2>
+                <p className="text-gray-700 leading-relaxed italic text-[16.5px] mb-5">
+                  &ldquo;At Apexnova Logistics, safety and reliability are our top priorities.
+                  We are committed to ensuring the secure handling, proper coordination, and
+                  timely movement of every shipment through responsible logistics management
+                  and professional transportation practices.&rdquo;
+                </p>
+                <div className="flex flex-wrap gap-2 mt-6">
+                  {["Insured Cargo", "Trained Crew", "Secure Handling", "Real-Time Coordination"].map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3.5 py-1.5 bg-orange/10 text-orange text-[12px] font-semibold rounded-full border border-orange/20"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -217,6 +396,9 @@ We look forward to growing together with our partners and setting new standards 
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
+            <span className="text-orange text-xs font-bold tracking-widest uppercase mb-2 block">
+              WHAT WE STAND FOR
+            </span>
             <h2 className="text-3xl md:text-4xl font-bold text-navy">Our Core Values</h2>
           </div>
 
@@ -254,76 +436,6 @@ We look forward to growing together with our partners and setting new standards 
               </motion.div>
             ))}
           </motion.div>
-        </div>
-      </section>
-
-      {/* FOUNDER MESSAGE */}
-      <section className="bg-navy py-20 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="w-full lg:w-2/3 relative z-10">
-              <motion.svg
-                initial={{ scale: 0, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 0.2 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", stiffness: 200, damping: 20 }}
-                className="absolute -top-10 -left-6 text-orange w-[120px] h-[120px] -z-10"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-              </motion.svg>
-              <div className="text-white text-[18px] italic leading-relaxed mb-6">
-                <motion.div
-                  variants={{
-                    hidden: {},
-                    visible: { transition: { staggerChildren: 0.1 } }
-                  }}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-50px" }}
-                >
-                  {founderLines.map((line, i) => (
-                    <motion.p key={i} variants={fadeUp} className={i !== founderLines.length - 1 ? "mb-4" : ""}>
-                      {line}
-                    </motion.p>
-                  ))}
-                </motion.div>
-              </div>
-              <motion.p 
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.8 }}
-                className="text-orange font-bold"
-              >
-                — RS Shah, Director & Founder, Apexnova Logistics
-              </motion.p>
-            </div>
-
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="w-full lg:w-1/3 flex flex-col items-center"
-            >
-              <div className="relative mb-6">
-                <div className="absolute inset-0 border-2 border-orange border-dashed rounded-full scale-110 animate-rotate-ring opacity-50"></div>
-                <div className="w-[160px] h-[160px] bg-[#0F1D4A] rounded-full flex items-center justify-center shadow-2xl relative z-10 border border-white/10">
-                  <span className="text-orange text-5xl font-bold">RS</span>
-                </div>
-              </div>
-              <h3 className="text-white text-2xl font-bold">RS Shah</h3>
-              <p className="text-orange font-medium mb-6">Director & Founder</p>
-              
-              <div className="flex flex-wrap justify-center gap-2">
-                <span className="bg-white/10 text-white text-xs px-3 py-1 rounded-full border border-white/10">NCR Operations</span>
-                <span className="bg-white/10 text-white text-xs px-3 py-1 rounded-full border border-white/10">Pan India Vision</span>
-                <span className="bg-white/10 text-white text-xs px-3 py-1 rounded-full border border-white/10">Customer First</span>
-              </div>
-            </motion.div>
-          </div>
         </div>
       </section>
 

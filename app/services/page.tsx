@@ -136,7 +136,7 @@ export default function ServicesPage() {
                   </ul>
                   <div className="mt-auto">
                     <Link
-                      href="/contact"
+                      href="/quote"
                       className="inline-block bg-orange text-white px-8 py-3 rounded-full font-bold hover:bg-orange-dark transition-colors shadow-sm"
                     >
                       Get Quote for This Service

@@ -364,6 +364,8 @@ export default function QuotePage() {
                         <label className="block text-sm font-bold text-gray-700 mb-2">Full Name *</label>
                         <input
                           {...register("name")}
+                          type="text"
+                          autoComplete="name"
                           placeholder="Your Name"
                           className={`w-full h-12 px-4 rounded-xl border-2 outline-none transition-colors ${errors.name ? 'border-red-400' : 'border-gray-200 focus:border-orange'}`}
                         />
@@ -373,6 +375,8 @@ export default function QuotePage() {
                         <label className="block text-sm font-bold text-gray-700 mb-2">Company Name</label>
                         <input
                           {...register("company")}
+                          type="text"
+                          autoComplete="organization"
                           placeholder="Optional"
                           className="w-full h-12 px-4 rounded-xl border-2 border-gray-200 focus:border-orange outline-none transition-colors"
                         />
@@ -384,11 +388,14 @@ export default function QuotePage() {
                         <label className="block text-sm font-bold text-gray-700 mb-2">Phone Number *</label>
                         <input
                           {...register("phone")}
+                          type="tel"
+                          inputMode="tel"
+                          autoComplete="tel"
                           placeholder="+91 XXXXX XXXXX"
                           className={`w-full h-12 px-4 rounded-xl border-2 outline-none transition-colors ${errors.phone ? 'border-red-400' : 'border-gray-200 focus:border-orange'}`}
                         />
                         {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>}
-                        
+
                         <label className="flex items-center gap-2 mt-3 cursor-pointer">
                           <input type="checkbox" {...register("whatsapp")} className="w-4 h-4 rounded text-orange focus:ring-orange accent-orange" />
                           <span className="text-sm text-gray-600">Same as WhatsApp number</span>
@@ -398,6 +405,9 @@ export default function QuotePage() {
                         <label className="block text-sm font-bold text-gray-700 mb-2">Email Address *</label>
                         <input
                           {...register("email")}
+                          type="email"
+                          inputMode="email"
+                          autoComplete="email"
                           placeholder="you@company.com"
                           className={`w-full h-12 px-4 rounded-xl border-2 outline-none transition-colors ${errors.email ? 'border-red-400' : 'border-gray-200 focus:border-orange'}`}
                         />
