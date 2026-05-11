@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
@@ -92,10 +92,26 @@ export const metadata: Metadata = {
     shortcut: "/images/apex-nova.png",
     apple: "/images/apex-nova.png",
   },
+  formatDetection: {
+    telephone: true,
+    email: true,
+    address: true,
+  },
+  category: "Logistics & Transportation",
   verification: {
     // Add your Google Search Console verification token here once set up:
     // google: "your-google-verification-token",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0F1D4A" },
+  ],
 };
 
 // Organization / LocalBusiness JSON-LD schema for rich Google results
