@@ -34,21 +34,21 @@ export default function Hero() {
       {/* Background Image & Layered Overlays */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero-truck.jpg"
+          src="/images/hero-truck.webp"
           alt="Freight truck on highway at dusk"
           fill
           priority
           className="object-cover object-center scale-105"
         />
-        {/* Cinematic darken */}
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/95 to-navy-deep/40" />
-        {/* Animated brand wash */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1B2E6B]/85 via-[#0F1D4A]/70 to-transparent animate-hero-gradient" />
+        {/* Cinematic darken — readable on the left, fully clear on the right to reveal the image */}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/85 via-navy-deep/35 to-transparent" />
+        {/* Animated brand wash — soft tint only on the far left */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1B2E6B]/35 via-transparent to-transparent animate-hero-gradient" />
         {/* Subtle grid mesh */}
-        <div className="absolute inset-0 grid-bg radial-fade opacity-60" />
-        {/* Orange glow blob */}
-        <div className="absolute -top-32 -right-32 w-[520px] h-[520px] bg-orange/25 rounded-full blur-[140px] animate-blob" />
-        <div className="absolute bottom-0 left-1/3 w-[420px] h-[420px] bg-[#2A48A5]/30 rounded-full blur-[140px] animate-blob" style={{ animationDelay: "4s" }} />
+        <div className="absolute inset-0 grid-bg radial-fade opacity-15" />
+        {/* Orange glow blob — softer so it doesn't wash out the right-side image */}
+        <div className="absolute -top-32 -right-32 w-[520px] h-[520px] bg-orange/10 rounded-full blur-[140px] animate-blob" />
+        <div className="absolute bottom-0 left-1/3 w-[420px] h-[420px] bg-[#2A48A5]/15 rounded-full blur-[140px] animate-blob" style={{ animationDelay: "4s" }} />
       </div>
 
       <FloatingParticles />

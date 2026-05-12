@@ -20,9 +20,9 @@ export default function WhyChoose() {
       <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-navy/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
+        <div className="flex flex-col lg:flex-row gap-12 items-center">
           {/* Content */}
-          <div className="w-full lg:w-[58%]">
+          <div className="w-full lg:w-[45%]">
             <span className="inline-flex items-center gap-2 text-orange text-[12px] font-bold tracking-[0.25em] uppercase mb-3 px-4 py-1.5 rounded-full bg-orange/10 border border-orange/20">
               <Sparkles size={13} /> Our Advantage
             </span>
@@ -80,7 +80,7 @@ export default function WhyChoose() {
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
             variants={slideRight}
-            className="w-full lg:w-[42%] relative"
+            className="w-full lg:w-[55%] relative"
           >
             <div className="absolute -inset-4 bg-gradient-to-tr from-orange/30 via-transparent to-navy/30 rounded-[40px] blur-2xl opacity-60" />
             <motion.div
