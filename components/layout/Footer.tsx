@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { MapPin, Phone, Mail, ArrowUpRight, ArrowRight, ShieldCheck, Clock, Truck, Headphones, Sparkles } from "lucide-react";
+import GoogleMapEmbed from "@/components/GoogleMapEmbed";
 
 const LinkedinIcon = ({ size = 16 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -175,16 +176,10 @@ export default function Footer() {
           className="relative max-w-6xl mx-auto rounded-[24px] overflow-hidden border border-white/10 bg-white/[0.02] backdrop-blur-sm"
         >
           <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr]">
-            <div className="relative h-[260px] lg:h-[300px] bg-navy-deep">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m3!1d112130.64024344078!2d77.34862590204739!3d28.567086829774643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a43173357b%3A0x37ffce30c87205d0!2sGreater%20Noida%20West%2C%20Greater%20Noida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1715456208001!5m2!1sen!2sin"
-                width="100%"
-                height="100%"
-                style={{ border: 0, filter: "grayscale(20%) contrast(1.05)" }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Apexnova Logistics Office Location"
+            <div className="relative bg-navy-deep">
+              <GoogleMapEmbed
+                title="Apexnova Logistics — Greater Noida HQ"
+                className="!rounded-none h-[240px] sm:h-[280px] lg:h-[300px]"
               />
             </div>
             <div className="relative p-7 lg:p-9 flex flex-col justify-center bg-gradient-to-br from-[#0F1D4A] to-[#0A1538]">
@@ -223,10 +218,10 @@ export default function Footer() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 mb-14"
+          className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 sm:gap-10 lg:gap-12 mb-14"
         >
           {/* Brand */}
-          <motion.div variants={fadeUp} className="md:col-span-4 space-y-6">
+          <motion.div variants={fadeUp} className="sm:col-span-2 lg:col-span-4 space-y-6">
             <Link href="/" className="inline-block group">
               <div className="relative inline-block bg-white p-3 rounded-2xl shadow-soft overflow-hidden">
                 <div className="absolute inset-0 -translate-x-full group-hover:animate-shimmer-sweep bg-gradient-to-r from-transparent via-orange/20 to-transparent pointer-events-none" />
@@ -273,7 +268,7 @@ export default function Footer() {
           </motion.div>
 
           {/* Quick Links */}
-          <motion.div variants={fadeUp} className="md:col-span-2">
+          <motion.div variants={fadeUp} className="sm:col-span-1 lg:col-span-2">
             <h3 className="text-white text-[13px] font-semibold uppercase tracking-[0.2em] mb-6">
               Quick Links
             </h3>
@@ -296,7 +291,7 @@ export default function Footer() {
           </motion.div>
 
           {/* Services */}
-          <motion.div variants={fadeUp} className="md:col-span-3">
+          <motion.div variants={fadeUp} className="sm:col-span-1 lg:col-span-3">
             <h3 className="text-white text-[13px] font-semibold uppercase tracking-[0.2em] mb-6">
               Our Services
             </h3>
@@ -319,7 +314,7 @@ export default function Footer() {
           </motion.div>
 
           {/* Contact */}
-          <motion.div variants={fadeUp} className="md:col-span-3">
+          <motion.div variants={fadeUp} className="sm:col-span-2 lg:col-span-3">
             <h3 className="text-white text-[13px] font-semibold uppercase tracking-[0.2em] mb-6">
               Get In Touch
             </h3>

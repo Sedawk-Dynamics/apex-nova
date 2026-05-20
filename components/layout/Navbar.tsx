@@ -68,12 +68,12 @@ export default function Navbar() {
               "rounded-xl transition-all duration-300",
               scrolled ? "bg-transparent" : "bg-white/95 backdrop-blur-sm px-2 py-1 shadow-md"
             )}>
-              <Image src="/images/apex-nova.png" alt="Apexnova Logistics" width={200} height={64} className="h-14 w-auto object-contain transition-transform group-hover:scale-105" />
+              <Image src="/images/apex-nova.png" alt="Apexnova Logistics" width={200} height={64} priority className="h-10 sm:h-12 lg:h-14 w-auto object-contain transition-transform group-hover:scale-105" />
             </div>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-8">
             <ul className="flex items-center gap-7">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
@@ -129,11 +129,12 @@ export default function Navbar() {
           {/* Mobile Toggle */}
           <button
             className={clsx(
-              "md:hidden p-2 relative z-[60] transition-colors",
+              "lg:hidden p-2 min-w-[44px] min-h-[44px] relative z-[60] transition-colors flex items-center justify-center",
               isOpen || scrolled ? "text-navy-deep" : "text-white"
             )}
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle Menu"
+            aria-expanded={isOpen}
           >
             <motion.div
               animate={{ rotate: isOpen ? 180 : 0 }}
@@ -153,7 +154,7 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.55 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black z-40 md:hidden backdrop-blur-sm"
+              className="fixed inset-0 bg-black z-40 lg:hidden backdrop-blur-sm"
               onClick={() => setIsOpen(false)}
             />
             <motion.div
@@ -161,7 +162,7 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="fixed top-0 right-0 bottom-0 w-3/4 max-w-sm bg-white shadow-2xl z-50 md:hidden flex flex-col pt-24 px-6"
+              className="fixed top-0 right-0 bottom-0 w-[85%] max-w-sm bg-white shadow-2xl z-50 lg:hidden flex flex-col pt-24 px-6"
             >
               <motion.div
                 variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.05 } } }}

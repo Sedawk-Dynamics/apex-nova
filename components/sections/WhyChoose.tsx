@@ -65,7 +65,7 @@ export default function WhyChoose() {
                       </div>
                       <div>
                         <div className="font-semibold text-navy-deep mb-1 tracking-tight">{feature.label}</div>
-                        <div className="text-[13px] text-theme-muted leading-snug">{feature.desc}</div>
+                        <div className="text-[14px] sm:text-[13px] text-theme-muted leading-relaxed">{feature.desc}</div>
                       </div>
                     </div>
                   </motion.div>

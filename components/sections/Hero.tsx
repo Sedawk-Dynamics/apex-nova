@@ -30,14 +30,15 @@ export default function Hero() {
   const subChars = subText.split("");
 
   return (
-    <section className="relative min-h-[92vh] flex items-center bg-navy-deep w-full pt-32 md:pt-36 pb-48 md:pb-52 overflow-hidden">
+    <section className="relative min-h-[88vh] sm:min-h-[92vh] flex items-center bg-navy-deep w-full pt-28 sm:pt-32 md:pt-36 pb-40 sm:pb-44 md:pb-52 overflow-hidden">
       {/* Background Image & Layered Overlays */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero-truck.webp"
-          alt="Freight truck on highway at dusk"
+          alt="Apexnova Logistics freight truck on Indian highway at dusk"
           fill
           priority
+          sizes="100vw"
           className="object-cover object-center scale-105"
         />
         {/* Cinematic darken — readable on the left, fully clear on the right to reveal the image */}
@@ -56,9 +57,12 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
         <div className="max-w-3xl">
           {/* Title */}
-          <h1 className="text-[44px] sm:text-[56px] lg:text-[68px] font-extrabold text-white leading-[1.05] mb-7 tracking-tight flex flex-wrap gap-x-4 gap-y-2">
+          <h1 className="text-[34px] xs:text-[40px] sm:text-[52px] md:text-[58px] lg:text-[64px] xl:text-[72px] font-extrabold text-white leading-[1.05] mb-7 tracking-tight flex flex-wrap gap-y-2">
             {titleWords.map((word, index) => (
-              <span key={index} className="overflow-hidden inline-block">
+              <span
+                key={index}
+                className="overflow-hidden inline-block mr-2 sm:mr-3 md:mr-4 last:mr-0"
+              >
                 <motion.span
                   custom={index}
                   variants={{
@@ -101,7 +105,7 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             variants={scaleIn}
-            className="flex flex-wrap items-center gap-4"
+            className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4"
           >
             <Link href="/quote">
               <motion.button
@@ -181,24 +185,27 @@ export default function Hero() {
         initial={{ y: 80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.9, duration: 0.7, ease: "easeOut" }}
-        className="absolute bottom-0 left-0 right-0 translate-y-[60%] z-20 px-6"
+        className="absolute bottom-0 left-0 right-0 translate-y-[35%] sm:translate-y-[45%] md:translate-y-[60%] z-20 px-4 sm:px-6"
       >
-        <div className="max-w-5xl mx-auto bg-white/95 backdrop-blur-xl rounded-3xl shadow-premium border border-white/80 p-8 relative overflow-hidden">
+        <div className="max-w-5xl mx-auto bg-white/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-premium border border-white/80 p-5 sm:p-7 md:p-8 relative overflow-hidden">
           {/* Subtle gradient accent */}
           <div className="absolute -top-20 -left-20 w-60 h-60 bg-orange/10 rounded-full blur-3xl" />
           <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-navy/10 rounded-full blur-3xl" />
 
-          <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-gray-200/70">
+          <div className="relative grid grid-cols-3 gap-3 sm:gap-6 md:gap-8 divide-x divide-gray-200/70">
             {[
-              { stat: stat1, label: "Shipments Delivered" },
-              { stat: stat2, label: "Happy Clients" },
-              { stat: stat3, label: "Cities Covered" },
+              { stat: stat1, label: "Shipments Delivered", short: "Shipments" },
+              { stat: stat2, label: "Happy Clients", short: "Clients" },
+              { stat: stat3, label: "Cities Covered", short: "Cities" },
             ].map((item, idx) => (
-              <div key={idx} className="text-center pt-4 md:pt-0 group">
-                <div ref={item.stat.ref} className="gradient-text text-[42px] md:text-[44px] font-bold leading-none mb-2 inline-block">
+              <div key={idx} className="text-center group px-1">
+                <div ref={item.stat.ref} className="gradient-text text-[24px] sm:text-[34px] md:text-[44px] font-bold leading-none mb-1.5 sm:mb-2 inline-block">
                   {item.stat.displayValue}
                 </div>
-                <div className="text-theme-muted font-medium text-[13px] tracking-wide uppercase">{item.label}</div>
+                <div className="text-theme-muted font-medium text-[10px] sm:text-[12px] md:text-[13px] tracking-wide uppercase">
+                  <span className="sm:hidden">{item.short}</span>
+                  <span className="hidden sm:inline">{item.label}</span>
+                </div>
               </div>
             ))}
           </div>

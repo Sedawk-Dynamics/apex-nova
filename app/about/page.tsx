@@ -258,7 +258,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen pb-0">
+    <main className="min-h-screen pb-0">
       {/* HERO BANNER */}
       <section className="bg-gradient-to-b from-navy to-navy-deep min-h-[44vh] relative flex flex-col justify-center items-center overflow-hidden">
         <div className="absolute inset-0 grid-bg radial-fade opacity-40" />
@@ -627,6 +627,30 @@ export default function AboutPage() {
               </motion.div>
             ))}
           </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center text-gray-600 mt-10 text-[14.5px] leading-relaxed"
+          >
+            Looking for a tailored fit?{" "}
+            <Link
+              href="/services"
+              className="text-orange font-semibold hover:underline"
+            >
+              Explore our full service catalog
+            </Link>{" "}
+            or{" "}
+            <Link
+              href="/quote"
+              className="text-orange font-semibold hover:underline"
+            >
+              get a free quote
+            </Link>
+            .
+          </motion.p>
         </div>
       </section>
 
@@ -1028,6 +1052,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

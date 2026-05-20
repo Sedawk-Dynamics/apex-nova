@@ -1,9 +1,29 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle, XCircle } from "lucide-react";
+import { CheckCircle, XCircle, ChevronDown, HelpCircle } from "lucide-react";
+
+const faqs = [
+  {
+    q: "What types of cargo do you handle?",
+    a: "We move freight for FMCG, manufacturing, electronics, e-commerce, retail, automobile, packaging, industrial machinery, and general trade — supported by a fleet ranging from LCVs and pickup trucks to 32 ft and 40 ft containers and trailers.",
+  },
+  {
+    q: "How quickly can I get a quote and dispatch?",
+    a: "Submit our quote form or call +91 9560639966 — our team responds with the best rate within 2 hours. Same-day vehicle placement is available for NCR local and on-demand routes.",
+  },
+  {
+    q: "Do you provide shipment tracking and proof of delivery?",
+    a: "Yes. We provide continuous shipment coordination, transit updates, and POD (Proof of Delivery) documentation after every successful delivery, with GST-compliant invoicing.",
+  },
+  {
+    q: "Which areas do you cover across India?",
+    a: "We are headquartered in NCR (Greater Noida West) and operate pan-India with active routes across all four regions — North, West, South, and East — covering 25+ cities and 500+ routes.",
+  },
+];
 
 const servicesData = [
   {
@@ -44,13 +64,14 @@ const servicesData = [
 ];
 
 export default function ServicesPage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   };
 
   return (
-    <div className="min-h-screen pb-0">
+    <main className="min-h-screen pb-0">
       {/* HERO BANNER */}
       <section className="bg-gradient-to-b from-navy to-navy-deep min-h-[44vh] relative flex flex-col justify-center items-center overflow-hidden">
         <div className="absolute inset-0 grid-bg radial-fade opacity-40" />
@@ -61,7 +82,7 @@ export default function ServicesPage() {
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
-            className="text-4xl md:text-[56px] font-bold text-white mb-4 tracking-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold text-white mb-4 tracking-tight"
           >
             Our <span className="gradient-text">Services</span>
           </motion.h1>
@@ -110,8 +131,9 @@ export default function ServicesPage() {
                 <div className="w-full lg:w-1/2 relative min-h-[280px]">
                   <Image
                     src={service.image}
-                    alt={service.title}
+                    alt={`${service.title} — Apexnova Logistics`}
                     fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
                   />
                 </div>
@@ -158,7 +180,8 @@ export default function ServicesPage() {
             </h2>
           </div>
           
-          <div className="overflow-x-auto pb-4">
+          {/* Desktop: comparison table */}
+          <div className="hidden md:block overflow-x-auto pb-4">
             <div className="min-w-[800px] bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
               <table className="w-full text-left border-collapse">
                 <thead>
@@ -208,6 +231,50 @@ export default function ServicesPage() {
               </table>
             </div>
           </div>
+
+          {/* Mobile: stacked comparison cards */}
+          <div className="md:hidden space-y-4">
+            {[
+              { name: "FTL", ideal: "Bulk Load", load: "Full Truck", dedicated: true, cost: "$$$" },
+              { name: "PTL", ideal: "Small Load", load: "Partial", dedicated: false, cost: "$" },
+              { name: "NCR Local", ideal: "City Delivery", load: "Flexible", dedicated: true, cost: "$$" },
+              { name: "Corporate", ideal: "B2B Needs", load: "Flexible", dedicated: true, cost: "Custom" },
+              { name: "On-Demand", ideal: "Urgent", load: "Any", dedicated: true, cost: "$$$" },
+            ].map((s) => (
+              <div
+                key={s.name}
+                className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden"
+              >
+                <div className="bg-navy text-white px-5 py-3 font-semibold text-[15px]">
+                  {s.name}
+                </div>
+                <dl className="divide-y divide-gray-100">
+                  <div className="flex justify-between items-center px-5 py-3 text-[14px]">
+                    <dt className="text-gray-500 font-medium">Ideal For</dt>
+                    <dd className="text-navy font-semibold">{s.ideal}</dd>
+                  </div>
+                  <div className="flex justify-between items-center px-5 py-3 text-[14px]">
+                    <dt className="text-gray-500 font-medium">Minimum Load</dt>
+                    <dd className="text-navy font-semibold">{s.load}</dd>
+                  </div>
+                  <div className="flex justify-between items-center px-5 py-3 text-[14px]">
+                    <dt className="text-gray-500 font-medium">Dedicated Vehicle</dt>
+                    <dd>
+                      {s.dedicated ? (
+                        <CheckCircle className="text-green-500" size={20} />
+                      ) : (
+                        <XCircle className="text-gray-300" size={20} />
+                      )}
+                    </dd>
+                  </div>
+                  <div className="flex justify-between items-center px-5 py-3 text-[14px]">
+                    <dt className="text-gray-500 font-medium">Cost</dt>
+                    <dd className="text-navy font-semibold">{s.cost}</dd>
+                  </div>
+                </dl>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -241,7 +308,7 @@ export default function ServicesPage() {
                     {item.step}
                   </div>
                   <h3 className="text-navy font-bold text-[18px] mb-2">{item.title}</h3>
-                  <p className="text-gray-600 text-[14px]">{item.desc}</p>
+                  <p className="text-gray-600 text-[15px] leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -249,6 +316,75 @@ export default function ServicesPage() {
         </div>
       </section>
 
-    </div>
+      {/* FAQ */}
+      <section className="bg-theme-light py-20" id="faq">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <span className="inline-flex items-center gap-2 text-orange text-[12px] font-bold tracking-[0.25em] uppercase mb-3 px-4 py-1.5 rounded-full bg-orange/10 border border-orange/20">
+              <HelpCircle size={13} /> FAQ
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-gray-600 mt-3 max-w-2xl mx-auto text-[15px] leading-relaxed">
+              Quick answers about cargo, timelines, tracking, and coverage. Still curious?{" "}
+              <Link href="/contact" className="text-orange font-semibold hover:underline">
+                Get in touch
+              </Link>
+              .
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            {faqs.map((faq, i) => {
+              const isOpen = openFaq === i;
+              return (
+                <div
+                  key={faq.q}
+                  className="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:border-orange/30 transition-colors"
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpenFaq(isOpen ? null : i)}
+                    aria-expanded={isOpen}
+                    aria-controls={`faq-panel-${i}`}
+                    className="w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-5 text-left min-h-[56px]"
+                  >
+                    <span className="text-navy font-semibold text-[15px] sm:text-[16px] leading-snug">
+                      {faq.q}
+                    </span>
+                    <motion.span
+                      animate={{ rotate: isOpen ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="shrink-0 w-9 h-9 rounded-full bg-orange/10 text-orange flex items-center justify-center"
+                    >
+                      <ChevronDown size={18} />
+                    </motion.span>
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        key="content"
+                        id={`faq-panel-${i}`}
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <p className="px-5 sm:px-6 pb-5 text-gray-600 text-[15px] leading-relaxed">
+                          {faq.a}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+    </main>
   );
 }

@@ -11,6 +11,19 @@ import PageTransition from "@/components/layout/PageTransition";
 import ProgressBar from "@/components/ui/ProgressBar";
 import dynamic from "next/dynamic";
 
+import {
+  SITE_URL,
+  SITE_NAME,
+  LEGAL_NAME,
+  PHONE,
+  EMAIL,
+  CORPORATE_ADDRESS,
+  REGISTERED_ADDRESS,
+  GEO,
+  FOUNDER,
+  SAME_AS,
+} from "@/lib/site";
+
 const CustomCursor = dynamic(() => import("@/components/ui/CustomCursor"), { ssr: false });
 
 const jakarta = Plus_Jakarta_Sans({
@@ -20,10 +33,6 @@ const jakarta = Plus_Jakarta_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
 });
 
-const SITE_URL = "https://www.apexnovalogistics.com";
-const PHONE = "+919560639966";
-const EMAIL = "info@apexnovalogistics.com";
-
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -31,27 +40,29 @@ export const metadata: Metadata = {
     template: "%s | Apexnova Logistics",
   },
   description:
-    "Apexnova Logistics India Pvt Ltd delivers reliable, secure, and cost-effective freight & supply chain solutions across India. FTL, PTL, NCR local, corporate logistics & on-demand transport — driven by reliability, powered by trust.",
+    "Apexnova Logistics delivers reliable FTL, PTL, NCR local & corporate freight services across India. Get a free quote in 2 hours. Call +91 9560639966.",
   keywords: [
     "Apexnova Logistics",
-    "logistics company India",
+    "logistics company NCR",
+    "logistics company Greater Noida",
+    "logistics company Noida",
+    "FTL services India",
+    "Full Truck Load India",
+    "PTL services India",
+    "Part Load transportation",
+    "pan India transport company",
+    "NCR local logistics",
+    "NCR last mile delivery",
+    "corporate logistics India",
+    "on-demand transport India",
     "freight forwarding India",
-    "pan india transport",
-    "FTL services",
-    "PTL services",
-    "NCR logistics",
-    "Greater Noida logistics",
-    "supply chain India",
-    "warehousing",
-    "express cargo",
-    "corporate logistics",
+    "vehicle placement Noida",
+    "supply chain partner India",
   ],
-  authors: [{ name: "Apexnova Logistics India Pvt Ltd" }],
-  creator: "Apexnova Logistics India Pvt Ltd",
-  publisher: "Apexnova Logistics India Pvt Ltd",
-  alternates: {
-    canonical: SITE_URL,
-  },
+  authors: [{ name: LEGAL_NAME }],
+  creator: LEGAL_NAME,
+  publisher: LEGAL_NAME,
+  alternates: { canonical: "/" },
   robots: {
     index: true,
     follow: true,
@@ -67,7 +78,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: SITE_URL,
-    siteName: "Apexnova Logistics",
+    siteName: SITE_NAME,
     title: "Apexnova Logistics | Reliable Freight & Pan-India Transport Services",
     description:
       "Driven by Reliability, Powered by Trust. Pan-India freight, NCR local delivery, FTL/PTL, and corporate logistics solutions.",
@@ -99,49 +110,40 @@ export const metadata: Metadata = {
   },
   category: "Logistics & Transportation",
   verification: {
-    // Add your Google Search Console verification token here once set up:
     // google: "your-google-verification-token",
   },
 };
 
+// WCAG: removed maximumScale to allow user pinch-zoom
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 5,
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
     { media: "(prefers-color-scheme: dark)", color: "#0F1D4A" },
   ],
 };
 
-// Organization / LocalBusiness JSON-LD schema for rich Google results
-const jsonLd = {
+// Organization + LocalBusiness + MovingCompany JSON-LD schema
+const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": SITE_URL,
-  name: "Apexnova Logistics India Pvt Ltd",
-  alternateName: "Apexnova Logistics",
+  "@type": ["Organization", "LocalBusiness", "MovingCompany"],
+  "@id": `${SITE_URL}#organization`,
+  name: LEGAL_NAME,
+  alternateName: SITE_NAME,
   url: SITE_URL,
   logo: `${SITE_URL}/images/apex-nova.png`,
   image: `${SITE_URL}/images/hero-truck.jpg`,
   description:
-    "Apexnova Logistics India Pvt Ltd is a dynamic and fast-growing logistics & supply chain company delivering reliable freight, FTL, PTL, NCR local, and corporate transport services across India.",
+    "NCR-based, pan-India freight & logistics company offering FTL, PTL, corporate logistics, NCR local delivery and on-demand transport.",
   telephone: PHONE,
   email: EMAIL,
-  priceRange: "₹₹",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Greater Noida West, Sector-1",
-    addressLocality: "Greater Noida",
-    addressRegion: "Uttar Pradesh",
-    postalCode: "201306",
-    addressCountry: "IN",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 28.567087,
-    longitude: 77.348626,
-  },
+  priceRange: "$$",
+  address: [
+    { "@type": "PostalAddress", name: "Corporate Office", ...CORPORATE_ADDRESS },
+    { "@type": "PostalAddress", name: "Registered Office", ...REGISTERED_ADDRESS },
+  ],
+  geo: { "@type": "GeoCoordinates", ...GEO },
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
@@ -150,12 +152,15 @@ const jsonLd = {
       closes: "19:00",
     },
   ],
-  areaServed: { "@type": "Country", name: "India" },
-  sameAs: [
-    // Add real social links once available:
-    // "https://www.linkedin.com/company/apexnova-logistics",
-    // "https://www.facebook.com/apexnovalogistics",
+  areaServed: [
+    { "@type": "Country", name: "India" },
+    { "@type": "AdministrativeArea", name: "NCR" },
+    { "@type": "City", name: "Delhi" },
+    { "@type": "City", name: "Noida" },
+    { "@type": "City", name: "Greater Noida" },
+    { "@type": "City", name: "Gurgaon" },
   ],
+  founder: { "@type": "Person", name: FOUNDER.name, jobTitle: FOUNDER.jobTitle },
   contactPoint: [
     {
       "@type": "ContactPoint",
@@ -165,6 +170,20 @@ const jsonLd = {
       availableLanguage: ["English", "Hindi"],
     },
   ],
+  sameAs: SAME_AS,
+};
+
+// WebSite schema for sitelinks search box potential
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}#website`,
+  url: SITE_URL,
+  name: SITE_NAME,
+  description:
+    "NCR-based pan-India freight & logistics — FTL, PTL, corporate logistics, NCR local delivery, on-demand transport.",
+  publisher: { "@id": `${SITE_URL}#organization` },
+  inLanguage: "en-IN",
 };
 
 export default function RootLayout({
@@ -175,10 +194,37 @@ export default function RootLayout({
   return (
     <html lang="en" className={jakarta.variable}>
       <head>
+        {/* Preconnects to speed up Google Maps iframe + Unsplash CDN handshake */}
+        <link rel="preconnect" href="https://www.google.com" />
+        <link rel="preconnect" href="https://maps.gstatic.com" crossOrigin="" />
+        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="" />
+        <link rel="dns-prefetch" href="https://www.google.com" />
+
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+
+        {/*
+          GA4 / GTM placeholder — uncomment and fill GA_MEASUREMENT_ID when the
+          client provides one. Loaded with strategy="afterInteractive" so it
+          never blocks LCP.
+
+          <Script
+            src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+            strategy="afterInteractive"
+          />
+          <Script id="ga4-init" strategy="afterInteractive">{`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'GA_MEASUREMENT_ID', { anonymize_ip: true });
+          `}</Script>
+        */}
       </head>
       <body className={`${jakarta.className} antialiased`}>
         <Suspense fallback={null}>

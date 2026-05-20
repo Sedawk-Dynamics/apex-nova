@@ -101,7 +101,7 @@ export default function Services() {
                 <h3 className="text-[19px] font-semibold text-navy-deep mb-2.5 relative z-10 tracking-tight">
                   {service.title}
                 </h3>
-                <p className="text-theme-muted text-[14.5px] leading-relaxed relative z-10 mb-5">
+                <p className="text-theme-muted text-[15px] leading-relaxed relative z-10 mb-5">
                   {service.description}
                 </p>
 

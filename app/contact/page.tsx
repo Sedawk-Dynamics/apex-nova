@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { showToast } from "@/components/ui/ToastManager";
+import GoogleMapEmbed from "@/components/GoogleMapEmbed";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -60,7 +61,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen pb-0 bg-white">
+    <main className="min-h-screen pb-0 bg-white">
       {/* HERO BANNER */}
       <section className="bg-gradient-to-b from-navy to-navy-deep min-h-[44vh] relative flex flex-col justify-center items-center overflow-hidden">
         <div className="absolute inset-0 grid-bg radial-fade opacity-40" />
@@ -71,7 +72,7 @@ export default function ContactPage() {
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
-            className="text-4xl md:text-[56px] font-bold text-white mb-4 tracking-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold text-white mb-4 tracking-tight"
           >
             Contact <span className="gradient-text">Us</span>
           </motion.h1>
@@ -189,18 +190,24 @@ export default function ContactPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   {/* Full Name */}
                   <div>
+                    <label htmlFor="contact-name" className="sr-only">Full Name</label>
                     <input
+                      id="contact-name"
                       {...register("name")}
                       type="text"
                       autoComplete="name"
                       placeholder="Full Name *"
+                      aria-required="true"
+                      aria-invalid={errors.name ? "true" : "false"}
                       className={`w-full rounded-xl border-2 px-4 h-12 outline-none transition-colors ${errors.name ? "border-red-400 focus:border-red-500" : "border-gray-200 focus:border-orange"}`}
                     />
                     {errors.name && <p className="text-red-500 text-xs mt-1 ml-1">{errors.name.message}</p>}
                   </div>
                   {/* Company Name */}
                   <div>
+                    <label htmlFor="contact-company" className="sr-only">Company Name</label>
                     <input
+                      id="contact-company"
                       {...register("company")}
                       type="text"
                       autoComplete="organization"
@@ -210,33 +217,43 @@ export default function ContactPage() {
                   </div>
                   {/* Phone */}
                   <div>
+                    <label htmlFor="contact-phone" className="sr-only">Phone Number</label>
                     <input
+                      id="contact-phone"
                       {...register("phone")}
                       type="tel"
                       inputMode="tel"
                       autoComplete="tel"
                       placeholder="Phone Number *"
+                      aria-required="true"
+                      aria-invalid={errors.phone ? "true" : "false"}
                       className={`w-full rounded-xl border-2 px-4 h-12 outline-none transition-colors ${errors.phone ? "border-red-400 focus:border-red-500" : "border-gray-200 focus:border-orange"}`}
                     />
                     {errors.phone && <p className="text-red-500 text-xs mt-1 ml-1">{errors.phone.message}</p>}
                   </div>
                   {/* Email */}
                   <div>
+                    <label htmlFor="contact-email" className="sr-only">Email Address</label>
                     <input
+                      id="contact-email"
                       {...register("email")}
                       type="email"
                       inputMode="email"
                       autoComplete="email"
                       placeholder="Email Address *"
+                      aria-required="true"
+                      aria-invalid={errors.email ? "true" : "false"}
                       className={`w-full rounded-xl border-2 px-4 h-12 outline-none transition-colors ${errors.email ? "border-red-400 focus:border-red-500" : "border-gray-200 focus:border-orange"}`}
                     />
                     {errors.email && <p className="text-red-500 text-xs mt-1 ml-1">{errors.email.message}</p>}
                   </div>
                   {/* Service Needed */}
                   <div className="md:col-span-2">
+                    <label htmlFor="contact-service" className="sr-only">Service needed</label>
                     <select
+                      id="contact-service"
                       {...register("service")}
-                      className="w-full rounded-xl border-2 border-gray-200 focus:border-orange px-4 h-12 outline-none transition-colors bg-white text-gray-700"
+                      className="w-full rounded-xl border-2 border-gray-200 focus:border-orange px-4 h-12 outline-none transition-colors bg-white text-gray-700 appearance-none"
                     >
                       <option value="">Select Service Needed</option>
                       <option value="FTL">Full Truck Load (FTL)</option>
@@ -249,26 +266,35 @@ export default function ContactPage() {
                   </div>
                   {/* Origin */}
                   <div>
+                    <label htmlFor="contact-origin" className="sr-only">Origin city</label>
                     <input
+                      id="contact-origin"
                       {...register("origin")}
+                      type="text"
                       placeholder="Origin City"
                       className="w-full rounded-xl border-2 border-gray-200 focus:border-orange px-4 h-12 outline-none transition-colors"
                     />
                   </div>
                   {/* Destination */}
                   <div>
+                    <label htmlFor="contact-destination" className="sr-only">Destination city</label>
                     <input
+                      id="contact-destination"
                       {...register("destination")}
+                      type="text"
                       placeholder="Destination City"
                       className="w-full rounded-xl border-2 border-gray-200 focus:border-orange px-4 h-12 outline-none transition-colors"
                     />
                   </div>
                   {/* Message */}
                   <div className="md:col-span-2">
+                    <label htmlFor="contact-message" className="sr-only">Message</label>
                     <textarea
+                      id="contact-message"
                       {...register("message")}
                       placeholder="Your Message..."
-                      className="w-full rounded-xl border-2 border-gray-200 focus:border-orange p-4 h-32 outline-none transition-colors resize-none"
+                      rows={5}
+                      className="w-full rounded-xl border-2 border-gray-200 focus:border-orange p-4 min-h-32 outline-none transition-colors resize-y"
                     ></textarea>
                   </div>
                 </div>
@@ -294,27 +320,28 @@ export default function ContactPage() {
       </section>
 
       {/* MAP SECTION */}
-      <section className="bg-theme-light py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-navy text-center mb-12">Find Us</h2>
-          <div className="w-full h-[400px] rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-white">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m3!1d112130.64024344078!2d77.34862590204739!3d28.567086829774643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a43173357b%3A0x37ffce30c87205d0!2sGreater%20Noida%20West%2C%20Greater%20Noida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1715456208001!5m2!1sen!2sin" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              allowFullScreen={true} 
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-          <div className="mt-8 bg-white max-w-3xl mx-auto rounded-full py-4 px-8 text-center text-sm font-medium text-gray-700 shadow-sm border border-gray-100 flex flex-col md:flex-row items-center justify-center gap-2">
-            <MapPin size={18} className="text-orange shrink-0" />
-            Registered: 205A, 2nd Floor, Block B-14, Supertech Eco Village 1, Noida, Gautam Buddha Nagar – 201301, UP
+      <section className="bg-theme-light py-16 sm:py-20">
+        <div className="max-w-5xl mx-auto px-5 sm:px-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-navy text-center mb-10 sm:mb-12">
+            Find Us
+          </h2>
+          <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+            <GoogleMapEmbed
+              title="Apexnova Logistics — Greater Noida HQ"
+              className="!rounded-none h-[280px] sm:h-[380px] lg:h-[440px]"
+            />
+            <div className="px-5 sm:px-7 py-5 border-t border-gray-100 flex items-start gap-3">
+              <MapPin size={18} className="text-orange shrink-0 mt-0.5" />
+              <p className="text-[13px] sm:text-sm text-gray-600 leading-relaxed">
+                <strong className="text-navy font-semibold">Registered:</strong>{" "}
+                205A, 2nd Floor, Block B-14, Supertech Eco Village 1, Noida,
+                Gautam Buddha Nagar &ndash; 201301, UP
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-    </div>
+    </main>
   );
 }

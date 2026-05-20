@@ -117,10 +117,10 @@ export default function Trust() {
                 <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br from-navy-deep to-navy text-orange flex items-center justify-center shadow-md group-hover:shadow-glow-navy transition-shadow">
                   <Icon size={22} strokeWidth={2} />
                 </div>
-                <div className="text-navy-deep font-semibold text-[14.5px] tracking-tight mb-1">
+                <div className="text-navy-deep font-semibold text-[15px] tracking-tight mb-1">
                   {industry.name}
                 </div>
-                <div className="text-[11.5px] text-theme-muted leading-snug hidden md:block">
+                <div className="text-[12.5px] text-theme-muted leading-snug hidden md:block">
                   {industry.blurb}
                 </div>
               </motion.div>

@@ -127,13 +127,13 @@ export default function QuotePage() {
 
   if (isSuccess) {
     return (
-      <div className="min-h-screen bg-theme-light flex items-center justify-center py-20 px-6">
-        <motion.div 
+      <main className="min-h-screen bg-theme-light flex items-center justify-center py-20 px-6">
+        <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           className="bg-white rounded-2xl shadow-xl max-w-lg w-full p-10 text-center"
         >
-          <motion.div 
+          <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ type: "spring", delay: 0.2 }}
@@ -141,7 +141,7 @@ export default function QuotePage() {
           >
             <CheckCircle className="text-green-500 w-12 h-12" />
           </motion.div>
-          <h2 className="text-3xl font-bold text-navy mb-4">Quote Request Submitted!</h2>
+          <h1 className="text-3xl font-bold text-navy mb-4">Quote Request Submitted!</h1>
           <p className="text-gray-600 mb-8 leading-relaxed">
             Thank you <span className="font-semibold text-navy">{formData.name}</span>! Our team will contact you at <span className="font-semibold text-navy">{formData.phone}</span> within 2 hours with the best rate for your shipment.
           </p>
@@ -151,12 +151,12 @@ export default function QuotePage() {
             </Link>
           </div>
         </motion.div>
-      </div>
+      </main>
     );
   }
 
   return (
-    <div className="min-h-screen pb-0 bg-theme-light">
+    <main className="min-h-screen pb-0 bg-theme-light">
       {/* HERO BANNER */}
       <section className="bg-gradient-to-b from-navy to-navy-deep min-h-[44vh] relative flex flex-col justify-center items-center overflow-hidden">
         <div className="absolute inset-0 grid-bg radial-fade opacity-40" />
@@ -167,7 +167,7 @@ export default function QuotePage() {
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
-            className="text-4xl md:text-[56px] font-bold text-white mb-4 tracking-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold text-white mb-4 tracking-tight"
           >
             Get a <span className="gradient-text">Free Quote</span>
           </motion.h1>
@@ -555,6 +555,6 @@ export default function QuotePage() {
           </form>
         </div>
       </section>
-    </div>
+    </main>
   );
 }
