@@ -2,12 +2,12 @@ import { Suspense } from "react";
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import Navbar from "@/components/sections/layout/Navbar";
+import Footer from "@/components/sections/layout/Footer";
 
 import ToastManager from "@/components/ui/ToastManager";
-import FloatingActionButtons from "@/components/layout/FloatingActionButtons";
-import PageTransition from "@/components/layout/PageTransition";
+import FloatingActionButtons from "@/components/sections/layout/FloatingActionButtons";
+import PageTransition from "@/components/sections/layout/PageTransition";
 import ProgressBar from "@/components/ui/ProgressBar";
 import dynamic from "next/dynamic";
 
@@ -93,10 +93,18 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@apexnova0",
+    creator: "@apexnova0",
     title: "Apexnova Logistics | Reliable Pan-India Freight",
     description:
       "FTL, PTL, NCR local & corporate logistics across India. Get a free quote within 2 hours.",
     images: ["/images/hero-truck.jpg"],
+  },
+  applicationName: SITE_NAME,
+  appleWebApp: {
+    capable: true,
+    title: SITE_NAME,
+    statusBarStyle: "default",
   },
   icons: {
     icon: "/images/apex-nova.png",
@@ -192,7 +200,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={jakarta.variable}>
+    <html lang="en-IN" className={jakarta.variable}>
       <head>
         {/* Preconnects to speed up Google Maps iframe + Unsplash CDN handshake */}
         <link rel="preconnect" href="https://www.google.com" />

@@ -34,6 +34,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@apexnova0",
+    creator: "@apexnova0",
     title: "About Apexnova Logistics",
     description:
       "Reliable, transparent and customer-focused logistics across NCR & PAN India.",

@@ -32,6 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@apexnova0",
+    creator: "@apexnova0",
     title: "Contact Apexnova Logistics",
     description: "Phone, WhatsApp, email & Greater Noida office — get a quote in 2 hours.",
     images: ["/images/hero-truck.jpg"],

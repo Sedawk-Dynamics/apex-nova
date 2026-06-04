@@ -35,6 +35,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@apexnova0",
+    creator: "@apexnova0",
     title: "Apexnova Logistics — Services",
     description: "FTL, PTL, NCR local & corporate logistics across India.",
     images: ["/images/hero-truck.jpg"],
