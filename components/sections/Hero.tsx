@@ -30,7 +30,7 @@ export default function Hero() {
   const subChars = subText.split("");
 
   return (
-    <section className="relative min-h-[88vh] sm:min-h-[92vh] flex items-center bg-navy-deep w-full pt-28 sm:pt-32 md:pt-36 pb-40 sm:pb-44 md:pb-52 overflow-hidden">
+    <section className="relative min-h-[88vh] sm:min-h-[92vh] flex items-center bg-navy-deep w-full pt-28 sm:pt-32 md:pt-36 pb-44 xs:pb-48 sm:pb-44 md:pb-52 overflow-hidden">
       {/* Background Image & Layered Overlays */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -57,7 +57,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
         <div className="max-w-3xl">
           {/* Title */}
-          <h1 className="text-[34px] xs:text-[40px] sm:text-[52px] md:text-[58px] lg:text-[64px] xl:text-[72px] font-extrabold text-white leading-[1.05] mb-7 tracking-tight flex flex-wrap gap-y-2">
+          <h1 className="text-[30px] xs:text-[40px] sm:text-[52px] md:text-[58px] lg:text-[64px] xl:text-[72px] font-extrabold text-white leading-[1.08] xs:leading-[1.05] mb-6 sm:mb-7 tracking-tight flex flex-wrap gap-y-2">
             {titleWords.map((word, index) => (
               <span
                 key={index}
@@ -84,7 +84,7 @@ export default function Hero() {
           </h1>
 
           {/* Sub */}
-          <p className="text-[18px] md:text-[19px] text-gray-300/95 mb-9 min-h-[28px] tracking-tight max-w-xl">
+          <p className="text-[16px] xs:text-[17px] sm:text-[18px] md:text-[19px] text-gray-300/95 mb-8 sm:mb-9 min-h-[28px] tracking-tight max-w-xl">
             {subChars.map((char, index) => (
               <motion.span
                 key={index}
@@ -107,11 +107,11 @@ export default function Hero() {
             variants={scaleIn}
             className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-4"
           >
-            <Link href="/quote">
+            <Link href="/quote" className="w-full sm:w-auto">
               <motion.button
                 whileHover={!shouldReduceMotion ? { scale: 1.03 } : {}}
                 whileTap={!shouldReduceMotion ? { scale: 0.97 } : {}}
-                className="group relative overflow-hidden bg-gradient-to-r from-orange to-orange-dark text-white px-9 py-4 rounded-full text-[15px] font-semibold shadow-lg shadow-orange/30 hover:shadow-glow-orange transition-shadow flex items-center gap-2"
+                className="group relative overflow-hidden bg-gradient-to-r from-orange to-orange-dark text-white px-9 py-4 rounded-full text-[15px] font-semibold shadow-lg shadow-orange/30 hover:shadow-glow-orange transition-shadow flex items-center justify-center gap-2 w-full sm:w-auto"
               >
                 <span className="relative z-10">Get Free Quote</span>
                 <motion.span
@@ -130,7 +130,7 @@ export default function Hero() {
               href="tel:+919560639966"
               whileHover={!shouldReduceMotion ? { scale: 1.03 } : {}}
               whileTap={!shouldReduceMotion ? { scale: 0.97 } : {}}
-              className="group glass-dark text-white px-8 py-4 rounded-full text-[15px] font-semibold flex items-center gap-2.5 hover:bg-white/15 transition-colors"
+              className="group glass-dark text-white px-8 py-4 rounded-full text-[15px] font-semibold flex items-center justify-center gap-2.5 hover:bg-white/15 transition-colors w-full sm:w-auto"
             >
               <motion.span
                 variants={{ hover: { rotate: [-15, 15, -10, 10, 0], transition: { duration: 0.5 } } }}
@@ -199,7 +199,7 @@ export default function Hero() {
               { stat: stat3, label: "Cities Covered", short: "Cities" },
             ].map((item, idx) => (
               <div key={idx} className="text-center group px-1">
-                <div ref={item.stat.ref} className="gradient-text text-[24px] sm:text-[34px] md:text-[44px] font-bold leading-none mb-1.5 sm:mb-2 inline-block">
+                <div ref={item.stat.ref} className="gradient-text text-[22px] xs:text-[28px] sm:text-[34px] md:text-[44px] font-bold leading-none mb-1.5 sm:mb-2 inline-block">
                   {item.stat.displayValue}
                 </div>
                 <div className="text-theme-muted font-medium text-[10px] sm:text-[12px] md:text-[13px] tracking-wide uppercase">

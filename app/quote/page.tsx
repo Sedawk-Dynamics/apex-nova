@@ -131,7 +131,7 @@ export default function QuotePage() {
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="bg-white rounded-2xl shadow-xl max-w-lg w-full p-10 text-center"
+          className="bg-white rounded-2xl shadow-xl max-w-lg w-full p-6 sm:p-10 text-center"
         >
           <motion.div
             initial={{ scale: 0 }}
@@ -232,7 +232,7 @@ export default function QuotePage() {
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
-                  className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8"
+                  className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 sm:p-8"
                 >
                   <h2 className="text-2xl font-bold text-navy mb-6">1. Shipment Details</h2>
                   
@@ -354,7 +354,7 @@ export default function QuotePage() {
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
-                  className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8"
+                  className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 sm:p-8"
                 >
                   <h2 className="text-2xl font-bold text-navy mb-6">2. Contact Info</h2>
                   
@@ -457,7 +457,7 @@ export default function QuotePage() {
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
-                  className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8"
+                  className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 sm:p-8"
                 >
                   <h2 className="text-2xl font-bold text-navy mb-6">3. Review & Confirm</h2>
                   
@@ -472,7 +472,7 @@ export default function QuotePage() {
                         Edit Shipment
                       </button>
                       <h3 className="text-lg font-bold text-navy mb-4 border-b border-gray-200 pb-2">Shipment Details</h3>
-                      <div className="grid grid-cols-2 gap-4 text-sm">
+                      <div className="grid grid-cols-1 xs:grid-cols-2 gap-4 text-sm">
                         <div>
                           <span className="text-gray-500 block mb-1">Service Type</span>
                           <span className="font-semibold text-navy">{servicesList.find(s => s.id === formData.serviceType)?.label || formData.serviceType}</span>
@@ -501,7 +501,7 @@ export default function QuotePage() {
                         Edit Contact
                       </button>
                       <h3 className="text-lg font-bold text-navy mb-4 border-b border-gray-200 pb-2">Contact Info</h3>
-                      <div className="grid grid-cols-2 gap-4 text-sm">
+                      <div className="grid grid-cols-1 xs:grid-cols-2 gap-4 text-sm">
                         <div>
                           <span className="text-gray-500 block mb-1">Name</span>
                           <span className="font-semibold text-navy">{formData.name}</span>

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { MapPin, Phone, Mail, ArrowUpRight, ArrowRight, ShieldCheck, Clock, Truck, Headphones, Sparkles } from "lucide-react";
 import GoogleMapEmbed from "@/components/GoogleMapEmbed";
+import { SOCIALS, MAP_DIRECTIONS_URL } from "@/lib/site";
 
 const LinkedinIcon = ({ size = 16 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -58,10 +59,10 @@ const trustBadges = [
 ];
 
 const socials = [
-  { icon: LinkedinIcon, href: "#", label: "LinkedIn" },
-  { icon: FacebookIcon, href: "#", label: "Facebook" },
-  { icon: InstagramIcon, href: "#", label: "Instagram" },
-  { icon: TwitterIcon, href: "#", label: "X / Twitter" },
+  { icon: LinkedinIcon, href: SOCIALS.linkedin, label: "LinkedIn" },
+  { icon: FacebookIcon, href: SOCIALS.facebook, label: "Facebook" },
+  { icon: InstagramIcon, href: SOCIALS.instagram, label: "Instagram" },
+  { icon: TwitterIcon, href: SOCIALS.twitter, label: "X / Twitter" },
 ];
 
 const fadeUp = {
@@ -88,7 +89,7 @@ export default function Footer() {
           viewport={{ once: true, margin: "-80px" }}
           className="relative max-w-6xl mx-auto"
         >
-          <div className="relative rounded-[28px] overflow-hidden border border-white/10 bg-gradient-to-br from-[#1B2E6B]/70 via-[#0F1D4A]/90 to-[#0A1538] p-10 md:p-14 backdrop-blur-xl shadow-premium">
+          <div className="relative rounded-[20px] sm:rounded-[28px] overflow-hidden border border-white/10 bg-gradient-to-br from-[#1B2E6B]/70 via-[#0F1D4A]/90 to-[#0A1538] p-6 sm:p-10 md:p-14 backdrop-blur-xl shadow-premium">
             {/* Inner ambient + grid */}
             <div className="absolute inset-0 grid-bg opacity-50 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
             <div className="absolute -top-32 -right-24 w-[420px] h-[420px] bg-orange/20 rounded-full blur-[120px]" />
@@ -196,7 +197,7 @@ export default function Footer() {
                 <strong className="text-gray-300 font-medium">Registered:</strong> 205A, 2nd Floor, Block B-14, Supertech Eco Village 1, Noida &ndash; 201301
               </p>
               <a
-                href="https://www.google.com/maps/dir/?api=1&destination=Greater+Noida+West+Sector-1+UP+201306"
+                href={MAP_DIRECTIONS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 self-start px-5 py-2.5 rounded-full bg-orange text-white text-[13px] font-semibold hover:bg-orange-dark transition-colors shadow-md"
@@ -249,6 +250,8 @@ export default function Footer() {
                 <motion.a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   whileHover={!shouldReduceMotion ? { y: -3, scale: 1.08 } : {}}
                   whileTap={!shouldReduceMotion ? { scale: 0.95 } : {}}

@@ -29,8 +29,23 @@ export const REGISTERED_ADDRESS = {
 };
 
 export const GEO = {
-  latitude: 28.5670868,
-  longitude: 77.3486259,
+  latitude: 28.612478,
+  longitude: 77.3909599,
+};
+
+// === Map ===
+// Place embed for "APEXNOVA LOGISTICS INDIA PRIVATE LIMITED".
+export const MAP_EMBED_SRC =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.576536455903!2d77.3909599!3d28.612478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cefc05d1fe3d9%3A0xbe37d9443684f991!2sAPEXNOVA%20LOGISTICS%20INDIA%20PRIVATE%20LIMITED!5e0!3m2!1sen!2sin!4v1780488443176!5m2!1sen!2sin";
+// Short share link — used for "Get Directions" buttons.
+export const MAP_DIRECTIONS_URL = "https://maps.app.goo.gl/RViJA36zZkHXS5KNA";
+
+// === Social profiles ===
+export const SOCIALS = {
+  linkedin: "https://www.linkedin.com/company/apexnova-logistics-pvt-ltd/",
+  facebook: "https://www.facebook.com/apexnovalogistics/",
+  instagram: "https://www.instagram.com/apexnovalogistics/",
+  twitter: "https://x.com/apexnova0",
 };
 
 export const FOUNDER = {
@@ -39,9 +54,8 @@ export const FOUNDER = {
 };
 
 export const SAME_AS: string[] = [
-  // Populate when real social URLs are confirmed:
-  // "https://www.linkedin.com/company/apexnova-logistics",
-  // "https://www.facebook.com/apexnovalogistics",
-  // "https://www.instagram.com/apexnovalogistics",
-  // "https://x.com/apexnovalog",
+  SOCIALS.linkedin,
+  SOCIALS.facebook,
+  SOCIALS.instagram,
+  SOCIALS.twitter,
 ];

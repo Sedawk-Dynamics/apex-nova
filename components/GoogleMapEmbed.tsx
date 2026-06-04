@@ -1,15 +1,12 @@
 // Reusable, key-less Google Maps iframe embed.
-// Uses `?q=...&output=embed` format (no API key, no `pb` parameter).
-// Lazy-loaded via native iframe `loading="lazy"` so it only fetches when scrolled into view.
+// Defaults to the verified "APEXNOVA LOGISTICS INDIA PRIVATE LIMITED" place embed
+// (see MAP_EMBED_SRC in lib/site.ts). Lazy-loaded via native iframe `loading="lazy"`.
 
-const DEFAULT_QUERY =
-  "Supertech+Eco+Village+1+Sector+1+Greater+Noida+West+Noida+UP+201306";
-
-const DEFAULT_EMBED_SRC = `https://www.google.com/maps?q=${DEFAULT_QUERY}&output=embed`;
+import { MAP_EMBED_SRC } from "@/lib/site";
 
 type GoogleMapEmbedProps = {
-  /** Override the place query string. Use URL-encoded format (spaces as `+`). */
-  query?: string;
+  /** Override the full embed src URL. Defaults to the Apexnova place embed. */
+  src?: string;
   /** Accessible title for the iframe (screen-reader label). */
   title?: string;
   /** Extra Tailwind classes for the wrapping container. */
@@ -17,13 +14,11 @@ type GoogleMapEmbedProps = {
 };
 
 export default function GoogleMapEmbed({
-  query,
-  title = "Apexnova Logistics Office Location",
+  src: srcProp,
+  title = "Apexnova Logistics India Pvt Ltd — Office Location",
   className = "",
 }: GoogleMapEmbedProps) {
-  const src = query
-    ? `https://www.google.com/maps?q=${query}&output=embed`
-    : DEFAULT_EMBED_SRC;
+  const src = srcProp ?? MAP_EMBED_SRC;
 
   return (
     <div

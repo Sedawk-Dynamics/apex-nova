@@ -8,6 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        // Extra-small phones (used by Hero headline scaling, etc.)
+        xs: "475px",
+        // Wide desktops / 4K — lets layouts breathe on very large displays
+        "3xl": "1920px",
+      },
       colors: {
         primary: {
           navy: '#1B2E6B',

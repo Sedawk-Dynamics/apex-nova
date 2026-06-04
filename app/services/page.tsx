@@ -138,7 +138,7 @@ export default function ServicesPage() {
                   />
                 </div>
                 
-                <div className="w-full lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
+                <div className="w-full lg:w-1/2 p-6 sm:p-8 lg:p-12 flex flex-col justify-center">
                   <div className="w-12 h-12 bg-orange/10 text-orange rounded-full flex items-center justify-center font-bold text-xl mb-6">
                     {service.id}
                   </div>
