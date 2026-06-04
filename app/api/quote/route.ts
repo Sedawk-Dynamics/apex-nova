@@ -3,23 +3,6 @@ import nodemailer from "nodemailer";
 
 export const runtime = "nodejs";
 
-// Temporary diagnostic: GET /api/quote?diag=smtp reports which SMTP_* vars the
-// running function can see (presence only — never the secret values).
-// Safe to remove once mail delivery is confirmed.
-export async function GET(req: Request) {
-  const url = new URL(req.url);
-  if (url.searchParams.get("diag") !== "smtp") {
-    return NextResponse.json({ ok: true });
-  }
-  return NextResponse.json({
-    SMTP_HOST: Boolean(process.env.SMTP_HOST),
-    SMTP_PORT: process.env.SMTP_PORT ?? null,
-    SMTP_USER: Boolean(process.env.SMTP_USER),
-    SMTP_PASS: Boolean(process.env.SMTP_PASS),
-    CONTACT_EMAIL: Boolean(process.env.CONTACT_EMAIL),
-  });
-}
-
 // Escape user-supplied values before interpolating into the HTML email body.
 function esc(value: unknown): string {
   return String(value ?? "")
