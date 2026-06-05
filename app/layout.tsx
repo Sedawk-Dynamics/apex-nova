@@ -106,11 +106,8 @@ export const metadata: Metadata = {
     title: SITE_NAME,
     statusBarStyle: "default",
   },
-  icons: {
-    icon: "/images/apexnova-logo.png",
-    shortcut: "/images/apexnova-logo.png",
-    apple: "/images/apexnova-logo.png",
-  },
+  // Favicon & touch icons are provided by app/icon.png and app/apple-icon.png
+  // (Next.js file convention) — no manual `icons` block needed.
   formatDetection: {
     telephone: true,
     email: true,
