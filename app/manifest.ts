@@ -13,15 +13,13 @@ export default function manifest(): MetadataRoute.Manifest {
     orientation: "portrait",
     icons: [
       {
-        // Replace with /icon-192.png once available (192x192 PNG)
-        src: "/images/apex-nova.png",
+        src: "/images/apexnova-logo.png",
         sizes: "192x192",
         type: "image/png",
         purpose: "any",
       },
       {
-        // Replace with /icon-512.png once available (512x512 PNG)
-        src: "/images/apex-nova.png",
+        src: "/images/apexnova-logo.png",
         sizes: "512x512",
         type: "image/png",
         purpose: "any",

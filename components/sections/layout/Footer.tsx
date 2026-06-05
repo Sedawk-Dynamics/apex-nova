@@ -226,7 +226,7 @@ export default function Footer() {
             <Link href="/" className="inline-block group">
               <div className="relative inline-block bg-white p-3 rounded-2xl shadow-soft overflow-hidden">
                 <div className="absolute inset-0 -translate-x-full group-hover:animate-shimmer-sweep bg-gradient-to-r from-transparent via-orange/20 to-transparent pointer-events-none" />
-                <Image src="/images/apex-nova.png" alt="Apexnova Logistics" width={150} height={56} className="relative h-12 w-auto object-contain" />
+                <Image src="/images/apexnova-logo.png" alt="Apexnova Logistics India Pvt Ltd" width={180} height={160} className="relative h-14 sm:h-16 w-auto object-contain" />
               </div>
             </Link>
             <p className="text-[14.5px] leading-relaxed text-gray-400 max-w-sm">

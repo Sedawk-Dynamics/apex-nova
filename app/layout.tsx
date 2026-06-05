@@ -107,9 +107,9 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
   },
   icons: {
-    icon: "/images/apex-nova.png",
-    shortcut: "/images/apex-nova.png",
-    apple: "/images/apex-nova.png",
+    icon: "/images/apexnova-logo.png",
+    shortcut: "/images/apexnova-logo.png",
+    apple: "/images/apexnova-logo.png",
   },
   formatDetection: {
     telephone: true,
@@ -140,7 +140,7 @@ const organizationSchema = {
   name: LEGAL_NAME,
   alternateName: SITE_NAME,
   url: SITE_URL,
-  logo: `${SITE_URL}/images/apex-nova.png`,
+  logo: `${SITE_URL}/images/apexnova-logo.png`,
   image: `${SITE_URL}/images/hero-truck.jpg`,
   description:
     "NCR-based, pan-India freight & logistics company offering FTL, PTL, corporate logistics, NCR local delivery and on-demand transport.",
