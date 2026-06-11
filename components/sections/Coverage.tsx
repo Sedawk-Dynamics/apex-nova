@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import Link from "next/link";
 import { Globe2, ArrowUpRight, MapPin } from "lucide-react";
 
 const regions = [
@@ -126,6 +127,13 @@ export default function Coverage() {
 
               {/* Top accent bar */}
               <div className="absolute left-0 right-0 top-0 h-[3px] bg-gradient-to-r from-orange via-orange-glow to-orange scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
+
+              {/* Full-card link to services */}
+              <Link
+                href="/services"
+                aria-label={`Explore ${region.label} India logistics services`}
+                className="absolute inset-0 z-20"
+              />
 
               <div className="relative">
                 <div className="flex items-center gap-3 mb-5">

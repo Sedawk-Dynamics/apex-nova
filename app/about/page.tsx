@@ -78,31 +78,37 @@ const services = [
     title: "Full Truck Load (FTL)",
     icon: Truck,
     desc: "Dedicated trucks for bulk and large-volume shipments.",
+    href: "/services#service-01",
   },
   {
     title: "Part Truck Load (PTL)",
     icon: Package,
     desc: "Flexible and cost-effective transportation solutions.",
+    href: "/services#service-02",
   },
   {
     title: "On-Demand Logistics",
     icon: Zap,
     desc: "Urgent and fast vehicle placement services.",
+    href: "/services#service-05",
   },
   {
     title: "Local & NCR Logistics",
     icon: MapPin,
     desc: "Efficient intra-city and NCR transportation support.",
+    href: "/services#service-03",
   },
   {
     title: "Corporate Logistics",
     icon: Building2,
     desc: "Customized logistics solutions for business operations.",
+    href: "/services#service-04",
   },
   {
     title: "Supply Chain Support",
     icon: Layers,
     desc: "Reliable coordination for smooth goods movement.",
+    href: "/services#service-04",
   },
 ];
 
@@ -252,7 +258,7 @@ export default function AboutPage() {
   const words = titleText.split(" ");
 
   const founderLines = [
-    "At Apexnova Logistics, we believe logistics is not just about transportation — it is about delivering trust, reliability, and long-term partnerships.",
+    "At Apexnova Logistics India Pvt. Ltd., we believe logistics is not just about transportation — it is about delivering trust, reliability, and long-term partnerships.",
     "Our mission is to provide efficient, transparent, and customer-focused logistics solutions that help businesses grow with confidence.",
     "We are committed to operational excellence, timely deliveries, and building strong relationships through dependable service and professional coordination.",
   ];
@@ -342,7 +348,7 @@ export default function AboutPage() {
               <div className="relative w-full aspect-video lg:aspect-[4/3] rounded-2xl overflow-hidden shadow-xl group">
                 <Image
                   src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop"
-                  alt="Apexnova Logistics Warehouse Operations"
+                  alt="Apexnova Logistics India Pvt. Ltd. Warehouse Operations"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -379,10 +385,10 @@ export default function AboutPage() {
                 WHO WE ARE
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-navy mb-5 sm:mb-6">
-                About Apexnova Logistics
+                About Apexnova Logistics India Pvt. Ltd.
               </h2>
               <p className="text-gray-700 leading-relaxed mb-5 text-[15px] sm:text-base">
-                Apexnova Logistics Pvt. Ltd. is a professionally managed and
+                Apexnova Logistics India Pvt. Ltd. is a professionally managed and
                 fast-growing logistics & transportation company based in
                 NCR, India.
               </p>
@@ -567,21 +573,21 @@ export default function AboutPage() {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"
           >
             {services.map((s) => (
-              <motion.div
-                key={s.title}
-                variants={fadeUp}
-                whileHover={!shouldReduceMotion ? { y: -6 } : {}}
-                className="group bg-white rounded-2xl border border-gray-100 p-6 sm:p-7 hover:border-orange/40 hover:shadow-soft transition-all"
-              >
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-navy-deep to-navy text-orange flex items-center justify-center mb-4 group-hover:shadow-glow-navy transition-shadow shrink-0">
-                  <s.icon size={24} />
-                </div>
-                <h3 className="text-navy font-bold text-[17px] mb-2 tracking-tight">
-                  {s.title}
-                </h3>
-                <p className="text-gray-600 text-[14px] leading-relaxed">
-                  {s.desc}
-                </p>
+              <motion.div key={s.title} variants={fadeUp}>
+                <Link
+                  href={s.href}
+                  className="group block h-full bg-white rounded-2xl border border-gray-100 p-6 sm:p-7 hover:border-orange/40 hover:shadow-soft hover:-translate-y-1.5 transition-all"
+                >
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-navy-deep to-navy text-orange flex items-center justify-center mb-4 group-hover:shadow-glow-navy transition-shadow shrink-0">
+                    <s.icon size={24} />
+                  </div>
+                  <h3 className="text-navy font-bold text-[17px] mb-2 tracking-tight group-hover:text-orange transition-colors">
+                    {s.title}
+                  </h3>
+                  <p className="text-gray-600 text-[14px] leading-relaxed">
+                    {s.desc}
+                  </p>
+                </Link>
               </motion.div>
             ))}
           </motion.div>
@@ -807,6 +813,26 @@ export default function AboutPage() {
             retail, e-commerce, industrial goods, machinery movement, and
             corporate logistics requirements.
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mt-8 flex justify-center"
+          >
+            <Link
+              href="/contact"
+              className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-orange to-orange-dark text-white px-7 py-3.5 rounded-full text-[14px] font-semibold shadow-glow-orange hover:shadow-lg transition-shadow"
+            >
+              <PhoneCall size={16} />
+              Contact Us
+              <ArrowRight
+                size={16}
+                className="transition-transform group-hover:translate-x-1"
+              />
+            </Link>
+          </motion.div>
         </div>
       </section>
 
@@ -973,7 +999,7 @@ export default function AboutPage() {
                   — Founder &amp; Director
                 </p>
                 <p className="text-white/70 text-[13px] sm:text-sm">
-                  Apexnova Logistics Pvt. Ltd.
+                  Apexnova Logistics India Pvt. Ltd.
                 </p>
               </motion.div>
             </div>
@@ -994,7 +1020,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <h3 className="text-white text-xl sm:text-2xl font-bold">
-                RS Shah
+                Mr. RS Shah
               </h3>
               <p className="text-orange font-medium mb-5 sm:mb-6 text-sm sm:text-base">
                 Director &amp; Founder

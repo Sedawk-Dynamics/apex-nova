@@ -3,7 +3,7 @@
 
 export const SITE_URL = "https://www.apexnovalogistics.com";
 export const SITE_NAME = "Apexnova Logistics";
-export const LEGAL_NAME = "Apexnova Logistics India Pvt Ltd";
+export const LEGAL_NAME = "Apexnova Logistics India Pvt. Ltd.";
 export const TAGLINE = "Driven by Reliability, Powered by Trust";
 
 export const PHONE = "+91-9560639966";

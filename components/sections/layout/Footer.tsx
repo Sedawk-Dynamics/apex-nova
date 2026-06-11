@@ -223,7 +223,7 @@ export default function Footer() {
             <Link href="/" className="inline-block group">
               <div className="relative inline-block bg-white p-3 rounded-2xl shadow-soft overflow-hidden">
                 <div className="absolute inset-0 -translate-x-full group-hover:animate-shimmer-sweep bg-gradient-to-r from-transparent via-orange/20 to-transparent pointer-events-none" />
-                <Image src="/images/apexnovahorizontallogo.png" alt="Apexnova Logistics India Pvt Ltd" width={1126} height={267} className="relative h-14 sm:h-16 w-auto object-contain" />
+                <Image src="/images/apexnovahorizontallogo.png" alt="Apexnova Logistics India Pvt. Ltd." width={1126} height={267} className="relative h-14 sm:h-16 w-auto object-contain" />
               </div>
             </Link>
             <p className="text-[14.5px] leading-relaxed text-gray-400 max-w-sm">
@@ -375,7 +375,7 @@ export default function Footer() {
 
             <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-[12.5px] text-gray-500">
               <div className="flex items-center gap-3 flex-wrap justify-center">
-                <span>© {new Date().getFullYear()} Apexnova Logistics India Pvt Ltd.</span>
+                <span>© {new Date().getFullYear()} Apexnova Logistics India Pvt. Ltd.</span>
                 <span className="hidden md:inline w-1 h-1 bg-gray-600 rounded-full" />
                 <span>All rights reserved.</span>
               </div>

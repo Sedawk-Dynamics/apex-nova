@@ -15,7 +15,7 @@ type GoogleMapEmbedProps = {
 
 export default function GoogleMapEmbed({
   src: srcProp,
-  title = "Apexnova Logistics India Pvt Ltd — Office Location",
+  title = "Apexnova Logistics India Pvt. Ltd. — Office Location",
   className = "",
 }: GoogleMapEmbedProps) {
   const src = srcProp ?? MAP_EMBED_SRC;

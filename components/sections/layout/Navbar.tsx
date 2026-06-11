@@ -68,7 +68,7 @@ export default function Navbar() {
               "rounded-xl transition-all duration-300",
               scrolled ? "bg-transparent" : "bg-white/95 backdrop-blur-sm px-2 py-1 shadow-md"
             )}>
-              <Image src="/images/apexnovahorizontallogo.png" alt="Apexnova Logistics India Pvt Ltd" width={1126} height={267} priority className="h-11 sm:h-12 lg:h-14 w-auto object-contain transition-transform group-hover:scale-105" />
+              <Image src="/images/apexnovahorizontallogo.png" alt="Apexnova Logistics India Pvt. Ltd." width={1126} height={267} priority className="h-11 sm:h-12 lg:h-14 w-auto object-contain transition-transform group-hover:scale-105" />
             </div>
           </Link>
 

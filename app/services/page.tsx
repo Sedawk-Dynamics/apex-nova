@@ -122,11 +122,12 @@ export default function ServicesPage() {
             return (
               <motion.div
                 key={service.id}
+                id={`service-${service.id}`}
                 initial={{ opacity: 0, x: isEven ? 50 : -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className={`flex flex-col ${isEven ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden min-h-[280px] group hover:shadow-md transition-shadow`}
+                className={`scroll-mt-28 flex flex-col ${isEven ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden min-h-[280px] group hover:shadow-md transition-shadow`}
               >
                 <div className="w-full lg:w-1/2 relative min-h-[280px]">
                   <Image
@@ -219,14 +220,6 @@ export default function ServicesPage() {
                     <td className="p-5 text-center"><CheckCircle className="mx-auto text-green-500" size={20} /></td>
                     <td className="p-5 text-center"><CheckCircle className="mx-auto text-green-500" size={20} /></td>
                   </tr>
-                  <tr className="border-b border-gray-100">
-                    <td className="p-5 font-medium">Cost</td>
-                    <td className="p-5 text-center text-sm">$$$</td>
-                    <td className="p-5 text-center text-sm">$</td>
-                    <td className="p-5 text-center text-sm">$$</td>
-                    <td className="p-5 text-center text-sm">Custom</td>
-                    <td className="p-5 text-center text-sm">$$$</td>
-                  </tr>
                 </tbody>
               </table>
             </div>
@@ -235,11 +228,11 @@ export default function ServicesPage() {
           {/* Mobile: stacked comparison cards */}
           <div className="md:hidden space-y-4">
             {[
-              { name: "FTL", ideal: "Bulk Load", load: "Full Truck", dedicated: true, cost: "$$$" },
-              { name: "PTL", ideal: "Small Load", load: "Partial", dedicated: false, cost: "$" },
-              { name: "NCR Local", ideal: "City Delivery", load: "Flexible", dedicated: true, cost: "$$" },
-              { name: "Corporate", ideal: "B2B Needs", load: "Flexible", dedicated: true, cost: "Custom" },
-              { name: "On-Demand", ideal: "Urgent", load: "Any", dedicated: true, cost: "$$$" },
+              { name: "FTL", ideal: "Bulk Load", load: "Full Truck", dedicated: true },
+              { name: "PTL", ideal: "Small Load", load: "Partial", dedicated: false },
+              { name: "NCR Local", ideal: "City Delivery", load: "Flexible", dedicated: true },
+              { name: "Corporate", ideal: "B2B Needs", load: "Flexible", dedicated: true },
+              { name: "On-Demand", ideal: "Urgent", load: "Any", dedicated: true },
             ].map((s) => (
               <div
                 key={s.name}
@@ -266,10 +259,6 @@ export default function ServicesPage() {
                         <XCircle className="text-gray-300" size={20} />
                       )}
                     </dd>
-                  </div>
-                  <div className="flex justify-between items-center px-5 py-3 text-[14px]">
-                    <dt className="text-gray-500 font-medium">Cost</dt>
-                    <dd className="text-navy font-semibold">{s.cost}</dd>
                   </div>
                 </dl>
               </div>
