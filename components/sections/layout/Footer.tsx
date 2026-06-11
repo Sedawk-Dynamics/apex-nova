@@ -190,11 +190,8 @@ export default function Footer() {
               <h3 className="text-white text-[22px] md:text-[26px] font-bold tracking-tight mb-3 leading-tight">
                 Visit Our Office
               </h3>
-              <p className="text-gray-300 text-[13.5px] leading-relaxed mb-2">
+              <p className="text-gray-300 text-[13.5px] leading-relaxed mb-5">
                 <strong className="text-white font-semibold">Corporate:</strong> 3rd Floor, Plot No. A-280, Transport Nagar, Sector 69, Noida, Uttar Pradesh &ndash; 201301
-              </p>
-              <p className="text-gray-400 text-[12.5px] leading-relaxed mb-5">
-                <strong className="text-gray-300 font-medium">Registered:</strong> 205A, 2nd Floor, Block B-14, Supertech Eco Village 1, Noida &ndash; 201301
               </p>
               <a
                 href={MAP_DIRECTIONS_URL}

@@ -18,7 +18,6 @@ import {
   PHONE,
   EMAIL,
   CORPORATE_ADDRESS,
-  REGISTERED_ADDRESS,
   GEO,
   FOUNDER,
   SAME_AS,
@@ -144,10 +143,7 @@ const organizationSchema = {
   telephone: PHONE,
   email: EMAIL,
   priceRange: "$$",
-  address: [
-    { "@type": "PostalAddress", name: "Corporate Office", ...CORPORATE_ADDRESS },
-    { "@type": "PostalAddress", name: "Registered Office", ...REGISTERED_ADDRESS },
-  ],
+  address: { "@type": "PostalAddress", name: "Corporate Office", ...CORPORATE_ADDRESS },
   geo: { "@type": "GeoCoordinates", ...GEO },
   openingHoursSpecification: [
     {

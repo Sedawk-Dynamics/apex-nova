@@ -20,14 +20,6 @@ export const CORPORATE_ADDRESS = {
   addressCountry: "IN",
 };
 
-export const REGISTERED_ADDRESS = {
-  streetAddress: "205A, 2nd Floor, Block B-14, Supertech Eco Village 1",
-  addressLocality: "Noida",
-  addressRegion: "UP",
-  postalCode: "201301",
-  addressCountry: "IN",
-};
-
 export const GEO = {
   latitude: 28.612478,
   longitude: 77.3909599,

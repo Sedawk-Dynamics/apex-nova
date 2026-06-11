@@ -142,8 +142,7 @@ export default function ContactPage() {
               <div>
                 <div className="text-sm text-gray-500 font-medium mb-1">Address</div>
                 <div className="text-navy font-bold text-sm leading-relaxed">
-                  Corporate: 3rd Floor, Plot No. A-280, Transport Nagar, Sector 69, Noida, Uttar Pradesh – 201301<br/>
-                  <span className="text-gray-500 font-normal">Reg: 205A, 2nd Floor, Block B-14, Supertech Eco Village 1, Noida, UP – 201301</span>
+                  3rd Floor, Plot No. A-280, Transport Nagar, Sector 69, Noida, Uttar Pradesh – 201301
                 </div>
               </div>
             </div>
@@ -334,9 +333,9 @@ export default function ContactPage() {
             <div className="px-5 sm:px-7 py-5 border-t border-gray-100 flex items-start gap-3">
               <MapPin size={18} className="text-orange shrink-0 mt-0.5" />
               <p className="text-[13px] sm:text-sm text-gray-600 leading-relaxed">
-                <strong className="text-navy font-semibold">Registered:</strong>{" "}
-                205A, 2nd Floor, Block B-14, Supertech Eco Village 1, Noida,
-                Gautam Buddha Nagar &ndash; 201301, UP
+                <strong className="text-navy font-semibold">Corporate:</strong>{" "}
+                3rd Floor, Plot No. A-280, Transport Nagar, Sector 69, Noida,
+                Uttar Pradesh &ndash; 201301
               </p>
             </div>
           </div>
