@@ -142,7 +142,7 @@ export default function ContactPage() {
               <div>
                 <div className="text-sm text-gray-500 font-medium mb-1">Address</div>
                 <div className="text-navy font-bold text-sm leading-relaxed">
-                  Corporate: Greater Noida West, Sector-1, UP – 201306<br/>
+                  Corporate: 3rd Floor, Plot No. A-280, Transport Nagar, Sector 69, Noida, Uttar Pradesh – 201301<br/>
                   <span className="text-gray-500 font-normal">Reg: 205A, 2nd Floor, Block B-14, Supertech Eco Village 1, Noida, UP – 201301</span>
                 </div>
               </div>

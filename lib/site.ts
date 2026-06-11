@@ -13,10 +13,10 @@ export const WHATSAPP_URL =
   "https://wa.me/919560639966?text=Hi,%20I'd%20like%20to%20enquire%20about%20your%20logistics%20services.";
 
 export const CORPORATE_ADDRESS = {
-  streetAddress: "Greater Noida West, Sector-1",
-  addressLocality: "Greater Noida",
-  addressRegion: "UP",
-  postalCode: "201306",
+  streetAddress: "3rd Floor, Plot No. A-280, Transport Nagar, Sector 69",
+  addressLocality: "Noida",
+  addressRegion: "Uttar Pradesh",
+  postalCode: "201301",
   addressCountry: "IN",
 };
 

@@ -1,7 +1,8 @@
 "use client";
 
+import { useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { Clock, ShieldCheck, IndianRupee, HeadphonesIcon, Sparkles } from "lucide-react";
+import { Clock, ShieldCheck, IndianRupee, HeadphonesIcon, Sparkles, Volume2, VolumeX } from "lucide-react";
 import { slideRight } from "@/lib/animations";
 
 const features = [
@@ -13,6 +14,20 @@ const features = [
 
 export default function WhyChoose() {
   const shouldReduceMotion = useReducedMotion();
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [muted, setMuted] = useState(true);
+
+  const toggleSound = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    const next = !muted;
+    video.muted = next;
+    if (!next) {
+      // Unmuting — make sure playback continues with audio
+      video.play().catch(() => {});
+    }
+    setMuted(next);
+  };
 
   return (
     <section className="relative py-24 bg-white overflow-hidden">
@@ -90,32 +105,39 @@ export default function WhyChoose() {
               className="relative aspect-video rounded-[32px] overflow-hidden shadow-premium will-change-transform bg-navy-deep"
             >
               <video
+                ref={videoRef}
                 autoPlay
                 loop
                 muted
                 playsInline
                 preload="auto"
                 poster="/images/worker-warehouse.jpg"
-                aria-hidden="true"
                 className="block w-full h-full object-cover"
               >
                 <source src="/vedios/backgroundvedio.mp4" type="video/mp4" />
               </video>
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-deep/40 via-transparent to-transparent" />
-            </motion.div>
-          
 
-            <motion.div
-              animate={!shouldReduceMotion ? { y: [0, 8, 0] } : {}}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-7 -left-7 glass p-5 rounded-2xl shadow-premium z-10"
-            >
+              {/* Sound toggle */}
+              <button
+                type="button"
+                onClick={toggleSound}
+                aria-label={muted ? "Unmute video" : "Mute video"}
+                aria-pressed={!muted}
+                className="absolute bottom-4 right-4 z-10 w-11 h-11 rounded-full bg-navy-deep/60 hover:bg-navy-deep/80 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transition-colors shadow-lg"
+              >
+                {muted ? <VolumeX size={18} /> : <Volume2 size={18} />}
+              </button>
+            </motion.div>
+
+            {/* Trusted badge — placed below the video, separate */}
+            <div className="mt-7 glass p-5 rounded-2xl shadow-premium">
               <div className="flex items-center gap-2.5 text-navy-deep font-bold text-lg mb-1 tracking-tight">
                 <ShieldCheck className="text-orange" size={22} />
                 Trusted Since Day One
               </div>
               <p className="text-sm text-theme-muted">Serving 100+ businesses nationwide</p>
-            </motion.div>
+            </div>
 
             <motion.div
               animate={!shouldReduceMotion ? { y: [0, -10, 0] } : {}}

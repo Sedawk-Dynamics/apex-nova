@@ -191,7 +191,7 @@ export default function Footer() {
                 Visit Our Office
               </h3>
               <p className="text-gray-300 text-[13.5px] leading-relaxed mb-2">
-                <strong className="text-white font-semibold">Corporate:</strong> Greater Noida West, Sector-1, UP &ndash; 201306
+                <strong className="text-white font-semibold">Corporate:</strong> 3rd Floor, Plot No. A-280, Transport Nagar, Sector 69, Noida, Uttar Pradesh &ndash; 201301
               </p>
               <p className="text-gray-400 text-[12.5px] leading-relaxed mb-5">
                 <strong className="text-gray-300 font-medium">Registered:</strong> 205A, 2nd Floor, Block B-14, Supertech Eco Village 1, Noida &ndash; 201301
@@ -226,7 +226,7 @@ export default function Footer() {
             <Link href="/" className="inline-block group">
               <div className="relative inline-block bg-white p-3 rounded-2xl shadow-soft overflow-hidden">
                 <div className="absolute inset-0 -translate-x-full group-hover:animate-shimmer-sweep bg-gradient-to-r from-transparent via-orange/20 to-transparent pointer-events-none" />
-                <Image src="/images/apexnova-logo.png" alt="Apexnova Logistics India Pvt Ltd" width={180} height={160} className="relative h-14 sm:h-16 w-auto object-contain" />
+                <Image src="/images/apexnovahorizontallogo.png" alt="Apexnova Logistics India Pvt Ltd" width={1126} height={267} className="relative h-14 sm:h-16 w-auto object-contain" />
               </div>
             </Link>
             <p className="text-[14.5px] leading-relaxed text-gray-400 max-w-sm">
@@ -328,9 +328,9 @@ export default function Footer() {
                     <MapPin size={15} />
                   </div>
                   <div className="text-[13.5px] text-gray-400 leading-relaxed">
-                    Greater Noida West, Sector-1
+                    3rd Floor, Plot No. A-280, Transport Nagar,
                     <br />
-                    UP – 201306, India
+                    Sector 69, Noida, Uttar Pradesh – 201301, India
                   </div>
                 </div>
               </li>
