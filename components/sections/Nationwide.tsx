@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { Award, CheckCircle2 } from "lucide-react";
 
@@ -30,8 +30,6 @@ const mapDots = [
 ];
 
 export default function Nationwide() {
-  const shouldReduceMotion = useReducedMotion();
-
   return (
     <section className="relative bg-navy-deep py-24 overflow-hidden">
       {/* Mesh background */}
