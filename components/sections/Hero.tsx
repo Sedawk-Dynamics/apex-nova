@@ -3,34 +3,53 @@
 import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Phone, ShieldCheck, Clock, Truck, MapPin } from "lucide-react";
+import { ArrowRight, Award, Globe2, Network, HeartHandshake, ShieldCheck, Truck, MapPin } from "lucide-react";
 import dynamic from "next/dynamic";
-import { useCountUp } from "@/hooks/useCountUp";
 import { scaleIn } from "@/lib/animations";
 
 const FloatingParticles = dynamic(() => import("@/components/ui/FloatingParticles"), { ssr: false });
 
 const trustChips = [
-  { icon: ShieldCheck, label: "Trusted Partner" },
-  { icon: Clock, label: "On-Time Delivery" },
+  { icon: ShieldCheck, label: "12+ Years Expertise" },
+  { icon: Globe2, label: "Domestic & International" },
   { icon: Truck, label: "Pan India Network" },
-  { icon: MapPin, label: "NCR Headquarters" },
+  { icon: MapPin, label: "Customer-First" },
+];
+
+// Quick trust-building highlights (replaces unverified statistics).
+const highlights = [
+  {
+    icon: Award,
+    title: "12+ Years Industry Expertise",
+    desc: "Domestic transportation, international logistics & supply chain operations.",
+  },
+  {
+    icon: Globe2,
+    title: "Domestic & International",
+    desc: "Strong command of transportation, freight coordination & logistics management.",
+  },
+  {
+    icon: Network,
+    title: "Pan India Network Development",
+    desc: "Actively building a reliable nationwide logistics ecosystem.",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Customer-First Approach",
+    desc: "Transparency, responsiveness and long-term customer satisfaction.",
+  },
 ];
 
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
 
-  const stat1 = useCountUp(500, 2000, "+");
-  const stat2 = useCountUp(100, 2000, "+");
-  const stat3 = useCountUp(25, 2000, "+");
-
-  const titleWords = ["Fast,", "Secure", "&", "Reliable", "Logistics", "Across", "India"];
-  const accentIndex = 3; // "Reliable" gets gradient
-  const subText = "Delivering Your Business, On Time – Every Time.";
+  const titleWords = ["Reliable", "Domestic", "&", "International", "Logistics", "Solutions"];
+  const accentIndex = 3; // "International" gets gradient
+  const subText = "Powered by 12+ Years of Industry Expertise";
   const subChars = subText.split("");
 
   return (
-    <section className="relative min-h-[88vh] sm:min-h-[92vh] flex items-center bg-navy-deep w-full pt-28 sm:pt-32 md:pt-36 pb-44 xs:pb-48 sm:pb-44 md:pb-52 overflow-hidden">
+    <section className="relative min-h-[88vh] sm:min-h-[92vh] flex items-center bg-navy-deep w-full pt-28 sm:pt-32 md:pt-36 pb-48 xs:pb-52 sm:pb-52 md:pb-60 overflow-hidden">
       {/* Background Image & Layered Overlays */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -57,7 +76,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
         <div className="max-w-3xl">
           {/* Title */}
-          <h1 className="text-[30px] xs:text-[40px] sm:text-[52px] md:text-[58px] lg:text-[64px] xl:text-[72px] font-extrabold text-white leading-[1.08] xs:leading-[1.05] mb-6 sm:mb-7 tracking-tight flex flex-wrap gap-y-2">
+          <h1 className="text-[30px] xs:text-[40px] sm:text-[52px] md:text-[58px] lg:text-[64px] xl:text-[68px] font-extrabold text-white leading-[1.08] xs:leading-[1.05] mb-6 sm:mb-7 tracking-tight flex flex-wrap gap-y-2">
             {titleWords.map((word, index) => (
               <span
                 key={index}
@@ -84,7 +103,7 @@ export default function Hero() {
           </h1>
 
           {/* Sub */}
-          <p className="text-[16px] xs:text-[17px] sm:text-[18px] md:text-[19px] text-gray-300/95 mb-8 sm:mb-9 min-h-[28px] tracking-tight max-w-xl">
+          <p className="text-[16px] xs:text-[17px] sm:text-[18px] md:text-[19px] text-gray-300/95 mb-4 sm:mb-5 min-h-[28px] tracking-tight max-w-xl">
             {subChars.map((char, index) => (
               <motion.span
                 key={index}
@@ -100,6 +119,16 @@ export default function Hero() {
             ))}
           </p>
 
+          {/* Brand statement */}
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.7 }}
+            className="text-[14.5px] sm:text-[15px] text-gray-400/90 leading-relaxed max-w-2xl mb-8 sm:mb-9"
+          >
+            Driven by Experience. Powered by Partnerships. Committed to Excellence.
+          </motion.p>
+
           {/* CTAs */}
           <motion.div
             initial="hidden"
@@ -113,7 +142,7 @@ export default function Hero() {
                 whileTap={!shouldReduceMotion ? { scale: 0.97 } : {}}
                 className="group relative overflow-hidden bg-gradient-to-r from-orange to-orange-dark text-white px-9 py-4 rounded-full text-[15px] font-semibold shadow-lg shadow-orange/30 hover:shadow-glow-orange transition-shadow flex items-center justify-center gap-2 w-full sm:w-auto"
               >
-                <span className="relative z-10">Get Free Quote</span>
+                <span className="relative z-10">Get a Free Quote</span>
                 <motion.span
                   className="relative z-10 flex items-center"
                   initial={{ x: 0 }}
@@ -126,20 +155,16 @@ export default function Hero() {
               </motion.button>
             </Link>
 
-            <motion.a
-              href="tel:+919560639966"
-              whileHover={!shouldReduceMotion ? { scale: 1.03 } : {}}
-              whileTap={!shouldReduceMotion ? { scale: 0.97 } : {}}
-              className="group glass-dark text-white px-8 py-4 rounded-full text-[15px] font-semibold flex items-center justify-center gap-2.5 hover:bg-white/15 transition-colors w-full sm:w-auto"
-            >
+            <Link href="/contact" className="w-full sm:w-auto">
               <motion.span
-                variants={{ hover: { rotate: [-15, 15, -10, 10, 0], transition: { duration: 0.5 } } }}
-                whileHover="hover"
+                whileHover={!shouldReduceMotion ? { scale: 1.03 } : {}}
+                whileTap={!shouldReduceMotion ? { scale: 0.97 } : {}}
+                className="group glass-dark text-white px-8 py-4 rounded-full text-[15px] font-semibold flex items-center justify-center gap-2.5 hover:bg-white/15 transition-colors w-full sm:w-auto"
               >
-                <Phone size={17} />
+                Contact Our Team
+                <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" />
               </motion.span>
-              Call Now
-            </motion.a>
+            </Link>
           </motion.div>
 
           {/* Trust Chips */}
@@ -174,40 +199,43 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.6 }}
-        className="absolute bottom-44 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 text-white/55 z-10"
+        className="absolute bottom-52 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 text-white/55 z-10"
       >
         <span className="text-[10px] uppercase tracking-[0.3em]">Scroll</span>
         <div className="w-[1.5px] h-10 bg-gradient-to-b from-white/0 via-white/60 to-orange animate-scroll-cue" />
       </motion.div>
 
-      {/* Floating Stats Card */}
+      {/* Floating Trust Highlights Card */}
       <motion.div
         initial={{ y: 80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.9, duration: 0.7, ease: "easeOut" }}
-        className="absolute bottom-0 left-0 right-0 translate-y-[35%] sm:translate-y-[45%] md:translate-y-[60%] z-20 px-4 sm:px-6"
+        className="absolute bottom-0 left-0 right-0 translate-y-[42%] sm:translate-y-[48%] md:translate-y-[55%] z-20 px-4 sm:px-6"
       >
-        <div className="max-w-5xl mx-auto bg-white/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-premium border border-white/80 p-5 sm:p-7 md:p-8 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto bg-white/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-premium border border-white/80 p-5 sm:p-7 md:p-8 relative overflow-hidden">
           {/* Subtle gradient accent */}
           <div className="absolute -top-20 -left-20 w-60 h-60 bg-orange/10 rounded-full blur-3xl" />
           <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-navy/10 rounded-full blur-3xl" />
 
-          <div className="relative grid grid-cols-3 gap-3 sm:gap-6 md:gap-8 divide-x divide-gray-200/70">
-            {[
-              { stat: stat1, label: "Shipments Delivered", short: "Shipments" },
-              { stat: stat2, label: "Happy Clients", short: "Clients" },
-              { stat: stat3, label: "Cities Covered", short: "Cities" },
-            ].map((item, idx) => (
-              <div key={idx} className="text-center group px-1">
-                <div ref={item.stat.ref} className="gradient-text text-[22px] xs:text-[28px] sm:text-[34px] md:text-[44px] font-bold leading-none mb-1.5 sm:mb-2 inline-block">
-                  {item.stat.displayValue}
+          <div className="relative grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
+            {highlights.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.title} className="group flex flex-col gap-2.5">
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-navy-deep to-navy text-orange flex items-center justify-center shadow-md shrink-0">
+                    <Icon size={20} strokeWidth={2} />
+                  </div>
+                  <div>
+                    <div className="text-navy-deep font-semibold text-[13px] sm:text-[14px] leading-snug tracking-tight mb-1">
+                      {item.title}
+                    </div>
+                    <div className="text-theme-muted text-[11.5px] sm:text-[12px] leading-snug hidden sm:block">
+                      {item.desc}
+                    </div>
+                  </div>
                 </div>
-                <div className="text-theme-muted font-medium text-[10px] sm:text-[12px] md:text-[13px] tracking-wide uppercase">
-                  <span className="sm:hidden">{item.short}</span>
-                  <span className="hidden sm:inline">{item.label}</span>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </motion.div>

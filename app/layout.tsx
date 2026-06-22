@@ -35,11 +35,11 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Apexnova Logistics | Reliable Freight & Pan-India Transport Services",
+    default: "Apexnova Logistics | Reliable Domestic & International Logistics Solutions",
     template: "%s | Apexnova Logistics",
   },
   description:
-    "Apexnova Logistics delivers reliable FTL, PTL, NCR local & corporate freight services across India. Get a free quote in 2 hours. Call +91 9560639966.",
+    "Apexnova Logistics delivers reliable FTL, PTL, Express Cargo & pan-India transport, built on 12+ years of domestic and international logistics expertise. Get a free quote — call +91 9560639966.",
   keywords: [
     "Apexnova Logistics",
     "logistics company NCR",
@@ -78,9 +78,9 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: "Apexnova Logistics | Reliable Freight & Pan-India Transport Services",
+    title: "Apexnova Logistics | Reliable Domestic & International Logistics Solutions",
     description:
-      "Driven by Reliability, Powered by Trust. Pan-India freight, NCR local delivery, FTL/PTL, and corporate logistics solutions.",
+      "Driven by Experience. Powered by Partnerships. Built on 12+ years of domestic and international logistics expertise — FTL, PTL, Express Cargo and pan-India transport.",
     images: [
       {
         url: "/images/hero-truck.jpg",
@@ -94,9 +94,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@apexnova0",
     creator: "@apexnova0",
-    title: "Apexnova Logistics | Reliable Pan-India Freight",
+    title: "Apexnova Logistics | Reliable Domestic & International Logistics",
     description:
-      "FTL, PTL, NCR local & corporate logistics across India. Get a free quote within 2 hours.",
+      "FTL, PTL, Express Cargo & pan-India transport, built on 12+ years of domestic and international logistics expertise.",
     images: ["/images/hero-truck.jpg"],
   },
   applicationName: SITE_NAME,
@@ -139,7 +139,7 @@ const organizationSchema = {
   logo: `${SITE_URL}/images/apexnova-logo.png`,
   image: `${SITE_URL}/images/hero-truck.jpg`,
   description:
-    "NCR-based, pan-India freight & logistics company offering FTL, PTL, corporate logistics, NCR local delivery and on-demand transport.",
+    "Growing logistics company built on 12+ years of domestic and international logistics expertise — offering FTL, PTL, Express Cargo, pan-India transportation, supply chain support and customized logistics solutions.",
   telephone: PHONE,
   email: EMAIL,
   priceRange: "$$",
@@ -182,7 +182,7 @@ const websiteSchema = {
   url: SITE_URL,
   name: SITE_NAME,
   description:
-    "NCR-based pan-India freight & logistics — FTL, PTL, corporate logistics, NCR local delivery, on-demand transport.",
+    "Domestic & international logistics expertise — FTL, PTL, Express Cargo, pan-India transportation, supply chain support and customized logistics solutions.",
   publisher: { "@id": `${SITE_URL}#organization` },
   inLanguage: "en-IN",
 };

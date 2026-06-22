@@ -62,7 +62,7 @@ export default function CTABand() {
           }}
           className="text-white/95 text-lg mb-9 max-w-2xl mx-auto tracking-tight"
         >
-          Fast, transparent pricing — quote within 2 hours, no hidden charges
+          Transparent pricing and reliable service, backed by 12+ years of logistics expertise
         </motion.p>
 
         <motion.div

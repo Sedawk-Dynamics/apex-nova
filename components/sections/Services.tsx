@@ -1,38 +1,49 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { Truck, Navigation, Warehouse, Zap, ArrowUpRight } from "lucide-react";
+import {
+  Truck,
+  Package,
+  Zap,
+  Navigation,
+  Network,
+  Layers,
+  Users,
+  Settings,
+  ArrowUpRight,
+  Plane,
+  Ship,
+  Globe2,
+  FileCheck,
+  PackageCheck,
+} from "lucide-react";
 import Link from "next/link";
 import { staggerContainer, scaleIn } from "@/lib/animations";
 
 const services = [
-  {
-    icon: Truck,
-    title: "Local Transport",
-    description: "City-to-city freight with real-time updates and dedicated dispatch.",
-  },
-  {
-    icon: Navigation,
-    title: "Pan India Delivery",
-    description: "Nationwide coverage across 25+ cities with optimized routing.",
-  },
-  {
-    icon: Warehouse,
-    title: "Warehousing",
-    description: "Secure, climate-controlled storage with inventory transparency.",
-  },
-  {
-    icon: Zap,
-    title: "Express Cargo",
-    description: "Priority express delivery for time-critical shipments.",
-  },
+  { icon: Truck, title: "Full Truck Load (FTL)", description: "Dedicated trucks for bulk and large-volume shipments." },
+  { icon: Package, title: "Part Truck Load (PTL)", description: "Flexible, cost-effective transport for smaller consignments." },
+  { icon: Zap, title: "Express Cargo Services", description: "Priority movement for time-critical shipments." },
+  { icon: Navigation, title: "Pan India Transportation", description: "Nationwide coverage with optimized routing." },
+  { icon: Network, title: "Logistics Coordination", description: "End-to-end coordination across every leg of the journey." },
+  { icon: Layers, title: "Supply Chain Support", description: "Reliable coordination for smooth movement of goods." },
+  { icon: Users, title: "Vendor Management", description: "Professional fleet and transport partner management." },
+  { icon: Settings, title: "Customized Logistics Solutions", description: "Tailored logistics built around your business needs." },
+];
+
+const futureServices = [
+  { icon: Globe2, title: "International Freight Forwarding" },
+  { icon: Plane, title: "Air Freight Solutions" },
+  { icon: Ship, title: "Sea Freight Solutions" },
+  { icon: PackageCheck, title: "Import & Export Logistics Support" },
+  { icon: FileCheck, title: "Customs Coordination Support" },
 ];
 
 export default function Services() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative bg-theme-light py-24 pt-44 md:pt-48 overflow-hidden">
+    <section className="relative bg-theme-light py-24 overflow-hidden">
       {/* Ambient backdrop */}
       <div className="absolute inset-0 grid-bg-light opacity-50 pointer-events-none" />
       <div className="absolute -top-40 left-1/4 w-[500px] h-[500px] bg-orange/5 rounded-full blur-3xl pointer-events-none" />
@@ -46,7 +57,7 @@ export default function Services() {
             transition={{ duration: 0.5 }}
             className="inline-block text-orange text-[12px] font-bold tracking-[0.25em] uppercase mb-3 px-4 py-1.5 rounded-full bg-orange/10 border border-orange/20"
           >
-            What We Offer
+            Our Services
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -55,10 +66,10 @@ export default function Services() {
             transition={{ duration: 0.6 }}
             className="text-[34px] md:text-[44px] font-bold text-navy-deep mb-4 tracking-tight text-balance"
           >
-            Logistics Solutions, <span className="gradient-text">Built for Scale</span>
+            Reliable Logistics, <span className="gradient-text">Built for Your Business</span>
           </motion.h2>
           <p className="text-theme-muted text-lg max-w-2xl mx-auto tracking-tight">
-            End-to-end logistics infrastructure crafted for ambitious Indian businesses
+            Transportation and supply chain solutions designed to move your goods with confidence and efficiency.
           </p>
         </div>
 
@@ -98,10 +109,10 @@ export default function Services() {
                   </motion.div>
                 </motion.div>
 
-                <h3 className="text-[19px] font-semibold text-navy-deep mb-2.5 relative z-10 tracking-tight">
+                <h3 className="text-[18px] font-semibold text-navy-deep mb-2.5 relative z-10 tracking-tight">
                   {service.title}
                 </h3>
-                <p className="text-theme-muted text-[15px] leading-relaxed relative z-10 mb-5">
+                <p className="text-theme-muted text-[14.5px] leading-relaxed relative z-10 mb-5">
                   {service.description}
                 </p>
 
@@ -110,17 +121,59 @@ export default function Services() {
                   className="relative z-10 inline-flex items-center gap-1.5 text-[13px] font-semibold text-navy-deep group-hover:text-orange transition-colors"
                 >
                   Explore service
-                  <motion.span
-                    initial={{ x: 0, y: 0 }}
-                    animate={{ x: 0, y: 0 }}
-                    className="inline-flex"
-                  >
-                    <ArrowUpRight size={15} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </motion.span>
+                  <ArrowUpRight size={15} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
               </motion.div>
             );
           })}
+        </motion.div>
+
+        {/* Future Expansion Capability */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6 }}
+          className="mt-16 relative rounded-3xl bg-gradient-to-br from-navy-deep via-navy to-[#0F1D4A] p-8 sm:p-10 overflow-hidden border border-white/10 shadow-premium"
+        >
+          <div className="absolute inset-0 grid-bg radial-fade opacity-25" />
+          <div className="absolute -top-24 -right-24 w-[360px] h-[360px] bg-orange/15 rounded-full blur-[120px]" />
+
+          <div className="relative">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+              <div>
+                <span className="inline-flex items-center gap-2 text-orange text-[11.5px] font-bold tracking-[0.25em] uppercase mb-3 px-3.5 py-1.5 rounded-full bg-orange/15 border border-orange/30">
+                  <Globe2 size={12} /> Future Expansion Capability
+                </span>
+                <h3 className="text-white text-[24px] md:text-[30px] font-bold tracking-tight">
+                  Growing Towards Global Logistics
+                </h3>
+              </div>
+              <p className="text-gray-300/90 text-[14.5px] leading-relaxed max-w-md">
+                Backed by 12+ years of domestic and international expertise, we are building
+                capabilities to extend our reach beyond borders.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+              {futureServices.map((s) => {
+                const Icon = s.icon;
+                return (
+                  <div
+                    key={s.title}
+                    className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4 hover:bg-white/[0.08] transition-colors"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-orange shrink-0">
+                      <Icon size={18} />
+                    </div>
+                    <span className="text-white/85 text-[13px] font-medium leading-snug">
+                      {s.title}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

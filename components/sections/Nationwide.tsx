@@ -1,33 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
-import { Quote, Star } from "lucide-react";
-import { useCountUp } from "@/hooks/useCountUp";
+import { Award, CheckCircle2 } from "lucide-react";
 
-const testimonials = [
-  {
-    quote:
-      "Apexnova Logistics has shown great professionalism and commitment towards timely deliveries. Their approach is reliable and customer-focused, making them a promising logistics partner.",
-    author: "Ashish Pandey",
-    role: "Operations Manager, Trading Business",
-    initials: "AP",
-  },
-  {
-    quote:
-      "Working with Apexnova has streamlined our supply chain end-to-end. The transparency, real-time visibility, and dedicated support are exactly what enterprise operations demand.",
-    author: "Rahul Mehta",
-    role: "Supply Chain Lead, Manufacturing",
-    initials: "RM",
-  },
-  {
-    quote:
-      "From NCR-local pickups to pan-India dispatches, Apexnova has been our consistent partner. Their team treats every shipment with the seriousness of their own business.",
-    author: "Priya Sharma",
-    role: "Logistics Director, E-commerce",
-    initials: "PS",
-  },
+// === 12+ Years of Domestic & International Logistics Expertise ===
+const experienceAreas = [
+  "Domestic Transportation Management",
+  "Full Truck Load (FTL)",
+  "Part Truck Load (PTL)",
+  "International Logistics Coordination",
+  "Freight Forwarding Operations",
+  "Import & Export Logistics Support",
+  "Air Freight Coordination",
+  "Sea Freight Coordination",
+  "Vendor & Fleet Management",
+  "Supply Chain Coordination",
+  "Customer Relationship Management",
 ];
 
 // Approximate city dot positions on the India map (relative %)
@@ -42,18 +31,6 @@ const mapDots = [
 
 export default function Nationwide() {
   const shouldReduceMotion = useReducedMotion();
-  const [active, setActive] = useState(0);
-  const stat1 = useCountUp(500, 2000, "+");
-  const stat2 = useCountUp(100, 2000, "+");
-  const stat3 = useCountUp(25, 2000, "+");
-
-  useEffect(() => {
-    if (shouldReduceMotion) return;
-    const id = setInterval(() => setActive((p) => (p + 1) % testimonials.length), 6500);
-    return () => clearInterval(id);
-  }, [shouldReduceMotion]);
-
-  const t = testimonials[active];
 
   return (
     <section className="relative bg-navy-deep py-24 overflow-hidden">
@@ -65,79 +42,45 @@ export default function Nationwide() {
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           {/* Left */}
-          <div className="w-full lg:w-[45%] z-10 space-y-10">
-            <div>
-              <span className="inline-flex items-center gap-2 text-orange text-[12px] font-bold tracking-[0.25em] uppercase mb-4 px-4 py-1.5 rounded-full bg-orange/15 border border-orange/30">
-                <Star size={13} className="fill-orange" /> Trusted Network
-              </span>
-              <h2 className="text-[34px] md:text-[46px] font-bold text-white mb-9 leading-[1.08] tracking-tight text-balance">
-                Trusted by Businesses <span className="gradient-text">Nationwide</span>
-              </h2>
+          <div className="w-full lg:w-[52%] z-10">
+            <span className="inline-flex items-center gap-2 text-orange text-[12px] font-bold tracking-[0.25em] uppercase mb-4 px-4 py-1.5 rounded-full bg-orange/15 border border-orange/30">
+              <Award size={13} /> Industry Experience
+            </span>
+            <h2 className="text-[30px] md:text-[42px] font-bold text-white mb-5 leading-[1.1] tracking-tight text-balance">
+              12+ Years of Domestic &amp; International{" "}
+              <span className="gradient-text">Logistics Expertise</span>
+            </h2>
+            <p className="text-gray-300/90 text-[15.5px] leading-relaxed mb-9 max-w-xl">
+              Our foundation is built on extensive, hands-on experience across the full
+              spectrum of transportation and logistics operations — expertise we channel
+              into reliable service for every customer.
+            </p>
 
-              <div className="grid grid-cols-3 gap-4 md:gap-8 mb-2">
-                {[
-                  { stat: stat1, label: "Shipments" },
-                  { stat: stat2, label: "Clients" },
-                  { stat: stat3, label: "Cities" },
-                ].map((item, idx) => (
-                  <div key={idx} className="relative">
-                    <div ref={item.stat.ref} className="text-orange text-[34px] md:text-[40px] font-bold mb-1 leading-none">
-                      {item.stat.displayValue}
-                    </div>
-                    <div className="text-gray-400 text-[12.5px] uppercase tracking-wider font-medium">
-                      {item.label}
-                    </div>
-                    <div className="absolute -bottom-2 left-0 h-px w-12 bg-gradient-to-r from-orange to-transparent" />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Testimonial */}
-            <div className="relative min-h-[260px]">
-              <AnimatePresence mode="wait">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.05 } } }}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3"
+            >
+              {experienceAreas.map((area) => (
                 <motion.div
-                  key={active}
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -16 }}
-                  transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-                  className="glass-dark rounded-2xl p-7 relative"
+                  key={area}
+                  variants={{
+                    hidden: { opacity: 0, x: -12 },
+                    visible: { opacity: 1, x: 0, transition: { duration: 0.4 } },
+                  }}
+                  className="flex items-center gap-2.5 text-gray-200 text-[14px]"
                 >
-                  <Quote className="absolute top-6 left-6 text-orange/70" size={28} />
-                  <p className="text-white text-[16.5px] leading-relaxed pl-12 mb-6 italic">
-                    &quot;{t.quote}&quot;
-                  </p>
-                  <div className="flex items-center gap-3 pl-12">
-                    <div className="w-11 h-11 rounded-full bg-gradient-to-br from-orange to-orange-dark text-white flex items-center justify-center font-bold text-sm shadow-glow-orange">
-                      {t.initials}
-                    </div>
-                    <div>
-                      <div className="text-white font-semibold tracking-tight">{t.author}</div>
-                      <div className="text-gray-400 text-[12.5px]">{t.role}</div>
-                    </div>
-                  </div>
+                  <CheckCircle2 size={16} className="text-orange shrink-0" />
+                  <span>{area}</span>
                 </motion.div>
-              </AnimatePresence>
-
-              {/* Pagination dots */}
-              <div className="flex items-center gap-2 mt-5 ml-1">
-                {testimonials.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setActive(i)}
-                    aria-label={`Show testimonial ${i + 1}`}
-                    className={`h-1.5 rounded-full transition-all duration-500 ${
-                      i === active ? "w-8 bg-orange" : "w-2 bg-white/30 hover:bg-white/50"
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
+              ))}
+            </motion.div>
           </div>
 
           {/* Map */}
-          <div className="w-full lg:w-[55%] relative flex justify-center mt-10 lg:mt-0">
+          <div className="w-full lg:w-[48%] relative flex justify-center mt-10 lg:mt-0">
             <div className="absolute inset-0 bg-orange opacity-15 blur-[120px] rounded-full w-3/4 h-3/4 m-auto" />
 
             <motion.div
@@ -145,7 +88,7 @@ export default function Nationwide() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              className="relative w-full max-w-[620px] aspect-[4/5]"
+              className="relative w-full max-w-[560px] aspect-[4/5]"
             >
               <Image
                 src="/images/map.webp"

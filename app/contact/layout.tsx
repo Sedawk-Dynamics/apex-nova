@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     site: "@apexnova0",
     creator: "@apexnova0",
     title: "Contact Apexnova Logistics",
-    description: "Phone, WhatsApp, email & Greater Noida office — get a quote in 2 hours.",
+    description: "Phone, WhatsApp, email & Noida (NCR) office — get a custom logistics quote.",
     images: ["/images/hero-truck.jpg"],
   },
 };

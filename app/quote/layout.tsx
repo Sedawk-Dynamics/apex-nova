@@ -3,10 +3,10 @@ import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Get a Free Logistics Quote in 2 Hours | Apexnova Logistics",
+    absolute: "Get a Free Logistics Quote | Apexnova Logistics",
   },
   description:
-    "Request a custom freight quote from Apexnova Logistics — FTL, PTL, NCR local & pan-India transport. Transparent pricing, response within 2 hours.",
+    "Request a custom freight quote from Apexnova Logistics — FTL, PTL, Express Cargo & pan-India transport. Transparent pricing and a prompt response.",
   keywords: [
     "free logistics quote",
     "freight quote India",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Get a Free Quote — Apexnova Logistics",
     description:
-      "Free shipping quote within 2 hours. FTL, PTL, NCR local, corporate logistics & on-demand.",
+      "Free shipping quote with a prompt response. FTL, PTL, Express Cargo, Pan India transportation & customized logistics.",
     url: "/quote",
     type: "website",
     images: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     site: "@apexnova0",
     creator: "@apexnova0",
     title: "Get a Free Logistics Quote — Apexnova",
-    description: "Transparent pricing, response within 2 hours.",
+    description: "Transparent pricing and a prompt response.",
     images: ["/images/hero-truck.jpg"],
   },
 };

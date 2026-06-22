@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { MapPin, Phone, Mail, ArrowUpRight, ArrowRight, ShieldCheck, Clock, Truck, Headphones, Sparkles } from "lucide-react";
+import { MapPin, Phone, Mail, ArrowUpRight, ArrowRight, Award, Globe2, Truck, Headphones, Sparkles } from "lucide-react";
 import GoogleMapEmbed from "@/components/GoogleMapEmbed";
 import { SOCIALS, MAP_DIRECTIONS_URL } from "@/lib/site";
 
@@ -37,10 +37,10 @@ const InstagramIcon = ({ size = 16 }: { size?: number }) => (
 
 const services = [
   { name: "Full Truck Load (FTL)", href: "/services" },
-  { name: "Part Load (PTL)", href: "/services" },
-  { name: "NCR Local Logistics", href: "/services" },
-  { name: "Corporate Logistics", href: "/services" },
-  { name: "On-Demand Transport", href: "/services" },
+  { name: "Part Truck Load (PTL)", href: "/services" },
+  { name: "Express Cargo Services", href: "/services" },
+  { name: "Pan India Transportation", href: "/services" },
+  { name: "Supply Chain Support", href: "/services" },
 ];
 
 const quickLinks = [
@@ -52,10 +52,10 @@ const quickLinks = [
 ];
 
 const trustBadges = [
-  { icon: ShieldCheck, label: "Insured Cargo" },
-  { icon: Clock, label: "99% On-Time" },
+  { icon: Award, label: "12+ Years Expertise" },
+  { icon: Globe2, label: "Domestic & International" },
   { icon: Truck, label: "Pan-India Network" },
-  { icon: Headphones, label: "24/7 Support" },
+  { icon: Headphones, label: "Dedicated Support" },
 ];
 
 const socials = [
@@ -114,8 +114,9 @@ export default function Footer() {
                   <span className="gradient-text">Business Faster</span>?
                 </h3>
                 <p className="text-gray-300/90 mt-5 max-w-xl text-[15.5px] leading-relaxed">
-                  Get a custom logistics quote within 2 hours. Transparent pricing,
-                  dedicated account manager, and a pan-India network built for scale.
+                  Get a custom logistics quote with transparent pricing, dedicated support,
+                  and a growing pan-India network — backed by 12+ years of domestic and
+                  international logistics expertise.
                 </p>
               </div>
 
@@ -227,9 +228,10 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-[14.5px] leading-relaxed text-gray-400 max-w-sm">
-              Driven by Reliability, Powered by Trust. We deliver your business
-              on time — every time — with a growing nationwide network rooted
-              in NCR.
+              Built on 12+ years of domestic and international logistics expertise,
+              Apexnova Logistics is committed to delivering reliable transportation
+              solutions, fostering trusted partnerships, and creating long-term value
+              for businesses across India.
             </p>
 
             {/* Mini location chip */}

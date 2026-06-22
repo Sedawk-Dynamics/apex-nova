@@ -3,24 +3,24 @@ import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "About Apexnova Logistics — NCR-Based Pan-India Freight Partner",
+    absolute: "About Apexnova Logistics — 12+ Years of Domestic & International Expertise",
   },
   description:
-    "Meet Apexnova Logistics — NCR-based, technology-driven freight partner serving FMCG, manufacturing, retail & e-commerce with verified fleet across India.",
+    "Meet Apexnova Logistics — a growing company built on 12+ years of domestic and international logistics expertise, serving manufacturing, FMCG, retail, e-commerce & more across India.",
   keywords: [
     "About Apexnova Logistics",
-    "logistics company NCR",
-    "Greater Noida logistics",
+    "domestic and international logistics",
+    "12 years logistics experience",
     "FTL PTL provider India",
-    "vehicle placement",
+    "freight forwarding India",
     "supply chain India",
-    "container trailer fleet",
+    "pan India transport company",
   ],
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About Apexnova Logistics — NCR-Based Pan-India Freight Partner",
+    title: "About Apexnova Logistics — 12+ Years of Domestic & International Expertise",
     description:
-      "Vision, mission, core values, services, industries, fleet & process — meet your trusted NCR-based logistics partner serving PAN India.",
+      "Vision, mission, core values, services, industries, fleet & process — built on 12+ years of domestic and international logistics expertise across India.",
     url: "/about",
     type: "website",
     images: [

@@ -143,7 +143,7 @@ export default function QuotePage() {
           </motion.div>
           <h1 className="text-3xl font-bold text-navy mb-4">Quote Request Submitted!</h1>
           <p className="text-gray-600 mb-8 leading-relaxed">
-            Thank you <span className="font-semibold text-navy">{formData.name}</span>! Our team will contact you at <span className="font-semibold text-navy">{formData.phone}</span> within 2 hours with the best rate for your shipment.
+            Thank you <span className="font-semibold text-navy">{formData.name}</span>! Our team will contact you at <span className="font-semibold text-navy">{formData.phone}</span> shortly with the best rate for your shipment.
           </p>
           <div className="flex justify-center">
             <Link href="/" className="bg-orange text-white px-6 py-3 rounded-full font-bold hover:bg-orange-dark transition-colors">
@@ -172,7 +172,7 @@ export default function QuotePage() {
             Get a <span className="gradient-text">Free Quote</span>
           </motion.h1>
           <p className="text-gray-300 text-lg mb-5 max-w-xl mx-auto">
-            Tell us about your shipment and we&apos;ll get back with the best rate within 2 hours.
+            Tell us about your shipment and we&apos;ll get back with the best rate promptly.
           </p>
           <motion.div
             initial={{ opacity: 0, y: 8 }}

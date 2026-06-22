@@ -36,6 +36,9 @@ import {
   TrendingUp,
   PhoneCall,
   ArrowRight,
+  Shirt,
+  Car,
+  Globe2,
 } from "lucide-react";
 import {
   fadeUp,
@@ -78,50 +81,51 @@ const services = [
     title: "Full Truck Load (FTL)",
     icon: Truck,
     desc: "Dedicated trucks for bulk and large-volume shipments.",
-    href: "/services#service-01",
+    href: "/services",
   },
   {
     title: "Part Truck Load (PTL)",
     icon: Package,
     desc: "Flexible and cost-effective transportation solutions.",
-    href: "/services#service-02",
+    href: "/services",
   },
   {
-    title: "On-Demand Logistics",
+    title: "Express Cargo Services",
     icon: Zap,
-    desc: "Urgent and fast vehicle placement services.",
-    href: "/services#service-05",
+    desc: "Priority movement for time-critical shipments.",
+    href: "/services",
   },
   {
-    title: "Local & NCR Logistics",
+    title: "Pan India Transportation",
     icon: MapPin,
-    desc: "Efficient intra-city and NCR transportation support.",
-    href: "/services#service-03",
-  },
-  {
-    title: "Corporate Logistics",
-    icon: Building2,
-    desc: "Customized logistics solutions for business operations.",
-    href: "/services#service-04",
+    desc: "Nationwide coverage with reliable, optimized routing.",
+    href: "/services",
   },
   {
     title: "Supply Chain Support",
     icon: Layers,
-    desc: "Reliable coordination for smooth goods movement.",
-    href: "/services#service-04",
+    desc: "Reliable coordination for smooth movement of goods.",
+    href: "/services",
+  },
+  {
+    title: "Customized Logistics Solutions",
+    icon: Building2,
+    desc: "Tailored logistics built around your business needs.",
+    href: "/services",
   },
 ];
 
 const industries = [
-  { name: "FMCG", icon: ShoppingBag },
   { name: "Manufacturing", icon: Factory },
-  { name: "Retail & Distribution", icon: ShoppingCart },
-  { name: "E-commerce", icon: Package },
-  { name: "Traders & Wholesalers", icon: Handshake },
+  { name: "FMCG", icon: Package },
+  { name: "Retail", icon: ShoppingCart },
+  { name: "E-Commerce", icon: ShoppingBag },
+  { name: "Textile", icon: Shirt },
   { name: "Electronics", icon: Cpu },
-  { name: "Packaging Industry", icon: Boxes },
-  { name: "Consumer Goods", icon: ShoppingBag },
-  { name: "Industrial Goods & Machinery", icon: Wrench },
+  { name: "Automotive", icon: Car },
+  { name: "Engineering", icon: Wrench },
+  { name: "Consumer Goods", icon: Boxes },
+  { name: "Import & Export Businesses", icon: Globe2 },
 ];
 
 const whyChoose = [
@@ -258,9 +262,9 @@ export default function AboutPage() {
   const words = titleText.split(" ");
 
   const founderLines = [
-    "At Apexnova Logistics India Pvt. Ltd., we believe logistics is not just about transportation — it is about delivering trust, reliability, and long-term partnerships.",
-    "Our mission is to provide efficient, transparent, and customer-focused logistics solutions that help businesses grow with confidence.",
-    "We are committed to operational excellence, timely deliveries, and building strong relationships through dependable service and professional coordination.",
+    "With more than 12 years of experience across domestic transportation and international logistics, I believe logistics is not just about moving goods — it is about delivering trust, reliability, and long-term partnerships.",
+    "Our objective is to provide efficient, transparent, and customer-focused logistics solutions that help businesses grow with confidence.",
+    "We are committed to operational excellence, dependable service, and building strong relationships through professional coordination and transparent communication.",
   ];
 
   return (
@@ -368,8 +372,8 @@ export default function AboutPage() {
                   <Shield size={24} />
                 </div>
                 <div>
-                  <div className="text-navy font-bold text-xl">100+</div>
-                  <div className="text-gray-500 text-sm">Happy Clients</div>
+                  <div className="text-navy font-bold text-xl">12+ Years</div>
+                  <div className="text-gray-500 text-sm">Industry Experience</div>
                 </div>
               </motion.div>
             </motion.div>
@@ -388,30 +392,31 @@ export default function AboutPage() {
                 About Apexnova Logistics India Pvt. Ltd.
               </h2>
               <p className="text-gray-700 leading-relaxed mb-5 text-[15px] sm:text-base">
-                Apexnova Logistics India Pvt. Ltd. is a professionally managed and
-                fast-growing logistics & transportation company based in
-                NCR, India.
+                Apexnova Logistics India Pvt. Ltd. is a growing logistics and
+                transportation company built on more than 12 years of industry
+                experience in Domestic Transportation, International Logistics,
+                Freight Operations, Supply Chain Management, and Customer
+                Relationship Management.
               </p>
               <p className="text-gray-700 leading-relaxed mb-5 text-[15px] sm:text-base">
-                We specialize in dependable transportation and supply chain
-                solutions with a strong focus on timely delivery, operational
-                efficiency, and customer satisfaction across NCR and PAN India.
+                Our objective is to provide reliable, transparent, and efficient
+                logistics solutions that help businesses move goods with confidence
+                and operational efficiency.
               </p>
               <p className="text-gray-700 leading-relaxed mb-6 text-[15px] sm:text-base">
-                Our services are designed to support businesses across FMCG,
-                manufacturing, retail, e-commerce, trading, and industrial
-                sectors through reliable transportation, quick vehicle
-                placement, and transparent coordination.
+                By combining industry expertise with a customer-focused approach, we
+                are actively building a strong logistics network across India while
+                creating long-term partnerships with customers and business associates.
               </p>
               <div className="flex flex-wrap gap-2 sm:gap-3">
                 <span className="px-4 sm:px-6 py-2 border border-orange text-orange font-semibold rounded-full text-xs sm:text-sm">
-                  NCR Based
+                  12+ Years Experience
                 </span>
                 <span className="px-4 sm:px-6 py-2 border border-orange text-orange font-semibold rounded-full text-xs sm:text-sm">
-                  Pan India Vision
+                  Domestic &amp; International
                 </span>
                 <span className="px-4 sm:px-6 py-2 border border-orange text-orange font-semibold rounded-full text-xs sm:text-sm">
-                  Technology-Driven
+                  Pan India Network
                 </span>
               </div>
             </motion.div>
@@ -461,9 +466,10 @@ export default function AboutPage() {
                 Our Vision
               </h3>
               <p className="text-gray-600 leading-relaxed text-[15px] sm:text-base">
-                To become one of India&apos;s most trusted and technology-driven
-                logistics partners by delivering reliable, efficient, and
-                customer-focused transportation solutions.
+                To become one of India&apos;s most trusted logistics companies by
+                delivering reliable, innovative, and customer-focused transportation
+                and supply chain solutions that connect businesses across India and
+                global markets.
               </p>
             </motion.div>
 
@@ -490,9 +496,9 @@ export default function AboutPage() {
                 Our Mission
               </h3>
               <p className="text-gray-600 leading-relaxed text-[15px] sm:text-base">
-                To provide transparent, cost-effective, and dependable logistics
-                services that help businesses operate smoothly and grow
-                confidently.
+                To provide safe, transparent, cost-effective, and dependable
+                logistics solutions through operational excellence, strong
+                partnerships, industry expertise, and a commitment to customer success.
               </p>
             </motion.div>
           </motion.div>
@@ -1028,10 +1034,10 @@ export default function AboutPage() {
 
               <div className="flex flex-wrap justify-center gap-2">
                 <span className="bg-white/10 text-white text-xs px-3 py-1 rounded-full border border-white/10">
-                  NCR Operations
+                  12+ Years Experience
                 </span>
                 <span className="bg-white/10 text-white text-xs px-3 py-1 rounded-full border border-white/10">
-                  Pan India Vision
+                  Domestic &amp; International
                 </span>
                 <span className="bg-white/10 text-white text-xs px-3 py-1 rounded-full border border-white/10">
                   Customer First
@@ -1039,6 +1045,27 @@ export default function AboutPage() {
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* OUR COMMITMENT */}
+      <section className="bg-white py-16 sm:py-20 overflow-hidden">
+        <div className="max-w-4xl mx-auto px-5 sm:px-6 text-center">
+          <span className="text-orange text-xs font-bold tracking-widest uppercase mb-2 block">
+            OUR PROMISE
+          </span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-navy mb-6">
+            Our Commitment
+          </h2>
+          <p className="text-gray-700 text-[16px] sm:text-[18px] leading-relaxed mb-4">
+            At Apexnova Logistics, our commitment is simple: to build trust through reliable
+            service, professional conduct, transparent communication, and long-term business
+            relationships.
+          </p>
+          <p className="text-gray-600 text-[15px] sm:text-base leading-relaxed">
+            We measure our success by the confidence our customers, partners, and stakeholders
+            place in us.
+          </p>
         </div>
       </section>
 

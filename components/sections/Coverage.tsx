@@ -28,10 +28,10 @@ const regions = [
 ];
 
 const stats = [
-  { value: "25+", label: "Cities Covered" },
-  { value: "4", label: "Regions Active" },
-  { value: "500+", label: "Routes Operated" },
-  { value: "Pan-India", label: "Network Reach" },
+  { value: "12+", label: "Years Expertise" },
+  { value: "4", label: "Regions" },
+  { value: "Pan India", label: "Network Reach" },
+  { value: "Growing", label: "Daily Network" },
 ];
 
 export default function Coverage() {
@@ -184,7 +184,7 @@ export default function Coverage() {
         >
           Don&apos;t see your city?{" "}
           <a href="/contact" className="text-orange font-semibold hover:underline">
-            Get in touch — chances are we serve there too.
+            Get in touch — we&apos;re continually expanding our network.
           </a>
         </motion.p>
       </div>

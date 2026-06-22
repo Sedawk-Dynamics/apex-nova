@@ -2,14 +2,23 @@
 
 import { useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { Clock, ShieldCheck, IndianRupee, HeadphonesIcon, Sparkles, Volume2, VolumeX } from "lucide-react";
+import { ShieldCheck, Users, MessageSquare, Handshake, Sparkles, Volume2, VolumeX } from "lucide-react";
 import { slideRight } from "@/lib/animations";
 
 const features = [
-  { icon: Clock, label: "On-Time Deliveries", desc: "99% punctuality across our routes" },
-  { icon: ShieldCheck, label: "Safe & Secure Handling", desc: "Insured cargo with end-to-end care" },
-  { icon: IndianRupee, label: "Affordable Pricing", desc: "Transparent rates, no hidden fees" },
-  { icon: HeadphonesIcon, label: "24/7 Customer Support", desc: "Always reachable, always responsive" },
+  { icon: ShieldCheck, label: "Reliable Transportation", desc: "Dependable, professional movement of your goods" },
+  { icon: Users, label: "Professional Vendor Management", desc: "Verified fleet partners and disciplined coordination" },
+  { icon: MessageSquare, label: "Transparent Communication", desc: "Clear, honest updates throughout the journey" },
+  { icon: Handshake, label: "Long-Term Partnerships", desc: "Focused on lasting relationships, not one-off jobs" },
+];
+
+const moreReasons = [
+  "12+ Years Industry Expertise",
+  "Domestic & International Knowledge",
+  "Growing Pan India Network",
+  "Customer-Focused Operations",
+  "Dedicated Support Team",
+  "Commitment to Service Excellence",
 ];
 
 export default function WhyChoose() {
@@ -44,8 +53,10 @@ export default function WhyChoose() {
             <h2 className="text-[34px] md:text-[44px] font-bold text-navy-deep mb-5 tracking-tight text-balance leading-[1.1]">
               Why Choose <span className="gradient-text">Apexnova Logistics</span>
             </h2>
-            <p className="text-theme-muted mb-12 text-[16.5px] max-w-xl leading-relaxed">
-              We combine national reach with local expertise to deliver unparalleled logistics solutions — built on transparency, technology, and trust.
+            <p className="text-theme-muted mb-10 text-[16.5px] max-w-xl leading-relaxed">
+              Built on 12+ years of domestic and international logistics expertise, we combine
+              industry knowledge with a customer-first approach — delivering reliable solutions
+              through transparency, professionalism, and trusted partnerships.
             </p>
 
             <motion.div
@@ -87,6 +98,19 @@ export default function WhyChoose() {
                 );
               })}
             </motion.div>
+
+            {/* Additional reasons */}
+            <div className="flex flex-wrap gap-2.5 mt-6">
+              {moreReasons.map((reason) => (
+                <span
+                  key={reason}
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-gray-200 bg-white text-navy-deep/75 text-[12.5px] font-medium"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-orange" />
+                  {reason}
+                </span>
+              ))}
+            </div>
           </div>
 
           {/* Image */}
@@ -134,9 +158,9 @@ export default function WhyChoose() {
             <div className="mt-7 glass p-5 rounded-2xl shadow-premium">
               <div className="flex items-center gap-2.5 text-navy-deep font-bold text-lg mb-1 tracking-tight">
                 <ShieldCheck className="text-orange" size={22} />
-                Trusted Since Day One
+                12+ Years of Expertise
               </div>
-              <p className="text-sm text-theme-muted">Serving 100+ businesses nationwide</p>
+              <p className="text-sm text-theme-muted">Domestic &amp; international logistics knowledge</p>
             </div>
 
             <motion.div

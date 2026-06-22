@@ -4,7 +4,11 @@
 export const SITE_URL = "https://www.apexnovalogistics.com";
 export const SITE_NAME = "Apexnova Logistics";
 export const LEGAL_NAME = "Apexnova Logistics India Pvt. Ltd.";
-export const TAGLINE = "Driven by Reliability, Powered by Trust";
+export const TAGLINE = "Driven by Experience. Powered by Partnerships. Committed to Excellence.";
+
+// Core brand statement — reused across hero, about, and footer trust statements.
+export const BRAND_STATEMENT =
+  "Built on 12+ years of domestic and international logistics expertise, Apexnova Logistics is committed to delivering reliable transportation solutions, fostering trusted partnerships, and creating long-term value for businesses across India.";
 
 export const PHONE = "+91-9560639966";
 export const PHONE_PLAIN = "+919560639966";

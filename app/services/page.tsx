@@ -4,24 +4,28 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle, XCircle, ChevronDown, HelpCircle } from "lucide-react";
+import { CheckCircle, XCircle, ChevronDown, HelpCircle, Globe2 } from "lucide-react";
 
 const faqs = [
   {
     q: "What types of cargo do you handle?",
-    a: "We move freight for FMCG, manufacturing, electronics, e-commerce, retail, automobile, packaging, industrial machinery, and general trade — supported by a fleet ranging from LCVs and pickup trucks to 32 ft and 40 ft containers and trailers.",
+    a: "We move freight for manufacturing, FMCG, retail, e-commerce, textile, electronics, automotive, engineering, consumer goods, and import & export businesses — supported by a fleet ranging from LCVs and pickup trucks to 32 ft and 40 ft containers and trailers.",
   },
   {
     q: "How quickly can I get a quote and dispatch?",
-    a: "Submit our quote form or call +91 9560639966 — our team responds with the best rate within 2 hours. Same-day vehicle placement is available for NCR local and on-demand routes.",
+    a: "Submit our quote form or call +91 9560639966 — our team responds promptly with the best rate for your shipment. Quick vehicle placement is available for express and on-demand requirements.",
   },
   {
-    q: "Do you provide shipment tracking and proof of delivery?",
+    q: "Do you provide shipment coordination and proof of delivery?",
     a: "Yes. We provide continuous shipment coordination, transit updates, and POD (Proof of Delivery) documentation after every successful delivery, with GST-compliant invoicing.",
   },
   {
     q: "Which areas do you cover across India?",
-    a: "We are headquartered in NCR (Greater Noida West) and operate pan-India with active routes across all four regions — North, West, South, and East — covering 25+ cities and 500+ routes.",
+    a: "We are based in Noida (NCR) and operate pan-India with a growing network across all four regions — North, West, South, and East — which we continue to expand.",
+  },
+  {
+    q: "Do you support international logistics?",
+    a: "Our foundation is built on 12+ years of domestic and international logistics expertise. We are actively developing future capabilities in international freight forwarding, air and sea freight, and import & export logistics support.",
   },
 ];
 
@@ -35,32 +39,40 @@ const servicesData = [
   },
   {
     id: "02",
-    title: "Part Load (PTL) Services",
-    desc: "Our part load services are ideal for smaller shipments, offering cost-effective and flexible transportation solutions without the need for a full truck.",
+    title: "Part Truck Load (PTL) Services",
+    desc: "Our part truck load services are ideal for smaller shipments, offering cost-effective and flexible transportation solutions without the need for a full truck.",
     features: ["Cost-Effective", "Flexible Space Allocation", "Consolidated Shipping"],
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop"
   },
   {
     id: "03",
-    title: "Local & NCR Logistics",
-    desc: "We offer reliable and timely local transportation services across NCR, ensuring smooth and efficient movement of goods within the region.",
-    features: ["Same-day options", "Deep NCR Network", "Optimized Local Routes"],
-    image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1000&auto=format&fit=crop"
+    title: "Express Cargo Services",
+    desc: "Our express cargo services are designed for time-critical shipments, delivering priority movement with quick response and efficient execution.",
+    features: ["Priority Handling", "Quick Response", "Time-Critical Delivery"],
+    image: "https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=1000&auto=format&fit=crop"
   },
   {
     id: "04",
-    title: "Business & Corporate Logistics Solutions",
-    desc: "We provide customized logistics solutions tailored to the specific needs of businesses, ensuring seamless supply chain operations and long-term reliability.",
-    features: ["Tailored Solutions", "Dedicated Account Manager", "Supply Chain Integration"],
-    image: "https://images.unsplash.com/photo-1554774853-719586f82d77?q=80&w=1000&auto=format&fit=crop"
+    title: "Pan India Transportation",
+    desc: "We provide reliable nationwide transportation with optimized routing and dependable transit across all four regions of India.",
+    features: ["Nationwide Coverage", "Optimized Routing", "Reliable Transit"],
+    image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1000&auto=format&fit=crop"
   },
   {
     id: "05",
-    title: "On-Demand Transportation Services",
-    desc: "Our on-demand logistics services are designed to meet urgent delivery requirements with quick response and efficient execution.",
-    features: ["Quick Response Time", "Urgent Deliveries", "Flexible Booking"],
-    image: "https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=1000&auto=format&fit=crop"
+    title: "Customized Logistics & Supply Chain Support",
+    desc: "We provide tailored logistics solutions with professional vendor management and dependable supply chain coordination, built around the specific needs of your business.",
+    features: ["Tailored Solutions", "Vendor Management", "Supply Chain Coordination"],
+    image: "https://images.unsplash.com/photo-1554774853-719586f82d77?q=80&w=1000&auto=format&fit=crop"
   }
+];
+
+const futureServices = [
+  "International Freight Forwarding",
+  "Air Freight Solutions",
+  "Sea Freight Solutions",
+  "Import & Export Logistics Support",
+  "Customs Coordination Support",
 ];
 
 export default function ServicesPage() {
@@ -172,6 +184,43 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* FUTURE EXPANSION */}
+      <section className="bg-theme-light py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="relative rounded-3xl bg-gradient-to-br from-navy-deep via-navy to-[#0F1D4A] p-8 sm:p-12 overflow-hidden border border-white/10 shadow-premium">
+            <div className="absolute inset-0 grid-bg radial-fade opacity-25" />
+            <div className="absolute -top-24 -right-24 w-[360px] h-[360px] bg-orange/15 rounded-full blur-[120px]" />
+
+            <div className="relative">
+              <div className="text-center max-w-2xl mx-auto mb-10">
+                <span className="inline-flex items-center gap-2 text-orange text-[11.5px] font-bold tracking-[0.25em] uppercase mb-3 px-3.5 py-1.5 rounded-full bg-orange/15 border border-orange/30">
+                  <Globe2 size={12} /> Future Expansion Capability
+                </span>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3">
+                  Growing Towards Global Logistics
+                </h2>
+                <p className="text-gray-300/90 text-[15px] leading-relaxed">
+                  Backed by 12+ years of domestic and international logistics expertise, we are
+                  building capabilities to extend our reach beyond borders.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                {futureServices.map((name) => (
+                  <div
+                    key={name}
+                    className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4 hover:bg-white/[0.08] transition-colors"
+                  >
+                    <CheckCircle size={18} className="text-orange shrink-0" />
+                    <span className="text-white/85 text-[13px] font-medium leading-snug">{name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* COMPARISON TABLE */}
       <section className="bg-theme-light py-20">
         <div className="max-w-7xl mx-auto px-6">
@@ -190,9 +239,9 @@ export default function ServicesPage() {
                     <th className="p-5 font-semibold border-b border-navy-light w-1/4">Feature</th>
                     <th className="p-5 font-semibold border-b border-navy-light text-center">FTL</th>
                     <th className="p-5 font-semibold border-b border-navy-light text-center">PTL</th>
-                    <th className="p-5 font-semibold border-b border-navy-light text-center">NCR Local</th>
-                    <th className="p-5 font-semibold border-b border-navy-light text-center">Corporate</th>
-                    <th className="p-5 font-semibold border-b border-navy-light text-center">On-Demand</th>
+                    <th className="p-5 font-semibold border-b border-navy-light text-center">Express</th>
+                    <th className="p-5 font-semibold border-b border-navy-light text-center">Pan India</th>
+                    <th className="p-5 font-semibold border-b border-navy-light text-center">Custom</th>
                   </tr>
                 </thead>
                 <tbody className="text-gray-700">
@@ -200,17 +249,17 @@ export default function ServicesPage() {
                     <td className="p-5 font-medium">Ideal For</td>
                     <td className="p-5 text-center text-sm">Bulk Load</td>
                     <td className="p-5 text-center text-sm">Small Load</td>
-                    <td className="p-5 text-center text-sm">City Delivery</td>
-                    <td className="p-5 text-center text-sm">B2B Needs</td>
                     <td className="p-5 text-center text-sm">Urgent</td>
+                    <td className="p-5 text-center text-sm">Nationwide</td>
+                    <td className="p-5 text-center text-sm">B2B Needs</td>
                   </tr>
                   <tr className="border-b border-gray-100">
                     <td className="p-5 font-medium">Minimum Load</td>
                     <td className="p-5 text-center text-sm">Full Truck</td>
                     <td className="p-5 text-center text-sm">Partial</td>
-                    <td className="p-5 text-center text-sm">Flexible</td>
-                    <td className="p-5 text-center text-sm">Flexible</td>
                     <td className="p-5 text-center text-sm">Any</td>
+                    <td className="p-5 text-center text-sm">Flexible</td>
+                    <td className="p-5 text-center text-sm">Flexible</td>
                   </tr>
                   <tr className="bg-gray-50 border-b border-gray-100">
                     <td className="p-5 font-medium">Dedicated Vehicle</td>
@@ -230,9 +279,9 @@ export default function ServicesPage() {
             {[
               { name: "FTL", ideal: "Bulk Load", load: "Full Truck", dedicated: true },
               { name: "PTL", ideal: "Small Load", load: "Partial", dedicated: false },
-              { name: "NCR Local", ideal: "City Delivery", load: "Flexible", dedicated: true },
-              { name: "Corporate", ideal: "B2B Needs", load: "Flexible", dedicated: true },
-              { name: "On-Demand", ideal: "Urgent", load: "Any", dedicated: true },
+              { name: "Express Cargo", ideal: "Urgent", load: "Any", dedicated: true },
+              { name: "Pan India Transport", ideal: "Nationwide", load: "Flexible", dedicated: true },
+              { name: "Customized Logistics", ideal: "B2B Needs", load: "Flexible", dedicated: true },
             ].map((s) => (
               <div
                 key={s.name}
