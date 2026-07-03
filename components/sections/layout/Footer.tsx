@@ -381,9 +381,11 @@ export default function Footer() {
                 <span className="hidden md:inline w-1 h-1 bg-gray-600 rounded-full" />
                 <span>All rights reserved.</span>
               </div>
-              <div className="flex items-center gap-6">
-                <Link href="/" className="link-underline hover:text-white transition-colors">Privacy Policy</Link>
-                <Link href="/" className="link-underline hover:text-white transition-colors">Terms of Service</Link>
+              <div className="flex items-center gap-x-5 gap-y-2 flex-wrap justify-center">
+                <Link href="/privacy" className="link-underline hover:text-white transition-colors">Privacy Policy</Link>
+                <Link href="/terms" className="link-underline hover:text-white transition-colors">Terms &amp; Conditions</Link>
+                <Link href="/refund" className="link-underline hover:text-white transition-colors">Refund Policy</Link>
+                <Link href="/cookies" className="link-underline hover:text-white transition-colors">Cookie Policy</Link>
               </div>
             </div>
           </div>

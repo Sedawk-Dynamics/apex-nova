@@ -311,6 +311,11 @@ export default function ContactPage() {
                       <>Send Message <ArrowRight size={20} /></>
                     )}
                   </button>
+                  <p className="text-[12px] text-gray-500 text-center mt-3">
+                    By submitting, you agree to our{" "}
+                    <Link href="/privacy" className="text-orange hover:underline">Privacy Policy</Link>{" "}and{" "}
+                    <Link href="/terms" className="text-orange hover:underline">Terms &amp; Conditions</Link>.
+                  </p>
                 </div>
               </form>
             </div>

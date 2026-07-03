@@ -88,6 +88,7 @@ export default function QuotePage() {
   };
 
   const onSubmit = async (data: QuoteData) => {
+    console.log("Submitting data:", data);
     setIsSubmitting(true);
     try {
       const payload = {
@@ -522,7 +523,9 @@ export default function QuotePage() {
                       <label className="flex items-start gap-3 cursor-pointer p-4 border-2 border-gray-100 rounded-xl hover:border-orange transition-colors">
                         <input type="checkbox" {...register("agree")} className="w-5 h-5 mt-0.5 rounded text-orange focus:ring-orange accent-orange" />
                         <span className="text-sm text-gray-600 font-medium">
-                          By submitting, you agree to be contacted by Apexnova Logistics regarding your shipment request and acknowledge our privacy terms.
+                          By submitting, you agree to be contacted by Apexnova Logistics regarding your shipment request and acknowledge our{" "}
+                          <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-orange font-semibold hover:underline">Privacy Policy</a>{" "}and{" "}
+                          <a href="/terms" target="_blank" rel="noopener noreferrer" className="text-orange font-semibold hover:underline">Terms &amp; Conditions</a>.
                         </span>
                       </label>
                       {errors.agree && <p className="text-red-500 text-xs mt-2 font-medium">{errors.agree.message}</p>}
