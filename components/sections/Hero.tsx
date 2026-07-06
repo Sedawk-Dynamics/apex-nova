@@ -45,7 +45,7 @@ export default function Hero() {
 
   const titleWords = ["Reliable", "Domestic", "&", "International", "Logistics", "Solutions"];
   const accentIndex = 3; // "International" gets gradient
-  const subText = "Powered by 12+ Years of Industry Expertise";
+  const subText = "Built on 12+ Years of Industry Expertise";
   const subChars = subText.split("");
 
   return (

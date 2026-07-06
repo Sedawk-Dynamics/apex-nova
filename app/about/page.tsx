@@ -1019,10 +1019,14 @@ export default function AboutPage() {
             >
               <div className="relative mb-6">
                 <div className="absolute inset-0 border-2 border-orange border-dashed rounded-full scale-110 animate-rotate-ring opacity-50" />
-                <div className="w-[140px] h-[140px] sm:w-[160px] sm:h-[160px] bg-[#0F1D4A] rounded-full flex items-center justify-center shadow-2xl relative z-10 border border-white/10">
-                  <span className="text-orange text-4xl sm:text-5xl font-bold">
-                    RS
-                  </span>
+                <div className="w-[140px] h-[140px] sm:w-[160px] sm:h-[160px] bg-[#0F1D4A] rounded-full overflow-hidden shadow-2xl relative z-10 border-2 border-white/15">
+                  <Image
+                    src="/images/rs-shah.jpeg"
+                    alt="Mr. RS Shah — Director & Founder, Apexnova Logistics India Pvt. Ltd."
+                    fill
+                    sizes="160px"
+                    className="object-cover object-top"
+                  />
                 </div>
               </div>
               <h3 className="text-white text-xl sm:text-2xl font-bold">
