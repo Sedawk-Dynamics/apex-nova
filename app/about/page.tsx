@@ -505,6 +505,106 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* CORPORATE CREDENTIALS & COMPLIANCE */}
+      <section className="relative bg-white py-16 sm:py-20 overflow-hidden">
+        {/* Ambient accents */}
+        <div className="absolute inset-0 grid-bg-light opacity-40 pointer-events-none" />
+        <div className="absolute -top-32 right-1/4 w-[420px] h-[420px] bg-orange/5 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute -bottom-32 left-1/4 w-[420px] h-[420px] bg-navy/5 rounded-full blur-[140px] pointer-events-none" />
+
+        <div className="relative max-w-7xl mx-auto px-5 sm:px-6">
+          {/* Intro */}
+          <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-14">
+            <span className="text-orange text-xs font-bold tracking-widest uppercase mb-2 block">
+              Corporate Credentials &amp; Compliance
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-navy mb-5">
+              Building Trust Through Transparency &amp; Compliance
+            </h2>
+            <p className="text-gray-700 leading-relaxed text-[15px] sm:text-base mb-4">
+              At Apexnova Logistics India Pvt. Ltd., we believe that trust is built through
+              transparency, professionalism, and responsible business practices. As a legally
+              incorporated Private Limited Company, we are committed to maintaining the highest
+              standards of corporate governance, regulatory compliance, and ethical business
+              conduct.
+            </p>
+            <p className="text-gray-600 leading-relaxed text-[15px] sm:text-base">
+              Founded on 12+ years of domestic and international logistics industry expertise,
+              Apexnova Logistics combines practical experience with a customer-first approach to
+              deliver reliable transportation and logistics solutions. Our statutory registrations
+              and government recognitions reflect our commitment to operating responsibly while
+              building long-term confidence with customers, transport partners, vendors, and
+              business associates.
+            </p>
+          </div>
+
+          {/* Our Corporate Credentials */}
+          <div className="text-center mb-8 sm:mb-10">
+            <h3 className="text-xl sm:text-2xl font-bold text-navy tracking-tight inline-flex items-center gap-3">
+              <span className="h-px w-8 bg-orange/50 hidden sm:inline-block" />
+              Our Corporate Credentials
+              <span className="h-px w-8 bg-orange/50 hidden sm:inline-block" />
+            </h3>
+          </div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+            variants={staggerContainer}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6"
+          >
+            {[
+              {
+                icon: Building2,
+                title: "Registered Private Limited Company",
+                desc: "Incorporated under the Companies Act, 2013 and regulated by the Ministry of Corporate Affairs (MCA).",
+              },
+              {
+                icon: Receipt,
+                title: "GST Registered",
+                desc: "GST-compliant operations with transparent, tax-compliant invoicing and billing.",
+              },
+              {
+                icon: FileCheck,
+                title: "PAN & TAN Registered",
+                desc: "Statutory tax registrations ensuring lawful and accountable financial operations.",
+              },
+              {
+                icon: ShieldCheck,
+                title: "Regulatory Compliance",
+                desc: "Adherence to applicable transport, taxation, and business regulations across our operations.",
+              },
+              {
+                icon: Handshake,
+                title: "Corporate Governance & Ethics",
+                desc: "Responsible management, ethical conduct, and professional accountability at every level.",
+              },
+              {
+                icon: CheckCircle2,
+                title: "Verified & Documented Operations",
+                desc: "Verified vendor network, POD documentation, and transparent record-keeping.",
+              },
+            ].map((c) => (
+              <motion.div
+                key={c.title}
+                variants={fadeUp}
+                whileHover={!shouldReduceMotion ? { y: -6 } : {}}
+                className="group bg-theme-light rounded-2xl border border-gray-100 p-6 sm:p-7 hover:bg-white hover:border-orange/40 hover:shadow-soft transition-all"
+              >
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-navy-deep to-navy text-orange flex items-center justify-center mb-4 group-hover:shadow-glow-navy transition-shadow">
+                  <c.icon size={24} />
+                </div>
+                <h3 className="text-navy font-bold text-[17px] mb-2 tracking-tight">
+                  {c.title}
+                </h3>
+                <p className="text-gray-600 text-[14px] leading-relaxed">{c.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
       {/* CORE VALUES */}
       <section className="bg-white py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-5 sm:px-6">
@@ -1022,7 +1122,7 @@ export default function AboutPage() {
                 <div className="w-[140px] h-[140px] sm:w-[160px] sm:h-[160px] bg-[#0F1D4A] rounded-full overflow-hidden shadow-2xl relative z-10 border-2 border-white/15">
                   <Image
                     src="/images/rs-shah.jpeg"
-                    alt="Mr. RS Shah — Director & Founder, Apexnova Logistics India Pvt. Ltd."
+                    alt="RS Shah — Director & Founder, Apexnova Logistics India Pvt. Ltd."
                     fill
                     sizes="160px"
                     className="object-cover object-top"
@@ -1030,7 +1130,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <h3 className="text-white text-xl sm:text-2xl font-bold">
-                Mr. RS Shah
+                RS Shah
               </h3>
               <p className="text-orange font-medium mb-5 sm:mb-6 text-sm sm:text-base">
                 Director &amp; Founder
