@@ -90,12 +90,13 @@ export default function AboutIntro() {
 
                 <Quote className="text-orange/60 mb-3" size={30} />
                 <p className="text-white text-[17px] sm:text-[18px] leading-relaxed font-medium mb-5">
-                  To build trust through reliable service, professional conduct, transparent
-                  communication, and long-term business relationships.
+                  Every shipment, every partnership, and every customer relationship is guided by
+                  professionalism, accountability, transparency, and compliance.
                 </p>
                 <p className="text-gray-300/90 text-[14.5px] leading-relaxed mb-7">
-                  We measure our success by the confidence our customers, partners, and
-                  stakeholders place in us.
+                  We are committed to delivering reliable logistics solutions, fostering trusted
+                  partnerships, and creating long-term value through consistent service excellence,
+                  ethical business practices, and customer-focused operations.
                 </p>
 
                 <div className="flex items-center gap-2.5 text-white/85 text-[13.5px] font-medium pt-6 border-t border-white/10">

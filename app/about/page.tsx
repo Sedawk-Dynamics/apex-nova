@@ -1062,13 +1062,13 @@ export default function AboutPage() {
             Our Commitment
           </h2>
           <p className="text-gray-700 text-[16px] sm:text-[18px] leading-relaxed mb-4">
-            At Apexnova Logistics, our commitment is simple: to build trust through reliable
-            service, professional conduct, transparent communication, and long-term business
-            relationships.
+            Every shipment, every partnership, and every customer relationship is guided by
+            professionalism, accountability, transparency, and compliance.
           </p>
           <p className="text-gray-600 text-[15px] sm:text-base leading-relaxed">
-            We measure our success by the confidence our customers, partners, and stakeholders
-            place in us.
+            We are committed to delivering reliable logistics solutions, fostering trusted
+            partnerships, and creating long-term value for businesses through consistent service
+            excellence, ethical business practices, and customer-focused operations.
           </p>
         </div>
       </section>
