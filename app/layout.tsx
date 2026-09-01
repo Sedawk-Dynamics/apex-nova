@@ -21,6 +21,7 @@ import {
   GEO,
   FOUNDER,
   SAME_AS,
+  GTM_ID,
 } from "@/lib/site";
 
 const CustomCursor = dynamic(() => import("@/components/ui/CustomCursor"), { ssr: false });
@@ -210,24 +211,33 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
 
-        {/*
-          GA4 / GTM placeholder — uncomment and fill GA_MEASUREMENT_ID when the
-          client provides one. Loaded with strategy="afterInteractive" so it
-          never blocks LCP.
-
-          <Script
-            src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
-            strategy="afterInteractive"
-          />
-          <Script id="ga4-init" strategy="afterInteractive">{`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'GA_MEASUREMENT_ID', { anonymize_ip: true });
-          `}</Script>
-        */}
+        {/* Google Tag Manager — loads async, injected on every page via the root layout.
+            Kept as a raw inline tag (not next/script) so the container is present in the
+            server-rendered HTML exactly as the client supplied it. */}
+        {/* eslint-disable-next-line @next/next/next-script-for-ga */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM_ID}');`,
+          }}
+        />
+        {/* End Google Tag Manager */}
       </head>
       <body className={`${jakarta.className} antialiased`}>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
+
         <Suspense fallback={null}>
           <ProgressBar />
         </Suspense>

@@ -10,6 +10,10 @@ export const TAGLINE = "Driven by Experience. Powered by Partnerships. Committed
 export const BRAND_STATEMENT =
   "Built on 12+ years of domestic and international logistics expertise, Apexnova Logistics is committed to delivering reliable transportation solutions, fostering trusted partnerships, and creating long-term value for businesses across India.";
 
+// === Analytics ===
+// Google Tag Manager container (supplied by the client, Sep 2026).
+export const GTM_ID = "GTM-W9HM5JDS";
+
 export const PHONE = "+91-9560639966";
 export const PHONE_PLAIN = "+919560639966";
 export const EMAIL = "info@apexnovalogistics.com";

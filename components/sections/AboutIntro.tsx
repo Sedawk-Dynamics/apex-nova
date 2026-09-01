@@ -35,25 +35,25 @@ export default function AboutIntro() {
               <Building2 size={13} /> About Apexnova Logistics
             </span>
             <h2 className="text-[32px] md:text-[44px] font-bold text-navy-deep mb-6 tracking-tight text-balance leading-[1.1]">
-              A Growing Logistics Company Built on{" "}
-              <span className="gradient-text">Industry Experience</span>
+              Noida-Based B2B Logistics for{" "}
+              <span className="gradient-text">Domestic &amp; International Shipments</span>
             </h2>
             <div className="space-y-4 text-theme-muted text-[15.5px] leading-relaxed max-w-2xl">
               <p>
-                Apexnova Logistics India Pvt. Ltd. is a growing logistics and transportation
-                company built on more than 12 years of industry experience in Domestic
-                Transportation, International Logistics, Freight Operations, Supply Chain
-                Management, and Customer Relationship Management.
+                ApexNova Logistics India Pvt. Ltd. is a Noida-based logistics and transportation
+                company helping businesses move goods across India and international destinations.
+                With 12+ years of industry experience in domestic transportation, freight
+                operations, international logistics and supply chain management, we provide FTL,
+                PTL, express cargo, pan-India transportation, air freight, ocean freight and
+                customized logistics solutions for businesses shipping across the globe.
               </p>
               <p>
-                Our objective is to provide reliable, transparent, and efficient logistics
-                solutions that help businesses move goods with confidence and operational
-                efficiency.
-              </p>
-              <p>
-                By combining industry expertise with a customer-focused approach, we are
-                actively building a strong logistics network across India while creating
-                long-term partnerships with customers and business associates.
+                As a B2B transportation and logistics company in Noida, we support businesses with
+                transportation and freight requirements across domestic and international markets.
+                Whether you need to move a full truckload within India, arrange transportation for
+                smaller consignments, move time-sensitive cargo or coordinate international
+                shipments by air or ocean, our team works to provide a logistics solution aligned
+                with your shipment requirements.
               </p>
             </div>
 

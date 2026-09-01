@@ -2,23 +2,63 @@
 
 import { useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { ShieldCheck, Users, MessageSquare, Handshake, Sparkles, Volume2, VolumeX } from "lucide-react";
+import {
+  ShieldCheck,
+  Users,
+  MessageSquare,
+  Handshake,
+  Sparkles,
+  Volume2,
+  VolumeX,
+  Award,
+  MapPin,
+  Globe2,
+  Truck,
+  Network,
+} from "lucide-react";
 import { slideRight } from "@/lib/animations";
 
 const features = [
-  { icon: ShieldCheck, label: "Reliable Transportation", desc: "Dependable, professional movement of your goods" },
-  { icon: Users, label: "Professional Vendor Management", desc: "Verified fleet partners and disciplined coordination" },
-  { icon: MessageSquare, label: "Transparent Communication", desc: "Clear, honest updates throughout the journey" },
-  { icon: Handshake, label: "Long-Term Partnerships", desc: "Focused on lasting relationships, not one-off jobs" },
-];
-
-const moreReasons = [
-  "12+ Years Industry Expertise",
-  "Domestic & International Knowledge",
-  "Growing Pan India Network",
-  "Customer-Focused Operations",
-  "Dedicated Support Team",
-  "Commitment to Service Excellence",
+  {
+    icon: Award,
+    label: "12+ Years of Experience",
+    desc: "Expertise across domestic transportation, international logistics, freight operations and supply chain management.",
+  },
+  {
+    icon: MapPin,
+    label: "Noida-Based Operations",
+    desc: "Based in Transport Nagar, Sector 69, Noida, providing logistics services in Noida and across India.",
+  },
+  {
+    icon: Globe2,
+    label: "Domestic & International Logistics",
+    desc: "FTL, PTL, express cargo, pan-India transportation, air freight and ocean freight for business shipments.",
+  },
+  {
+    icon: Truck,
+    label: "Reliable Transportation",
+    desc: "Professional coordination for dependable transportation services in Noida and across major Indian destinations.",
+  },
+  {
+    icon: Users,
+    label: "Professional Vendor Management",
+    desc: "Structured coordination with fleet and transportation partners for efficient shipment movement.",
+  },
+  {
+    icon: MessageSquare,
+    label: "Transparent Communication",
+    desc: "Clear updates and communication throughout the logistics process.",
+  },
+  {
+    icon: Handshake,
+    label: "Long-Term Partnerships",
+    desc: "Business-focused logistics solutions in Noida built around ongoing transportation and supply chain requirements.",
+  },
+  {
+    icon: Network,
+    label: "Growing Logistics Network",
+    desc: "A growing network connecting businesses across major destinations in North, West, South and East India.",
+  },
 ];
 
 export default function WhyChoose() {
@@ -51,12 +91,12 @@ export default function WhyChoose() {
               <Sparkles size={13} /> Our Advantage
             </span>
             <h2 className="text-[34px] md:text-[44px] font-bold text-navy-deep mb-5 tracking-tight text-balance leading-[1.1]">
-              Why Choose <span className="gradient-text">Apexnova Logistics</span>
+              Why Choose <span className="gradient-text">ApexNova Logistics</span>
             </h2>
             <p className="text-theme-muted mb-10 text-[16.5px] max-w-xl leading-relaxed">
-              Built on 12+ years of domestic and international logistics expertise, we combine
-              industry knowledge with a customer-first approach — delivering reliable solutions
-              through transparency, professionalism, and trusted partnerships.
+              With 12+ years of experience, ApexNova combines domestic and international logistics
+              expertise with professional transportation coordination to support businesses across
+              India and global markets.
             </p>
 
             <motion.div
@@ -98,19 +138,6 @@ export default function WhyChoose() {
                 );
               })}
             </motion.div>
-
-            {/* Additional reasons */}
-            <div className="flex flex-wrap gap-2.5 mt-6">
-              {moreReasons.map((reason) => (
-                <span
-                  key={reason}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-gray-200 bg-white text-navy-deep/75 text-[12.5px] font-medium"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-orange" />
-                  {reason}
-                </span>
-              ))}
-            </div>
           </div>
 
           {/* Image */}

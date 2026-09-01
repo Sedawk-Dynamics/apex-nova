@@ -4,7 +4,20 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle, XCircle, ChevronDown, HelpCircle, Globe2 } from "lucide-react";
+import {
+  CheckCircle,
+  XCircle,
+  ChevronDown,
+  HelpCircle,
+  Globe2,
+  Plane,
+  Ship,
+  PackageCheck,
+  FileCheck,
+  Layers,
+  Users,
+  Settings,
+} from "lucide-react";
 
 const faqs = [
   {
@@ -25,7 +38,19 @@ const faqs = [
   },
   {
     q: "Do you support international logistics?",
-    a: "Our foundation is built on 12+ years of domestic and international logistics expertise. We are actively developing future capabilities in international freight forwarding, air and sea freight, and import & export logistics support.",
+    a: "Yes. Alongside our domestic transportation services, we support businesses with international logistics and freight requirements — including air freight, ocean freight, import & export logistics and customs coordination support.",
+  },
+  {
+    q: "Do you provide both FTL and PTL transportation?",
+    a: "Yes. ApexNova provides both Full Truck Load (FTL) and Part Truck Load (PTL) transportation for business shipments. The suitable option depends on the shipment size, vehicle requirement and transportation needs.",
+  },
+  {
+    q: "Do you provide air freight and sea freight services?",
+    a: "Yes. ApexNova provides air freight and sea freight support for businesses moving commercial shipments between India and international destinations. The suitable option depends on the cargo, destination and required transit time.",
+  },
+  {
+    q: "Do you provide logistics services from Noida to other parts of India?",
+    a: "Yes. Based in Noida, ApexNova coordinates business transportation from Noida and Delhi NCR to destinations across India. We also support international shipments moving between India and overseas markets.",
   },
 ];
 
@@ -33,46 +58,78 @@ const servicesData = [
   {
     id: "01",
     title: "Full Truck Load (FTL) Services",
-    desc: "We provide dedicated full truck load transportation for bulk shipments, ensuring faster delivery, safety, and cost efficiency for large-scale business requirements.",
-    features: ["Dedicated Vehicle", "Faster Transit Time", "Direct Point-to-Point"],
+    desc: "For larger shipments that need a dedicated vehicle, our FTL service provides direct transportation from the pickup point to the delivery location. It is suitable for full loads and high-volume business shipments.",
+    features: ["Dedicated Vehicle", "Direct Point-to-Point", "High-Volume Shipments"],
     image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1000&auto=format&fit=crop"
   },
   {
     id: "02",
     title: "Part Truck Load (PTL) Services",
-    desc: "Our part truck load services are ideal for smaller shipments, offering cost-effective and flexible transportation solutions without the need for a full truck.",
-    features: ["Cost-Effective", "Flexible Space Allocation", "Consolidated Shipping"],
+    desc: "PTL works well for businesses with smaller consignments that do not require an entire truck. It gives businesses the option to use the vehicle space required for their shipment instead of booking a full vehicle.",
+    features: ["Pay for Space Used", "Smaller Consignments", "Consolidated Shipping"],
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop"
   },
   {
     id: "03",
     title: "Express Cargo Services",
-    desc: "Our express cargo services are designed for time-critical shipments, delivering priority movement with quick response and efficient execution.",
-    features: ["Priority Handling", "Quick Response", "Time-Critical Delivery"],
+    desc: "For shipments that need to move within a shorter timeframe, our express cargo service provides priority transportation for business requirements. The movement is planned around the shipment, route and required delivery timeline.",
+    features: ["Priority Handling", "Shorter Timeframes", "Route-Planned Movement"],
     image: "https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=1000&auto=format&fit=crop"
   },
   {
     id: "04",
-    title: "Pan India Transportation",
-    desc: "We provide reliable nationwide transportation with optimized routing and dependable transit across all four regions of India.",
-    features: ["Nationwide Coverage", "Optimized Routing", "Reliable Transit"],
+    title: "Pan-India Transportation",
+    desc: "ApexNova coordinates transportation between Noida, Delhi NCR and major commercial and industrial locations across India. We support business shipments across North, South, East and West India.",
+    features: ["Noida & Delhi NCR Origin", "Commercial & Industrial Hubs", "North, South, East & West"],
     image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1000&auto=format&fit=crop"
-  },
-  {
-    id: "05",
-    title: "Customized Logistics & Supply Chain Support",
-    desc: "We provide tailored logistics solutions with professional vendor management and dependable supply chain coordination, built around the specific needs of your business.",
-    features: ["Tailored Solutions", "Vendor Management", "Supply Chain Coordination"],
-    image: "https://images.unsplash.com/photo-1554774853-719586f82d77?q=80&w=1000&auto=format&fit=crop"
   }
 ];
 
-const futureServices = [
-  "International Freight Forwarding",
-  "Air Freight Solutions",
-  "Sea Freight Solutions",
-  "Import & Export Logistics Support",
-  "Customs Coordination Support",
+// Client-supplied services page sections (Sep 2026).
+const internationalServices = [
+  {
+    icon: Globe2,
+    title: "International Freight Forwarding",
+    desc: "As an international freight forwarding company in Noida, ApexNova helps businesses coordinate commercial shipments between India and international destinations. We work with the relevant transportation and logistics partners according to the shipment requirements.",
+  },
+  {
+    icon: Plane,
+    title: "Air Freight Forwarding",
+    desc: "For international shipments where air transportation is the preferred option, ApexNova provides air freight support based on the cargo, destination and required transit time.",
+  },
+  {
+    icon: Ship,
+    title: "Sea Freight Forwarding",
+    desc: "Our sea freight services help businesses move commercial cargo between India and international markets. Sea transportation is a suitable option for many larger shipments where transit time and cargo requirements allow for ocean freight.",
+  },
+  {
+    icon: PackageCheck,
+    title: "Import & Export Logistics",
+    desc: "Businesses involved in international trade need coordination at different stages of a shipment. ApexNova supports the logistics involved in moving commercial goods between India and international destinations.",
+  },
+  {
+    icon: FileCheck,
+    title: "Customs Coordination",
+    desc: "International shipments may involve customs requirements during the movement. ApexNova coordinates with the relevant parties to support the logistics process around these requirements.",
+  },
+];
+
+const supplyChainServices = [
+  {
+    icon: Layers,
+    title: "Supply Chain Management",
+    desc: "We help businesses coordinate the movement of goods between different points in their supply chain, including suppliers, manufacturers, warehouses, distributors and other business locations.",
+  },
+  {
+    icon: Users,
+    title: "Vendor Management",
+    desc: "A shipment can involve more than one transportation partner. ApexNova coordinates with fleet and transport vendors for vehicle availability, shipment movement, updates and other requirements during the shipment.",
+  },
+  {
+    icon: Settings,
+    title: "Customized Logistics Solutions",
+    desc: "Some businesses have regular routes and shipment schedules, while others have requirements that change from one shipment to another. ApexNova can arrange transportation and logistics support around the shipment volume, route, frequency, destination and other business requirements.",
+  },
 ];
 
 export default function ServicesPage() {
@@ -94,9 +151,9 @@ export default function ServicesPage() {
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold text-white mb-4 tracking-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-bold text-white mb-4 tracking-tight text-balance max-w-4xl mx-auto px-6"
           >
-            Our <span className="gradient-text">Services</span>
+            Domestic and <span className="gradient-text">International</span> Logistics Services
           </motion.h1>
           <motion.div
             initial={{ opacity: 0, y: 8 }}
@@ -118,16 +175,37 @@ export default function ServicesPage() {
             WHAT WE DO
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
-            Logistics Solutions Built for Your Business
+            Comprehensive Logistics Solutions for Businesses
           </h2>
-          <p className="text-gray-600 text-lg">
-            From bulk freight to last-mile delivery — we have a solution for every shipment.
+          <p className="text-gray-600 text-[17px] leading-relaxed">
+            ApexNova provides B2B logistics services for businesses moving goods within India and to
+            international destinations. Our services include FTL, PTL, express cargo, pan-India
+            transportation, international freight forwarding, air freight, ocean freight and supply
+            chain support.
           </p>
         </div>
       </section>
 
-      {/* DETAIL CARDS */}
-      <section className="bg-white pb-20">
+      {/* DOMESTIC TRANSPORTATION SERVICES */}
+      {/* overflow-hidden: the cards slide in from x: ±50 — without clipping, the
+          off-screen ones widen the document and add a horizontal scrollbar. */}
+      <section className="bg-white pb-20 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-3xl mb-12">
+            <span className="text-orange text-xs font-bold tracking-widest uppercase mb-2 block">
+              Within India
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
+              Domestic Transportation Services
+            </h2>
+            <p className="text-gray-600 text-[16px] leading-relaxed">
+              Based in Noida, ApexNova handles transportation requirements for businesses across
+              Delhi NCR and other parts of India. We work with businesses that need regular
+              transportation, bulk movement, smaller consignments or faster movement for
+              time-sensitive shipments.
+            </p>
+          </div>
+        </div>
         <div className="max-w-7xl mx-auto px-6 space-y-16">
           {servicesData.map((service, idx) => {
             const isEven = idx % 2 === 1;
@@ -155,9 +233,9 @@ export default function ServicesPage() {
                   <div className="w-12 h-12 bg-orange/10 text-orange rounded-full flex items-center justify-center font-bold text-xl mb-6">
                     {service.id}
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-navy mb-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-navy mb-4">
                     {service.title}
-                  </h2>
+                  </h3>
                   <p className="text-gray-600 mb-6 leading-relaxed">
                     {service.desc}
                   </p>
@@ -184,43 +262,105 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* FUTURE EXPANSION */}
-      <section className="bg-theme-light py-20">
+      {/* INTERNATIONAL FREIGHT & LOGISTICS SERVICES */}
+      <section className="bg-theme-light py-20 scroll-mt-28" id="international-freight">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="relative rounded-3xl bg-gradient-to-br from-navy-deep via-navy to-[#0F1D4A] p-8 sm:p-12 overflow-hidden border border-white/10 shadow-premium">
-            <div className="absolute inset-0 grid-bg radial-fade opacity-25" />
-            <div className="absolute -top-24 -right-24 w-[360px] h-[360px] bg-orange/15 rounded-full blur-[120px]" />
-
-            <div className="relative">
-              <div className="text-center max-w-2xl mx-auto mb-10">
-                <span className="inline-flex items-center gap-2 text-orange text-[11.5px] font-bold tracking-[0.25em] uppercase mb-3 px-3.5 py-1.5 rounded-full bg-orange/15 border border-orange/30">
-                  <Globe2 size={12} /> Future Expansion Capability
-                </span>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3">
-                  Growing Towards Global Logistics
-                </h2>
-                <p className="text-gray-300/90 text-[15px] leading-relaxed">
-                  Backed by 12+ years of domestic and international logistics expertise, we are
-                  building capabilities to extend our reach beyond borders.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-                {futureServices.map((name) => (
-                  <div
-                    key={name}
-                    className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4 hover:bg-white/[0.08] transition-colors"
-                  >
-                    <CheckCircle size={18} className="text-orange shrink-0" />
-                    <span className="text-white/85 text-[13px] font-medium leading-snug">{name}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+          <div className="max-w-3xl mb-12">
+            <span className="text-orange text-xs font-bold tracking-widest uppercase mb-2 block">
+              Across Borders
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
+              International Freight &amp; Logistics Services
+            </h2>
+            <p className="text-gray-600 text-[16px] leading-relaxed">
+              ApexNova also handles international logistics requirements alongside its domestic
+              transportation services. We coordinate commercial shipments between India and
+              international markets through freight forwarding, air freight, ocean freight and
+              import-export logistics.
+            </p>
           </div>
+
+          <motion.div
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            {internationalServices.map((item) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={item.title}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.55 } },
+                  }}
+                  className="group relative bg-white rounded-2xl border border-gray-100 p-7 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <div className="absolute left-0 right-0 top-0 h-[3px] bg-gradient-to-r from-orange via-orange-glow to-orange scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-navy-deep to-navy text-orange flex items-center justify-center mb-5 shadow-md shrink-0">
+                    <Icon size={22} strokeWidth={2} />
+                  </div>
+                  <h3 className="text-[18px] font-semibold text-navy-deep mb-2.5 tracking-tight">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 text-[14.5px] leading-relaxed">{item.desc}</p>
+                </motion.div>
+              );
+            })}
+          </motion.div>
         </div>
       </section>
+      {/* SUPPLY CHAIN & LOGISTICS SUPPORT */}
+      <section className="bg-white py-20 scroll-mt-28" id="supply-chain">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-3xl mb-12">
+            <span className="text-orange text-xs font-bold tracking-widest uppercase mb-2 block">
+              Beyond Transportation
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
+              Supply Chain &amp; Logistics Support
+            </h2>
+            <p className="text-gray-600 text-[16px] leading-relaxed">
+              Transportation is one part of a business&rsquo;s overall logistics requirements. ApexNova
+              works with businesses where shipment movement involves suppliers, manufacturers, transport
+              partners, warehouses, distributors and other locations.
+            </p>
+          </div>
 
+          <motion.div
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            {supplyChainServices.map((item) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={item.title}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.55 } },
+                  }}
+                  className="group relative bg-white rounded-2xl border border-gray-100 p-7 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <div className="absolute left-0 right-0 top-0 h-[3px] bg-gradient-to-r from-orange via-orange-glow to-orange scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-navy-deep to-navy text-orange flex items-center justify-center mb-5 shadow-md shrink-0">
+                    <Icon size={22} strokeWidth={2} />
+                  </div>
+                  <h3 className="text-[18px] font-semibold text-navy-deep mb-2.5 tracking-tight">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 text-[14.5px] leading-relaxed">{item.desc}</p>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </div>
+      </section>
       {/* COMPARISON TABLE */}
       <section className="bg-theme-light py-20">
         <div className="max-w-7xl mx-auto px-6">

@@ -3,10 +3,10 @@ import { SITE_URL, LEGAL_NAME, SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Logistics Services — FTL, PTL, Express Cargo & Pan India | Apexnova Logistics",
+    absolute: "Domestic & International Logistics Services | Freight Forwarding Company",
   },
   description:
-    "Explore Apexnova's services: Full Truck Load, Part Truck Load, Express Cargo, Pan India transportation, supply chain support & customized logistics — built on 12+ years of domestic and international expertise.",
+    "ApexNova Logistics provides domestic and international logistics services, including freight forwarding, air and sea freight, transportation and import-export support from Noida across India and global markets.",
   keywords: [
     "FTL services India",
     "PTL services India",
@@ -16,12 +16,18 @@ export const metadata: Metadata = {
     "supply chain support India",
     "customized logistics solutions",
     "domestic and international logistics",
+    "freight forwarding company Noida",
+    "international freight forwarding India",
+    "air freight forwarding Noida",
+    "sea freight forwarding India",
+    "import export logistics Noida",
+    "customs coordination India",
   ],
   alternates: { canonical: "/services" },
   openGraph: {
-    title: "Apexnova Logistics — Services",
+    title: "Domestic & International Logistics Services | Freight Forwarding Company",
     description:
-      "FTL, PTL, Express Cargo, Pan India transportation, supply chain support & customized logistics for Indian businesses.",
+      "ApexNova Logistics provides domestic and international logistics services, including freight forwarding, air and sea freight, transportation and import-export support from Noida across India and global markets.",
     url: "/services",
     type: "website",
     images: [
@@ -37,8 +43,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@apexnova0",
     creator: "@apexnova0",
-    title: "Apexnova Logistics — Services",
-    description: "FTL, PTL, Express Cargo, Pan India transportation & supply chain support.",
+    title: "Domestic & International Logistics Services | Freight Forwarding Company",
+    description:
+      "ApexNova Logistics provides domestic and international logistics services, including freight forwarding, air and sea freight, transportation and import-export support from Noida across India and global markets.",
     images: ["/images/hero-truck.jpg"],
   },
 };
@@ -54,36 +61,85 @@ const services = [
     name: "Full Truck Load (FTL) Services",
     serviceType: "Freight Transportation",
     description:
-      "Dedicated full-truck transportation for bulk shipments — faster transit, point-to-point delivery, and cost-efficient handling for large-volume cargo.",
+      "Dedicated full truck load transportation providing direct movement from the pickup point to the delivery location, suitable for full loads and high-volume business shipments.",
     url: `${SITE_URL}/services#service-01`,
   },
   {
     name: "Part Truck Load (PTL) Services",
     serviceType: "Freight Transportation",
     description:
-      "Cost-effective shared-truck transport for smaller shipments — flexible space allocation and consolidated routing across India.",
+      "Part load transportation for smaller consignments that do not require an entire truck, letting businesses use only the vehicle space their shipment needs.",
     url: `${SITE_URL}/services#service-02`,
   },
   {
     name: "Express Cargo Services",
     serviceType: "Express Freight",
     description:
-      "Priority movement for time-critical shipments with quick response and efficient execution across India.",
+      "Priority transportation for shipments that need to move within a shorter timeframe, planned around the shipment, route and required delivery timeline.",
     url: `${SITE_URL}/services#service-03`,
   },
   {
-    name: "Pan India Transportation",
+    name: "Pan-India Transportation",
     serviceType: "Freight Transportation",
     description:
-      "Reliable nationwide transportation with optimized routing and dependable transit across all four regions of India.",
+      "Transportation coordinated between Noida, Delhi NCR and major commercial and industrial locations across North, South, East and West India.",
     url: `${SITE_URL}/services#service-04`,
   },
   {
-    name: "Customized Logistics & Supply Chain Support",
+    name: "International Freight Forwarding",
+    serviceType: "Freight Forwarding",
+    description:
+      "International freight forwarding from Noida, coordinating commercial shipments between India and international destinations with the relevant transportation and logistics partners.",
+    url: `${SITE_URL}/services#international-freight`,
+  },
+  {
+    name: "Air Freight Forwarding",
+    serviceType: "Air Freight",
+    description:
+      "Air freight support for international shipments, based on the cargo, destination and required transit time.",
+    url: `${SITE_URL}/services#international-freight`,
+  },
+  {
+    name: "Sea Freight Forwarding",
+    serviceType: "Ocean Freight",
+    description:
+      "Sea freight services moving commercial cargo between India and international markets, suitable for larger shipments where transit time and cargo requirements allow.",
+    url: `${SITE_URL}/services#international-freight`,
+  },
+  {
+    name: "Import & Export Logistics",
+    serviceType: "Import Export Logistics",
+    description:
+      "Logistics coordination across the different stages of moving commercial goods between India and international destinations for businesses involved in international trade.",
+    url: `${SITE_URL}/services#international-freight`,
+  },
+  {
+    name: "Customs Coordination",
+    serviceType: "Customs Coordination",
+    description:
+      "Coordination with the relevant parties to support the logistics process around customs requirements on international shipments.",
+    url: `${SITE_URL}/services#international-freight`,
+  },
+  {
+    name: "Supply Chain Management",
+    serviceType: "Supply Chain Management",
+    description:
+      "Coordination of goods moving between different points in a supply chain, including suppliers, manufacturers, warehouses, distributors and other business locations.",
+    url: `${SITE_URL}/services#supply-chain`,
+  },
+  {
+    name: "Vendor Management",
+    serviceType: "Vendor Management",
+    description:
+      "Coordination with fleet and transport vendors for vehicle availability, shipment movement and updates where a shipment involves more than one transportation partner.",
+    url: `${SITE_URL}/services#supply-chain`,
+  },
+  {
+    name: "Customized Logistics Solutions",
     serviceType: "Logistics & Supply Chain",
     description:
-      "Tailored logistics solutions with professional vendor management and dependable supply chain coordination, built around each business's needs.",
-    url: `${SITE_URL}/services#service-05`,
+      "Transportation and logistics support arranged around shipment volume, route, frequency, destination and other business requirements.",
+    url: `${SITE_URL}/services#supply-chain`,
   },
 ];
 
@@ -150,7 +206,31 @@ const faqSchema = {
       name: "Do you support international logistics?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Our foundation is built on 12+ years of domestic and international logistics expertise. We are actively developing future capabilities in international freight forwarding, air and sea freight, and import & export logistics support.",
+        text: "Yes. Alongside our domestic transportation services, we support businesses with international logistics and freight requirements — including air freight, ocean freight, import & export logistics and customs coordination support.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you provide both FTL and PTL transportation?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. ApexNova provides both Full Truck Load (FTL) and Part Truck Load (PTL) transportation for business shipments. The suitable option depends on the shipment size, vehicle requirement and transportation needs.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you provide air freight and sea freight services?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. ApexNova provides air freight and sea freight support for businesses moving commercial shipments between India and international destinations. The suitable option depends on the cargo, destination and required transit time.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you provide logistics services from Noida to other parts of India?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Based in Noida, ApexNova coordinates business transportation from Noida and Delhi NCR to destinations across India. We also support international shipments moving between India and overseas markets.",
       },
     },
   ],

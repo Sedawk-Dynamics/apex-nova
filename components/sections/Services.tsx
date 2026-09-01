@@ -21,22 +21,98 @@ import Link from "next/link";
 import { staggerContainer, scaleIn } from "@/lib/animations";
 
 const services = [
-  { icon: Truck, title: "Full Truck Load (FTL)", description: "Dedicated trucks for bulk and large-volume shipments." },
-  { icon: Package, title: "Part Truck Load (PTL)", description: "Flexible, cost-effective transport for smaller consignments." },
-  { icon: Zap, title: "Express Cargo Services", description: "Priority movement for time-critical shipments." },
-  { icon: Navigation, title: "Pan India Transportation", description: "Nationwide coverage with optimized routing." },
-  { icon: Network, title: "Logistics Coordination", description: "End-to-end coordination across every leg of the journey." },
-  { icon: Layers, title: "Supply Chain Support", description: "Reliable coordination for smooth movement of goods." },
-  { icon: Users, title: "Vendor Management", description: "Professional fleet and transport partner management." },
-  { icon: Settings, title: "Customized Logistics Solutions", description: "Tailored logistics built around your business needs." },
+  {
+    icon: Truck,
+    title: "Full Truck Load (FTL)",
+    description:
+      "Dedicated truck transportation for bulk and full-load shipments where businesses require dedicated vehicle capacity.",
+    cta: "Explore FTL Services",
+  },
+  {
+    icon: Package,
+    title: "Part Truck Load (PTL)",
+    description:
+      "Flexible transportation for smaller consignments that do not require a complete truck.",
+    cta: "Explore PTL Services",
+  },
+  {
+    icon: Zap,
+    title: "Express Cargo Services",
+    description:
+      "Priority transportation support for time-sensitive commercial shipments where delivery timelines are important.",
+    cta: "Explore Express Cargo",
+  },
+  {
+    icon: Navigation,
+    title: "Pan-India Transportation",
+    description:
+      "Transportation support connecting businesses with major destinations and commercial locations across India.",
+    cta: "Explore Pan-India Transportation",
+  },
+  {
+    icon: Network,
+    title: "Logistics Coordination",
+    description:
+      "End-to-end coordination across the different stages and parties involved in moving your shipment.",
+    cta: "Explore Logistics Coordination",
+  },
+  {
+    icon: Layers,
+    title: "Supply Chain Support",
+    description:
+      "Logistics support designed to help businesses coordinate the movement of goods across their supply chain.",
+    cta: "Explore Supply Chain Support",
+  },
+  {
+    icon: Users,
+    title: "Vendor Management",
+    description:
+      "Professional coordination with transportation and fleet partners to support business logistics requirements.",
+    cta: "Explore Vendor Management",
+  },
+  {
+    icon: Settings,
+    title: "Customized Logistics Solutions",
+    description:
+      "Tailored logistics arrangements built around your shipment, destination, volume and specific business requirements.",
+    cta: "Explore Customized Solutions",
+  },
 ];
 
-const futureServices = [
-  { icon: Globe2, title: "International Freight Forwarding" },
-  { icon: Plane, title: "Air Freight Solutions" },
-  { icon: Ship, title: "Sea Freight Solutions" },
-  { icon: PackageCheck, title: "Import & Export Logistics Support" },
-  { icon: FileCheck, title: "Customs Coordination Support" },
+// Client update (Sep 2026): international offerings are now presented as current
+// services, replacing the previous "Future Expansion Capability" framing.
+const internationalServices = [
+  {
+    icon: Plane,
+    title: "Air Freight",
+    description:
+      "International cargo transportation by air for businesses that require an appropriate air freight solution for their shipment requirements.",
+  },
+  {
+    icon: Ship,
+    title: "Ocean Freight",
+    description:
+      "Ocean transportation for international cargo, providing a practical freight option for businesses moving goods between international markets.",
+  },
+  {
+    icon: Globe2,
+    title: "International Logistics",
+    description:
+      "Coordination and transportation support for businesses managing shipments between India and international destinations.",
+    cta: "Explore International Logistics",
+  },
+  {
+    icon: PackageCheck,
+    title: "Import & Export Logistics",
+    description:
+      "Logistics support for businesses involved in importing and exporting goods, helping coordinate transportation requirements across international markets.",
+  },
+  {
+    icon: FileCheck,
+    title: "Customs Coordination Support",
+    description:
+      "Coordination support for customs-related requirements involved in the movement of international commercial shipments.",
+  },
 ];
 
 export default function Services() {
@@ -66,10 +142,13 @@ export default function Services() {
             transition={{ duration: 0.6 }}
             className="text-[34px] md:text-[44px] font-bold text-navy-deep mb-4 tracking-tight text-balance"
           >
-            Reliable Logistics, <span className="gradient-text">Built for Your Business</span>
+            Reliable Logistics <span className="gradient-text">Built for Your Business</span>
           </motion.h2>
-          <p className="text-theme-muted text-lg max-w-2xl mx-auto tracking-tight">
-            Transportation and supply chain solutions designed to move your goods with confidence and efficiency.
+          <p className="text-theme-muted text-[16.5px] max-w-3xl mx-auto leading-relaxed">
+            ApexNova provides a range of transportation and logistics services designed to support
+            different business requirements. From domestic road transportation to international
+            freight, our services cover the movement and coordination requirements businesses face
+            across their supply chain.
           </p>
         </div>
 
@@ -120,15 +199,15 @@ export default function Services() {
                   href="/services"
                   className="relative z-10 inline-flex items-center gap-1.5 text-[13px] font-semibold text-navy-deep group-hover:text-orange transition-colors"
                 >
-                  Explore service
-                  <ArrowUpRight size={15} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  {service.cta}
+                  <ArrowUpRight size={15} className="shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
               </motion.div>
             );
           })}
         </motion.div>
 
-        {/* Future Expansion Capability */}
+        {/* International Freight & Global Logistics */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -143,32 +222,46 @@ export default function Services() {
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
               <div>
                 <span className="inline-flex items-center gap-2 text-orange text-[11.5px] font-bold tracking-[0.25em] uppercase mb-3 px-3.5 py-1.5 rounded-full bg-orange/15 border border-orange/30">
-                  <Globe2 size={12} /> Future Expansion Capability
+                  <Globe2 size={12} /> Global Reach
                 </span>
                 <h3 className="text-white text-[24px] md:text-[30px] font-bold tracking-tight">
-                  Growing Towards Global Logistics
+                  International Freight &amp; Global Logistics
                 </h3>
               </div>
               <p className="text-gray-300/90 text-[14.5px] leading-relaxed max-w-md">
-                Backed by 12+ years of domestic and international expertise, we are building
-                capabilities to extend our reach beyond borders.
+                Alongside our domestic transportation services, ApexNova supports businesses with
+                international logistics and freight requirements.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-              {futureServices.map((s) => {
-                const Icon = s.icon;
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {internationalServices.map((item) => {
+                const Icon = item.icon;
                 return (
                   <div
-                    key={s.title}
-                    className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4 hover:bg-white/[0.08] transition-colors"
+                    key={item.title}
+                    className="group flex flex-col rounded-2xl border border-white/10 bg-white/[0.04] p-5 hover:bg-white/[0.08] transition-colors"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-orange shrink-0">
-                      <Icon size={18} />
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-orange shrink-0">
+                        <Icon size={18} />
+                      </div>
+                      <span className="text-white text-[15px] font-semibold leading-snug tracking-tight">
+                        {item.title}
+                      </span>
                     </div>
-                    <span className="text-white/85 text-[13px] font-medium leading-snug">
-                      {s.title}
-                    </span>
+                    <p className="text-gray-300/85 text-[13.5px] leading-relaxed">
+                      {item.description}
+                    </p>
+                    {item.cta && (
+                      <Link
+                        href="/services"
+                        className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-orange hover:text-orange-glow transition-colors"
+                      >
+                        {item.cta}
+                        <ArrowUpRight size={14} className="shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      </Link>
+                    )}
                   </div>
                 );
               })}

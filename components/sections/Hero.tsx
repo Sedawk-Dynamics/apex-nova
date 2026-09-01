@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
+import { getImageProps } from "next/image";
 import { ArrowRight, Award, Globe2, Network, HeartHandshake, ShieldCheck, Truck, MapPin } from "lucide-react";
 import dynamic from "next/dynamic";
 import { scaleIn } from "@/lib/animations";
@@ -43,8 +43,8 @@ const highlights = [
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
 
-  const titleWords = ["Reliable", "Domestic", "&", "International", "Logistics", "Solutions"];
-  const accentIndex = 3; // "International" gets gradient
+  const titleWords = ["Logistics", "Company", "in", "Noida", "for", "Reliable", "B2B", "Transportation"];
+  const accentIndex = 3; // "Noida" gets gradient
   const subText = "Built on 12+ Years of Industry Expertise";
   const subChars = subText.split("");
 
@@ -52,14 +52,35 @@ export default function Hero() {
     <section className="relative min-h-[88vh] sm:min-h-[92vh] flex items-center bg-navy-deep w-full pt-28 sm:pt-32 md:pt-36 pb-48 xs:pb-52 sm:pb-52 md:pb-60 overflow-hidden">
       {/* Background Image & Layered Overlays */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/hero-truck.webp"
-          alt="Apexnova Logistics freight truck on Indian highway at dusk"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center scale-105"
-        />
+        {/*
+          Client-supplied home banners (Sep 2026), art-directed so only one file
+          is ever downloaded: the 1983x793 wide crop on md+, the 1254x1254 square
+          crop on mobile where a 2.5:1 image would lose nearly all of its height.
+        */}
+        {(() => {
+          const common = {
+            alt: "Apexnova Logistics multimodal freight — branded truck, cargo aircraft and container ship at sunset",
+            fill: true,
+            sizes: "100vw",
+            priority: true,
+          };
+          const { props: desktop } = getImageProps({
+            ...common,
+            src: "/images/hero-banner-desktop.webp",
+          });
+          const { props: mobile } = getImageProps({
+            ...common,
+            src: "/images/hero-banner-mobile.webp",
+            className: "w-full h-full object-cover object-center scale-105",
+          });
+          return (
+            <picture>
+              <source media="(min-width: 768px)" srcSet={desktop.srcSet} sizes="100vw" />
+              {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
+              <img {...mobile} />
+            </picture>
+          );
+        })()}
         {/* Cinematic darken — readable on the left, fully clear on the right to reveal the image */}
         <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/85 via-navy-deep/35 to-transparent" />
         {/* Animated brand wash — soft tint only on the far left */}
